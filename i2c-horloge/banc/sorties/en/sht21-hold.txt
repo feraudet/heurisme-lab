@@ -1,0 +1,18 @@
+$ sigrok-cli -i i2c-sht21-100khz-read-serial-hold.sr -P i2c:scl=SCL:sda=SDA -A i2c=addr-data --protocol-decoder-samplenum | grep -B4 -A12 'write: E3'
+145383-145383 i2c-1: Start
+145988-146063 i2c-1: Write
+145459-145988 i2c-1: Address write: 40
+146063-146138 i2c-1: ACK
+146138-146744 i2c-1: Data write: E3
+146744-146820 i2c-1: ACK
+146860-146860 i2c-1: Start repeat
+147465-147540 i2c-1: Read
+146936-147465 i2c-1: Address read: 40
+147541-147616 i2c-1: ACK
+669570-670177 i2c-1: Data read: 66
+670176-670252 i2c-1: ACK
+670252-670858 i2c-1: Data read: F0
+670857-670933 i2c-1: ACK
+670932-671536 i2c-1: Data read: 8D
+671536-671611 i2c-1: NACK
+671647-671647 i2c-1: Stop

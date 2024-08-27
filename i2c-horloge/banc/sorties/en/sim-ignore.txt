@@ -1,0 +1,10 @@
+$ python3 -I sim_bus.py --ignore --vcd sim-ignore.vcd --en
+controller: ignores clock stretching
+    0.379 ms  sensor: holds SCL at 0 for 65.25 ms
+    0.691 ms  read 1: bytes FF FF FF  -> 128.86 °C   (transaction: 0.64 ms)
+   65.630 ms  sensor: releases SCL, measurement ready
+  100.821 ms  read 2: NACK on the address, sensor missing?
+  201.150 ms  sensor: holds SCL at 0 for 65.25 ms
+  201.462 ms  read 3: bytes FF FF FF  -> 128.86 °C   (transaction: 0.64 ms)
+  266.401 ms  sensor: releases SCL, measurement ready
+  301.592 ms  read 4: NACK on the address, sensor missing?

@@ -1,0 +1,18 @@
+$ python3 -I /banc/calcul_pullup.py
+Rp(min) à 3.3 V : (3.3 - 0.4) / 3 mA = 967 ohms
+
+Rp(max) selon la capacité du bus :
+   Cb     standard   fast
+   50 pF  23.60 k    7.08 k
+  100 pF  11.80 k    3.54 k
+  200 pF   5.90 k    1.77 k
+  400 pF   2.95 k    0.89 k
+
+tr = 0,8473 x Rp x Cb :
+   Rp       100 pF     200 pF     400 pF
+   1.0 k     85 ns ok     169 ns ok     339 ns std
+   2.2 k    186 ns ok     373 ns std    746 ns std
+   4.7 k    398 ns std    796 ns std   1593 ns KO 
+  10.0 k    847 ns std   1695 ns KO    3389 ns KO 
+
+ok = fast et standard, std = standard seulement, KO = hors spec

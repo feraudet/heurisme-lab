@@ -1,0 +1,7 @@
+$ python3 -I /banc/mesure_scl.py ad5258_write_eeprom_63_readback_nack.sr 100
+capture : 6227 échantillons à 4 MHz (1.6 ms), pas de 250 ns
+SCL : 50 fronts montants
+  période médiane    :   3.25 us  (307.7 kHz)
+  palier haut médian :   2.00 us
+  palier bas médian  :   1.25 us
+paliers bas de SCL plus longs que 100 us :

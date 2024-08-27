@@ -1,0 +1,69 @@
+$ sigrok-cli -I vcd -i sim-respecte.vcd -P i2c:scl=SCL:sda=SDA -A i2c=addr-data --protocol-decoder-samplenum
+57-57 i2c-1: Start
+149-160 i2c-1: Write
+72-149 i2c-1: Address write: 40
+160-171 i2c-1: ACK
+171-259 i2c-1: Data write: E3
+259-270 i2c-1: ACK
+271-271 i2c-1: Start repeat
+363-374 i2c-1: Read
+286-363 i2c-1: Address read: 40
+374-385 i2c-1: ACK
+65631-65719 i2c-1: Data read: 66
+65719-65730 i2c-1: ACK
+65730-65818 i2c-1: Data read: F0
+65818-65829 i2c-1: ACK
+65829-65917 i2c-1: Data read: 8D
+65917-65928 i2c-1: NACK
+65933-65933 i2c-1: Stop
+165944-165944 i2c-1: Start
+166036-166047 i2c-1: Write
+165959-166036 i2c-1: Address write: 40
+166047-166058 i2c-1: ACK
+166058-166146 i2c-1: Data write: E3
+166146-166157 i2c-1: ACK
+166158-166158 i2c-1: Start repeat
+166250-166261 i2c-1: Read
+166173-166250 i2c-1: Address read: 40
+166261-166272 i2c-1: ACK
+231518-231606 i2c-1: Data read: 66
+231606-231617 i2c-1: ACK
+231617-231705 i2c-1: Data read: F0
+231705-231716 i2c-1: ACK
+231716-231804 i2c-1: Data read: 8D
+231804-231815 i2c-1: NACK
+231820-231820 i2c-1: Stop
+331831-331831 i2c-1: Start
+331923-331934 i2c-1: Write
+331846-331923 i2c-1: Address write: 40
+331934-331945 i2c-1: ACK
+331945-332033 i2c-1: Data write: E3
+332033-332044 i2c-1: ACK
+332045-332045 i2c-1: Start repeat
+332137-332148 i2c-1: Read
+332060-332137 i2c-1: Address read: 40
+332148-332159 i2c-1: ACK
+397405-397493 i2c-1: Data read: 66
+397493-397504 i2c-1: ACK
+397504-397592 i2c-1: Data read: F0
+397592-397603 i2c-1: ACK
+397603-397691 i2c-1: Data read: 8D
+397691-397702 i2c-1: NACK
+397707-397707 i2c-1: Stop
+497718-497718 i2c-1: Start
+497810-497821 i2c-1: Write
+497733-497810 i2c-1: Address write: 40
+497821-497832 i2c-1: ACK
+497832-497920 i2c-1: Data write: E3
+497920-497931 i2c-1: ACK
+497932-497932 i2c-1: Start repeat
+498024-498035 i2c-1: Read
+497947-498024 i2c-1: Address read: 40
+498035-498046 i2c-1: ACK
+563292-563380 i2c-1: Data read: 66
+563380-563391 i2c-1: ACK
+563391-563479 i2c-1: Data read: F0
+563479-563490 i2c-1: ACK
+563490-563578 i2c-1: Data read: 8D
+563578-563589 i2c-1: NACK
+563594-563594 i2c-1: Stop

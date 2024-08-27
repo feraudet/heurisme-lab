@@ -1,0 +1,9 @@
+$ python3 -I /banc/mesure_scl.py i2c-sht21-100khz-read-serial-hold.sr 100 --en
+capture: 1000000 samples at 8 MHz (125.0 ms), 125 ns step
+SCL: 409 rising edges
+  median period      :   9.50 us  (105.3 kHz)
+  median high time   :   4.00 us
+  median low time    :   5.38 us
+SCL low periods longer than 100 us:
+  at t =   18.447 ms   SCL held low  65.250 ms
+  at t =   87.136 ms   SCL held low  21.593 ms

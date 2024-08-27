@@ -1,0 +1,14 @@
+$ python3 -I sim_bus.py --respecte --vcd sim-respecte.vcd
+maître : respecte le clock stretching
+    0.379 ms  capteur : retient SCL à 0 pour 65.25 ms
+   65.630 ms  capteur : relâche SCL, mesure prête
+   65.937 ms  lecture 1 : octets 66 F0 8D  ->  23.81 °C   (transaction : 65.89 ms)
+  166.266 ms  capteur : retient SCL à 0 pour 65.25 ms
+  231.517 ms  capteur : relâche SCL, mesure prête
+  231.824 ms  lecture 2 : octets 66 F0 8D  ->  23.81 °C   (transaction : 65.89 ms)
+  332.153 ms  capteur : retient SCL à 0 pour 65.25 ms
+  397.404 ms  capteur : relâche SCL, mesure prête
+  397.711 ms  lecture 3 : octets 66 F0 8D  ->  23.81 °C   (transaction : 65.89 ms)
+  498.040 ms  capteur : retient SCL à 0 pour 65.25 ms
+  563.291 ms  capteur : relâche SCL, mesure prête
+  563.598 ms  lecture 4 : octets 66 F0 8D  ->  23.81 °C   (transaction : 65.89 ms)

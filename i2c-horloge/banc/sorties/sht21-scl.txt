@@ -1,0 +1,9 @@
+$ python3 -I /banc/mesure_scl.py i2c-sht21-100khz-read-serial-hold.sr 100
+capture : 1000000 échantillons à 8 MHz (125.0 ms), pas de 125 ns
+SCL : 409 fronts montants
+  période médiane    :   9.50 us  (105.3 kHz)
+  palier haut médian :   4.00 us
+  palier bas médian  :   5.38 us
+paliers bas de SCL plus longs que 100 us :
+  à t =   18.447 ms   SCL tenu bas  65.250 ms
+  à t =   87.136 ms   SCL tenu bas  21.593 ms

@@ -1,0 +1,4 @@
+$ python3 -I /banc/crc_sht21.py --en
+66 F0  CRC received 8D  computed 8D  OK
+74 2E  CRC received 21  computed 21  OK
+FF FF  CRC received FF  computed 2D  WRONG

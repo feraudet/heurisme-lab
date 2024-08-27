@@ -1,0 +1,10 @@
+$ python3 -I sim_bus.py --ignore --vcd sim-ignore.vcd
+maître : ignore le clock stretching
+    0.379 ms  capteur : retient SCL à 0 pour 65.25 ms
+    0.691 ms  lecture 1 : octets FF FF FF  -> 128.86 °C   (transaction : 0.64 ms)
+   65.630 ms  capteur : relâche SCL, mesure prête
+  100.821 ms  lecture 2 : NACK sur l’adresse, capteur absent ?
+  201.150 ms  capteur : retient SCL à 0 pour 65.25 ms
+  201.462 ms  lecture 3 : octets FF FF FF  -> 128.86 °C   (transaction : 0.64 ms)
+  266.401 ms  capteur : relâche SCL, mesure prête
+  301.592 ms  lecture 4 : NACK sur l’adresse, capteur absent ?

@@ -1,0 +1,20 @@
+$ sigrok-cli -i ad5258_write_eeprom_63_readback_nack.sr -P i2c:scl=SCL:sda=SDA -A i2c=addr-data --protocol-decoder-samplenum
+481-481 i2c-1: Start
+597-610 i2c-1: Write
+504-597 i2c-1: Address write: 1A
+611-624 i2c-1: ACK
+636-742 i2c-1: Data write: 20
+743-756 i2c-1: ACK
+767-873 i2c-1: Data write: 3F
+873-886 i2c-1: ACK
+908-908 i2c-1: Stop
+5054-5054 i2c-1: Start
+5170-5184 i2c-1: Write
+5076-5170 i2c-1: Address write: 1A
+5183-5197 i2c-1: NACK
+5217-5217 i2c-1: Stop
+5294-5294 i2c-1: Start
+5409-5422 i2c-1: Read
+5316-5409 i2c-1: Address read: 1A
+5423-5436 i2c-1: NACK
+5456-5456 i2c-1: Stop

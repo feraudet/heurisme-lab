@@ -1,0 +1,14 @@
+$ python3 -I sim_bus.py --respecte --vcd sim-respecte.vcd --en
+controller: honours clock stretching
+    0.379 ms  sensor: holds SCL at 0 for 65.25 ms
+   65.630 ms  sensor: releases SCL, measurement ready
+   65.937 ms  read 1: bytes 66 F0 8D  ->  23.81 °C   (transaction: 65.89 ms)
+  166.266 ms  sensor: holds SCL at 0 for 65.25 ms
+  231.517 ms  sensor: releases SCL, measurement ready
+  231.824 ms  read 2: bytes 66 F0 8D  ->  23.81 °C   (transaction: 65.89 ms)
+  332.153 ms  sensor: holds SCL at 0 for 65.25 ms
+  397.404 ms  sensor: releases SCL, measurement ready
+  397.711 ms  read 3: bytes 66 F0 8D  ->  23.81 °C   (transaction: 65.89 ms)
+  498.040 ms  sensor: holds SCL at 0 for 65.25 ms
+  563.291 ms  sensor: releases SCL, measurement ready
+  563.598 ms  read 4: bytes 66 F0 8D  ->  23.81 °C   (transaction: 65.89 ms)

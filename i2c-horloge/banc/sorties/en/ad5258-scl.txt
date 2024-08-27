@@ -1,0 +1,7 @@
+$ python3 -I /banc/mesure_scl.py ad5258_write_eeprom_63_readback_nack.sr 100 --en
+capture: 6227 samples at 4 MHz (1.6 ms), 250 ns step
+SCL: 50 rising edges
+  median period      :   3.25 us  (307.7 kHz)
+  median high time   :   2.00 us
+  median low time    :   1.25 us
+SCL low periods longer than 100 us:
