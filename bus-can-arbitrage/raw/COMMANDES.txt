@@ -1,0 +1,28 @@
+Commandes exactes (lancées depuis le dossier du banc, voir rejouer.sh ; images et paquets d'avant le 2025-01-14)
+  PY  = python:3.13.1-slim-bookworm@sha256:031ebf3cde9f3719d2db385233bcb18df5162038e9cda20e64e08f49f4b47a2f
+  DEB = debian:bookworm-20241223-slim@sha256:d365f4920711a9074c4bcd178e8f457ee59250426441ab2a5f8106ed8fe948eb
+  SOURCES = apt pointé sur https://snapshot.debian.org/archive/debian/20250114T000000Z/ (bookworm, bookworm-updates)
+            et https://snapshot.debian.org/archive/debian-security/20250114T000000Z/ (bookworm-security)
+  La version du noyau de Docker Desktop n'est pas affichée (pas de uname -r, modprobe -q).
+
+01-vcan-try.txt
+  docker run --rm --name deck-can-vcan --privileged -v "$PWD":/w "$DEB" bash -c "$SOURCES; bash /w/vcan-try.sh"
+
+02-can_frame.txt
+  docker run --rm --name deck-can-calc -v "$PWD":/w -w /w "$PY" sh -c 'echo "\$ python3 can_frame.py"; python3 --version; python3 can_frame.py; echo "exit=$?"'
+
+03-pycan-virtual.txt
+  docker run --rm --name deck-can-pycan -v "$PWD":/w "$PY" sh -c "pip install -q python-can==4.5.0 wrapt==1.17.1 packaging==24.2 typing_extensions==4.12.2 msgpack==1.1.0 >/dev/null 2>&1; echo '\$ python /w/pycan_demo.py'; python /w/pycan_demo.py"
+  (pycan_demo.py affiche les timestamps en secondes depuis le premier envoi, pas en heure réelle)
+
+04-vcan-clean.txt
+  docker run --rm --name deck-can-vcan2 --privileged -v "$PWD":/w "$DEB" bash -c "$SOURCES; bash /w/vcan-try2.sh"
+
+Références téléchargées
+  ref-tindell-frame.png : https://upload.wikimedia.org/wikipedia/commons/5/54/CAN-bus-frame-with-stuff-bit-and-correct-CRC.png
+                          (page : https://commons.wikimedia.org/wiki/File:CAN-bus-frame-with-stuff-bit-and-correct-CRC.png,
+                           article : https://kentindell.github.io/2020/01/03/canframe_py_tool/ , CC BY-SA 4.0)
+  crop1..3.png          : découpes de la figure pour la lecture des bits
+  sloa101b.pdf / .txt   : https://www.ti.com/lit/an/sloa101b/sloa101b.pdf
+  bosch-can2.pdf / .txt : https://www.nxp.com/docs/en/reference-manual/BCANPSV2.pdf (Bosch CAN 2.0, réédition Motorola/Freescale)
+  CRC-15/CAN check      : https://reveng.sourceforge.io/crc-catalogue/1-15.htm

@@ -1,0 +1,76 @@
+$ python3 can_frame.py
+Python 3.13.1
+== 1. CRC-15/CAN, polynôme 0x4599
+crc15(b"123456789") = 0x059e   reveng check = 0x059e   OK
+
+== 2. Trame ID 0x014, données 01, contre la capture de Ken Tindell
+CRC calculé      : 0x7753 (111011101010011)   publié : 0x7753 (111011101010011)
+flux calculé     : 0000010010100000100010000010011110111010100111011111111111
+flux publié      : 0000010010100000100010000010011110111010100111011111111111
+bits SOF..CRC    : 42 avant stuffing, 45 après (3 stuff bits)
+bits SOF..IFS    : 58
+identique        : OUI
+
+champ   bits
+SOF     0
+ID      0000
+stuff   1
+ID      0010100
+RTR     0
+IDE     0
+r0      0
+stuff   1
+DLC     0001
+D       00000
+stuff   1
+D       001
+CRC     111011101010011
+CRCdel  1
+ACK     0
+ACKdel  1
+EOF     1111111
+IFS     111
+
+== 3. Arbitrage : trois noeuds partent ensemble, bus = ET logique
+noeud A : ID 0x245 = 01001000101
+noeud B : ID 0x241 = 01001000001
+noeud C : ID 0x2c0 = 01011000000
+
+ t  champ  A  B  C  bus  événement
+ 0  SOF    0  0  0   0   
+ 1  ID     0  0  0   0   
+ 2  ID     1  1  1   1   
+ 3  ID     0  0  0   0   
+ 4  ID     0  0  1   0   C lit 0 après avoir émis 1 : se tait
+ 5  ID     1  1  .   1   
+ 6  ID     0  0  .   0   
+ 7  ID     0  0  .   0   
+ 8  ID     0  0  .   0   
+ 9  ID     1  0  .   0   A lit 0 après avoir émis 1 : se tait
+10  ID     .  0  .   0   
+11  stuff  .  1  .   1   
+12  ID     .  1  .   1   
+13  RTR    .  0  .   0   
+
+gagnant : B, sans délai ; il continue avec IDE, r0, DLC...
+
+== 4. TEC (transmit error counter), règles Bosch CAN 2.0 partie A ch. 5
+cas 1 : bit error à chaque envoi (ex. CANH en court-circuit), +8 par erreur
+  erreur  1 : TEC =   8  error-active
+  erreur  2 : TEC =  16  error-active
+  erreur 16 : TEC = 128  error-passive
+  erreur 32 : TEC = 256  bus-off
+cas 2 : noeud seul sur le bus, personne ne pose l'ACK
+  essai  1 : TEC =   8  error-active
+  essai 16 : TEC = 128  error-passive
+  essai 17 : TEC = 128  error-passive
+  essai 40 : TEC = 128  error-passive
+succès d'émission : TEC - 1 ; retour error-active si TEC et REC <= 127
+sortie de bus-off : 128 x 11 bits récessifs = 1408 bits, soit 2,816 ms à 500 kbit/s
+
+== 5. Durée sur le fil (trame 0x241, 2 octets)
+   125 kbit/s : 68 bits (IFS compris) =   544.0 µs
+   250 kbit/s : 68 bits (IFS compris) =   272.0 µs
+   500 kbit/s : 68 bits (IFS compris) =   136.0 µs
+  1000 kbit/s : 68 bits (IFS compris) =    68.0 µs
+exit=0

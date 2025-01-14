@@ -1,0 +1,8 @@
+$ modprobe -q vcan
+(exit 1)
+$ ip link add dev vcan0 type vcan
+Error: Unknown device type.
+(exit 2)
+$ candump vcan0
+socket: Address family not supported by protocol
+(exit 1)

@@ -1,0 +1,6 @@
+$ python /w/pycan_demo.py
+python-can 4.5.0
+socket PF_CAN/CAN_RAW : [Errno 97] Address family not supported by protocol
+Timestamp:        0.000045    ID:      245    S Rx                DL:  1    10                          Channel: deck
+Timestamp:        0.000136    ID:      241    S Rx                DL:  2    0f a0                       Channel: deck
+Timestamp:        0.000163    ID:      2c0    S Rx                DL:  1    01                          Channel: deck

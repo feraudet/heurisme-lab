@@ -16,5 +16,6 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | Bench | Article |
 |---|---|
 | [i2c-horloge](i2c-horloge/) | [I²C: who holds the clock](https://heurisme.fr/en/blog/i2c-horloge/) |
+| [bus-can-arbitrage](bus-can-arbitrage/) | [The CAN bus: the lowest ID wins, with no collision](https://heurisme.fr/en/blog/bus-can-arbitrage/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).
