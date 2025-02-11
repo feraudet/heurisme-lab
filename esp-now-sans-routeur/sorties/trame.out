@@ -1,0 +1,12 @@
+MAC header   24  d0 00 00 00 24 6f 28 aa bb cc 24 6f 28 11 22 33 ff ff ff ff ff ff 10 00
+Category      1  7f
+OUI           3  18 fe 34
+Random        4  5a 3c 9e 01
+Elem ID       1  dd
+Length        1  0e
+OUI           3  18 fe 34
+Type          1  04
+Version       1  01
+Body          9  74 65 6d 70 3d 32 31 2e 35
+FCS           4  96 86 37 f7
+total 52 octets pour 9 octets utiles
