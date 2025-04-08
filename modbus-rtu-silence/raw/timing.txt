@@ -1,0 +1,5 @@
+  bauds   caractère      t1.5      t3.5
+   9600     1146 us   1719 us   4010 us
+  19200      573 us    859 us   2005 us
+  38400      286 us    750 us   1750 us  (fixe)
+ 115200       95 us    750 us   1750 us  (fixe)

@@ -1,0 +1,15 @@
+Conteneur : docker run -d --name deck-modbus-lab -v <dossier modbus>:/work -w /work python:3.12.9-slim-bookworm@sha256:48a11b7ba705fd53bf15248d1f94d36c39549903c5d59edcfa2f3f84126e7b44 sleep 7200
+Outils dans le conteneur : Python 3.12.9, pymodbus 3.8.6, pyserial 3.5, socat 1.7.4.4 (apt, snapshot Debian du 2025-04-08), pypdf (lecture des PDF)
+Banc : src/run.sh monte deux paires pty socat : maître (/tmp/cli) <-> tap.py <-> esclave (/tmp/srv)
+Ligne : 19200 bauds 8N2 (le pty Linux refuse la parité paire : raw/pty-parite.txt)
+
+normal-*            docker exec deck-modbus-lab sh src/run.sh normal
+crc-normal.txt      docker exec deck-modbus-lab python src/crc.py raw/normal-capture.txt
+gap16-pymodbus-*    docker exec deck-modbus-lab sh src/run.sh gap16-pymodbus --gap-after 4 --gap-ms 16
+strict-normal-*     docker exec -e SLAVE="python src/strict_slave.py" deck-modbus-lab sh src/run.sh strict-normal
+strict-gap1ms-*     docker exec -e SLAVE="python src/strict_slave.py" deck-modbus-lab sh src/run.sh strict-gap1ms --gap-after 4 --gap-ms 1.2
+strict-gap16-*      docker exec -e SLAVE="python src/strict_slave.py" deck-modbus-lab sh src/run.sh strict-gap16 --gap-after 4 --gap-ms 16
+strict9600-gap1500us-*  docker exec -e BAUD=9600 -e SLAVE="python src/strict_slave.py" deck-modbus-lab sh src/run.sh strict9600-gap1500us --gap-after 4 --gap-ms 1.5
+timing.txt          docker exec deck-modbus-lab python src/timing.py
+
+Sources téléchargées : modbusoverserial.pdf -> serial.txt ; modbusprotocolspecification.pdf -> appli.txt ; ftdi_sio.c (Linux, commit 18e0885)

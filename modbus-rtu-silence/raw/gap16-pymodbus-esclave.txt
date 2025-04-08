@@ -1,0 +1,25 @@
+     26 ms DEBUG transport:256 Awaiting connections server_listener
+     26 ms INFO  base:85 Server listening.
+     27 ms DEBUG transport:277 Connected to server
+   1528 ms DEBUG transport:329 recv: 0x11 0x3 0x0 0x6b old_data:  addr=None
+   1528 ms DEBUG base:91 Processing: 0x11 0x3 0x0 0x6b
+   1529 ms DEBUG rtu:116 Frame - not ready
+   1529 ms DEBUG transport:341 recv, unused data waiting for next packet: 0x11 0x3 0x0 0x6b
+   1546 ms DEBUG transport:329 recv: 0x0 0x3 0x76 0x87 old_data: 0x11 0x3 0x0 0x6b addr=None
+   1546 ms DEBUG base:91 Processing: 0x11 0x3 0x0 0x6b 0x0 0x3 0x76 0x87
+   1546 ms DEBUG decoders:113 decoded PDU function_code(3 sub -1) -> ReadHoldingRegistersRequest(dev_id=0, transaction_id=0, address=107, count=3, bits=[], registers=[], status=1) 
+   1546 ms DEBUG base:101 Frame advanced, resetting header!!
+   1546 ms DEBUG context:120 validate: fc-[3] address-108: count-3
+   1546 ms DEBUG context:132 getValues: fc-[3] address-108: count-3
+   1546 ms DEBUG transport:386 send: 0x11 0x3 0x6 0x2 0x2b 0x0 0x0 0x0 0x64 0xc8 0xba
+   1553 ms DEBUG transport:329 recv: 0x11 0x3 0xf 0xa0 old_data:  addr=None
+   1553 ms DEBUG base:91 Processing: 0x11 0x3 0xf 0xa0
+   1554 ms DEBUG rtu:116 Frame - not ready
+   1554 ms DEBUG transport:341 recv, unused data waiting for next packet: 0x11 0x3 0xf 0xa0
+   1571 ms DEBUG transport:329 recv: 0x0 0x1 0x85 0xac old_data: 0x11 0x3 0xf 0xa0 addr=None
+   1571 ms DEBUG base:91 Processing: 0x11 0x3 0xf 0xa0 0x0 0x1 0x85 0xac
+   1571 ms DEBUG decoders:113 decoded PDU function_code(3 sub -1) -> ReadHoldingRegistersRequest(dev_id=0, transaction_id=0, address=4000, count=1, bits=[], registers=[], status=1) 
+   1571 ms DEBUG base:101 Frame advanced, resetting header!!
+   1571 ms DEBUG context:120 validate: fc-[3] address-4001: count-1
+   1571 ms ERROR pdu:128 Exception response 131 / 2
+   1572 ms DEBUG transport:386 send: 0x11 0x83 0x2 0xc1 0x34

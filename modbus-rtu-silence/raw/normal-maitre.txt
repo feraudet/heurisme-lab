@@ -1,0 +1,6 @@
+Exception response 131 / 0
+pymodbus 3.8.6
+read_holding_registers(0x006b, count=3) -> ReadHoldingRegistersResponse(dev_id=17, transaction_id=0, address=0, count=0, bits=[], registers=[555, 0, 100], status=1)
+  registers = ['0x022b', '0x0000', '0x0064']
+read_holding_registers(0x0fa0, count=1) -> ExceptionResponse(dev_id=17, transaction_id=0, address=0, count=0, bits=[], registers=[], status=1)
+  function_code = 0x83, exception_code = 0x02

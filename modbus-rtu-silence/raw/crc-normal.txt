@@ -1,0 +1,4 @@
+11 03 00 6b 00 03           capturé 76 87  calculé 76 87  OK
+11 03 06 02 2b 00 00 00 64  capturé c8 ba  calculé c8 ba  OK
+11 03 0f a0 00 01           capturé 85 ac  calculé 85 ac  OK
+11 83 02                    capturé c1 34  calculé c1 34  OK

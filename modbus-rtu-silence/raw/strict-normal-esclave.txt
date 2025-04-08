@@ -1,0 +1,5 @@
+19200 bauds : t1.5 = 859 us, t3.5 = 2005 us
+reçu 8 octets : 11 03 00 6b 00 03 76 87
+  trame valide -> réponse 11 03 06 02 2b 00 00 00 64 c8 ba
+reçu 8 octets : 11 03 0f a0 00 01 85 ac
+  trame valide -> réponse 11 83 02 c1 34

@@ -1,0 +1,5 @@
+No response received after 0 retries, continue with next request
+No response received after 0 retries, continue with next request
+pymodbus 3.8.6
+read_holding_registers(0x006b, count=3) -> ModbusIOException: Modbus Error: [Input/Output] No response received after 0 retries, continue with next request
+read_holding_registers(0x0fa0, count=1) -> ModbusIOException: Modbus Error: [Input/Output] No response received after 0 retries, continue with next request

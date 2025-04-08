@@ -1,0 +1,1 @@
+E 1 -> termios.error (22, Invalid argument) sur pty socat

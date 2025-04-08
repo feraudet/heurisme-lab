@@ -1,0 +1,9 @@
+19200 bauds : t1.5 = 859 us, t3.5 = 2005 us
+reçu 4 octets : 11 03 00 6b
+  CRC faux : rejetée  -> pas de réponse
+reçu 4 octets : 00 03 76 87
+  CRC faux : rejetée  -> pas de réponse
+reçu 4 octets : 11 03 0f a0
+  CRC faux : rejetée  -> pas de réponse
+reçu 4 octets : 00 01 85 ac
+  CRC faux : rejetée  -> pas de réponse
