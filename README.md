@@ -19,5 +19,6 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [bus-can-arbitrage](bus-can-arbitrage/) | [The CAN bus: the lowest ID wins, with no collision](https://heurisme.fr/en/blog/bus-can-arbitrage/) |
 | [esp-now-sans-routeur](esp-now-sans-routeur/) | [ESP-NOW: ESP32 boards talking without a router](https://heurisme.fr/en/blog/esp-now-sans-routeur/) |
 | [modbus-rtu-silence](modbus-rtu-silence/) | [Modbus RTU: the silence between frames](https://heurisme.fr/en/blog/modbus-rtu-silence/) |
+| [lora-temps-antenne](lora-temps-antenne/) | [LoRa: why 20 bytes take more than a second](https://heurisme.fr/en/blog/lora-temps-antenne/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).

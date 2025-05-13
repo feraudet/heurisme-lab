@@ -1,0 +1,33 @@
+SX1276 Rev. 7, 4.1.1.7 : Ts = 2^SF/BW ; Tpre = (npre + 4,25) Ts ;
+Npayload = 8 + max(ceil((8PL - 4SF + 28 + 16CRC - 20IH) / (4(SF - 2DE))) (CR + 4), 0)
+attente = ToA / 1 % - ToA ; msg/h = floor(36 s / ToA) ; msg/j FUP = floor(30 s / ToA)
+
+== 20 octets de payload radio : PL = 20 octets, BW 125 kHz, CR 4/5, préambule 8, en-tête explicite, CRC ==
+  SF  DR   Ts ms LDRO  Tpre ms Nsym  Tpay ms   ToA ms attente s msg/h msg/j FUP
+ SF7   5   1.024    0   12.544   43   44.032   56.576       5.6   636       530
+ SF8   4   2.048    0   25.088   38   77.824  102.912      10.2   349       291
+ SF9   3   4.096    0   50.176   33  135.168  185.344      18.3   194       161
+SF10   2   8.192    0  100.352   33  270.336  370.688      36.7    97        80
+SF11   1  16.384    1  200.704   33  540.672  741.376      73.4    48        40
+SF12   0  32.768    1  401.408   28  917.504 1318.912     130.6    27        22
+
+== 20 octets applicatifs en LoRaWAN (+13 octets d'en-tête et MIC) : PL = 33 octets, BW 125 kHz, CR 4/5, préambule 8, en-tête explicite, CRC ==
+  SF  DR   Ts ms LDRO  Tpre ms Nsym  Tpay ms   ToA ms attente s msg/h msg/j FUP
+ SF7   5   1.024    0   12.544   58   59.392   71.936       7.1   500       417
+ SF8   4   2.048    0   25.088   53  108.544  133.632      13.2   269       224
+ SF9   3   4.096    0   50.176   48  196.608  246.784      24.4   145       121
+SF10   2   8.192    0  100.352   43  352.256  452.608      44.8    79        66
+SF11   1  16.384    1  200.704   48  786.432  987.136      97.7    36        30
+SF12   0  32.768    1  401.408   43 1409.024 1810.432     179.2    19        16
+
+== Contrôle contre les tests du calculateur TTN (avbentem/airtime-calculator, src/lora/Airtime.test.ts) ==
+size=14 SF7  BW125  publié   46.336 ms  calculé   46.336 ms  OK
+size=16 SF7  BW125  publié   51.456 ms  calculé   51.456 ms  OK
+size=25 SF7  BW125  publié   61.696 ms  calculé   61.696 ms  OK
+size=14 SF8  BW125  publié   82.432 ms  calculé   82.432 ms  OK
+size=25 SF8  BW125  publié  113.152 ms  calculé  113.152 ms  OK
+size=14 SF11 BW125  publié  659.456 ms  calculé  659.456 ms  OK
+size=25 SF11 BW125  publié  823.296 ms  calculé  823.296 ms  OK
+
+rapport ToA SF12 / SF7 pour 20 octets : 23.3
+budget 1 % sur 24 h : 864 s ; Fair Use Policy TTN : 30 s
