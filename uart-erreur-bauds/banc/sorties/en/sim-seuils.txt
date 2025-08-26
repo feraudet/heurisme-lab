@@ -1,0 +1,3 @@
+256 back-to-back bytes (0x00 to 0xFF), 16 clock phases tested per offset
+U2X=0 (16x): passes from -5.2 % to +3.8 % | datasheet, equation 1: Rslow 95.36 %, Rfast 104.58 %
+U2X=1 ( 8x): passes from -5.2 % to +2.5 % | datasheet, equation 1: Rslow 96.00 %, Rfast 103.90 %

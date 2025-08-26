@@ -1,0 +1,74 @@
+== version
+sigrok-cli 0.7.2
+== capture
+$ sigrok-cli -i hello_world_8n1_115200.sr --show | grep -v '^- [1-7]:'
+Samplerate: 1000000
+Channels: 8
+- TX: logic
+Logic unitsize: 1
+Logic sample count: 3650
+== bon debit
+$ sigrok-cli -i hello_world_8n1_115200.sr -P uart:rx=TX:baudrate=115200 -B uart=rx | od -An -c | head -2
+   H   e   l   l   o       W   o   r   l   d   !  \r  \n   H   e
+   l   l   o       W   o   r   l   d   !  \r  \n   H   e   l   l
+== bits du premier octet
+$ sigrok-cli -i hello_world_8n1_115200.sr -P uart:rx=TX:baudrate=115200:format=ascii -A uart --protocol-decoder-samplenum | head -11
+5-14 uart-1: Start bit
+14-23 uart-1: 0
+23-32 uart-1: 0
+31-40 uart-1: 0
+40-49 uart-1: 1
+49-58 uart-1: 0
+57-66 uart-1: 0
+66-75 uart-1: 1
+75-84 uart-1: 0
+14-84 uart-1: H
+83-92 uart-1: Stop bit
+== +8.5 % (125000)
+$ sigrok-cli -i hello_world_8n1_115200.sr -P uart:rx=TX:baudrate=125000 -A uart=rx-data:rx-warnings | head -12
+uart-1: 88
+uart-1: Frame error
+uart-1: E5
+uart-1: Frame error
+uart-1: EC
+uart-1: Frame error
+uart-1: CC
+uart-1: Frame error
+uart-1: EF
+uart-1: Frame error
+uart-1: 60
+uart-1: Frame error
+== balayage 115200
+104000  33 octets    0 justes   27 framing errors
+106000  33 octets    0 justes   27 framing errors
+108000  33 octets    0 justes   27 framing errors
+110000  36 octets    3 justes   18 framing errors
+111111  36 octets    3 justes   18 framing errors
+112000  42 octets   42 justes    0 framing errors
+113000  42 octets   42 justes    0 framing errors
+115200  42 octets   42 justes    0 framing errors
+117647  42 octets   42 justes    0 framing errors
+119000  42 octets   42 justes    0 framing errors
+120000  42 octets   42 justes    0 framing errors
+121000  42 octets   42 justes    0 framing errors
+122000  42 octets   42 justes    4 framing errors
+123000  42 octets   28 justes   42 framing errors
+125000  42 octets    7 justes   42 framing errors
+== balayage 9600
+8800  44 octets    0 justes   36 framing errors
+9000  44 octets    0 justes   36 framing errors
+9100  44 octets    2 justes   36 framing errors
+9200  56 octets   56 justes    0 framing errors
+9600  56 octets   56 justes    0 framing errors
+10000  56 octets   56 justes    0 framing errors
+10100  56 octets   56 justes    0 framing errors
+10200  56 octets   56 justes   56 framing errors
+10416  56 octets    8 justes   56 framing errors
+== debit reel (premier et dernier start bit, nombre de trames)
+$ sigrok-cli -i hello_world_8n1_115200.sr -P uart:rx=TX:baudrate=115200 -A uart=rx-start --protocol-decoder-samplenum | sed -n '1p;$p'
+5-14 uart-1: Start bit
+3564-3573 uart-1: Start bit
+42
+55-120 uart-1: Start bit
+35862-35927 uart-1: Start bit
+56

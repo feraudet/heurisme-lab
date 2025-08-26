@@ -1,0 +1,4 @@
+Deux ATmega328P à 16 MHz, 115200 demandés des deux côtés ; ! = framing error
+U2X=0 -> U2X=0  écart +0.0 % : Hello World!\r\nHello World!\r\n  FE=0
+U2X=0 -> U2X=1  écart -5.6 % : Hello W!orl!d!\r\n!Hel!lo Worl!d!\r!\n  FE=6
+U2X=1 -> U2X=0  écart +5.9 % : [C8]!Y![CB]![BD]![A0]![D5]K[F1]![E4]![C8]![C8]![C8]!Y![8B]![FD]![A0]![D5]K[B1]![E4]![C8]![C8]!  FE=18

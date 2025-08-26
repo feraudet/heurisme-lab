@@ -1,0 +1,4 @@
+byte 'H' = 0x48 = 01001000 (binary, bit 7 on the left)
+on the wire, in order: start=0 d0=0 d1=0 d2=0 d3=1 d4=0 d5=0 d6=1 d7=0 stop=1
+115200 baud: 1 bit = 8.68 us, 1 frame of 10 bits = 86.8 us
+  9600 baud: 1 bit = 104.17 us, 1 frame of 10 bits = 1041.7 us

@@ -1,0 +1,10 @@
+16x receiver at 115200 baud, two back-to-back 0x55 bytes, start edge detected with no delay
+offset = transmitter rate / receiver rate - 1
+position of sample 9 within the transmitted bit (0 % = start of bit, 100 % = end)
+offset    start     d0     d1     d2     d3     d4     d5     d6     d7   stop   result
+ +0.0 %     50%    50%    50%    50%    50%    50%    50%    50%    50%    50%   0x55  ok
+ +2.0 %     51%    53%    55%    57%    59%    61%    63%    65%    67%    69%   0x55  ok
+ +4.0 %     52%    56%    60%    64%    68%    72%    76%    80%    84%    88%   0x55  ok
+ +6.0 %     53%    59%    65%    71%    77%    83%    89%    95%   101!   107!   0xD5  FRAMING ERROR
+ -4.0 %     48%    44%    40%    36%    32%    28%    24%    20%    16%    12%   0x55  ok
+ -6.0 %     47%    41%    35%    29%    23%    17%    11%     5%    -1!    -7!   0xD5  FRAMING ERROR
