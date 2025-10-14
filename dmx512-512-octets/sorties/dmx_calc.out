@@ -1,0 +1,103 @@
+
+======================================================================
+1. Durée de trame et rafraîchissement max (calculé)
+======================================================================
+slot = 11 bits x 4 µs = 44 µs
+
+émetteur E1.11 (92/12)
+  512 slots :    22676 µs  ->    44.1 Hz brut,   44.1 Hz conforme
+  128 slots :     5780 µs  ->   173.0 Hz brut,  173.0 Hz conforme
+   24 slots :     1204 µs  ->   830.6 Hz brut,  830.6 Hz conforme
+   18 slots :      940 µs  ->  1063.8 Hz brut,  830.6 Hz conforme  < 1204 µs : bourrer à 24 slots ou allonger
+
+récepteur E1.11 (88/8)
+  512 slots :    22668 µs  ->    44.1 Hz brut,   44.1 Hz conforme
+  128 slots :     5772 µs  ->   173.3 Hz brut,  173.3 Hz conforme
+   24 slots :     1196 µs  ->   836.1 Hz brut,  836.1 Hz conforme
+   18 slots :      932 µs  ->  1073.0 Hz brut, 1073.0 Hz conforme
+
+======================================================================
+2. Patch de 3 fixtures et trame DMX (construit en local)
+======================================================================
+PAR LED 7 canaux         adresse   1 -> slots 1..7
+    slot   1  dimmer     = 255 (0xff)
+    slot   2  rouge      = 255 (0xff)
+    slot   3  vert       =  64 (0x40)
+    slot   4  bleu       =   0 (0x00)
+    slot   5  strobe     =   0 (0x00)
+    slot   6  programme  =   0 (0x00)
+    slot   7  vitesse    =   0 (0x00)
+PAR LED 3 canaux RGB     adresse   8 -> slots 8..10
+    slot   8  rouge      =   0 (0x00)
+    slot   9  vert       =  80 (0x50)
+    slot  10  bleu       = 255 (0xff)
+Lyre 8 canaux 16 bits    adresse  11 -> slots 11..18
+    slot  11  pan        = 138 (0x8a)
+    slot  12  pan fine   =  60 (0x3c)
+    slot  13  tilt       =  64 (0x40)
+    slot  14  tilt fine  =   0 (0x00)
+    slot  15  dimmer     = 200 (0xc8)
+    slot  16  shutter    = 255 (0xff)
+    slot  17  couleur    =   0 (0x00)
+    slot  18  gobo       =   0 (0x00)
+
+pan 16 bits = 0x8a3c = 35388  -> coarse 138, fine 60
+résolution pan : 1/65536 du débattement (8 bits : 1/256)
+
+trame : start code 0x00 + 24 slots = 25 octets sur le fil
+(précédée d'un BREAK >= 92 µs et d'un MAB >= 12 µs, qui ne sont pas des octets)
+  0000  00 ff ff 40 00 00 00 00 00 50 ff 8a 3c 40 00 c8
+  0010  ff 00 00 00 00 00 00 00 00
+durée : 1204 µs (émetteur, minimums)
+
+======================================================================
+3. Paquet ArtDmx (construit en local)
+======================================================================
+42 octets = 18 d'en-tête + 24 de données (sans start code)
+  0000  41 72 74 2d 4e 65 74 00 00 50 00 0e 01 00 01 00
+  0010  00 18 ff ff 40 00 00 00 00 00 50 ff 8a 3c 40 00
+  0020  c8 ff 00 00 00 00 00 00 00 00
+
+======================================================================
+4. Paquet sACN E1.31 Data (construit en local)
+======================================================================
+150 octets = 126 d'en-tête + 24 slots ; multicast 239.255.0.1:5568
+  0000  00 10 00 00 41 53 43 2d 45 31 2e 31 37 00 00 00
+  0010  70 86 00 00 00 04 5a 1b 0c 1d 2e 3f 40 51 82 63
+  0020  74 85 96 a7 b8 c9 70 70 00 00 00 02 64 65 63 6b
+  0030  2d 64 6d 78 00 00 00 00 00 00 00 00 00 00 00 00
+  0040  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0050  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0060  00 00 00 00 00 00 00 00 00 00 00 00 64 00 00 01
+  0070  00 00 01 70 23 02 a1 00 00 00 01 00 19 00 ff ff
+  0080  40 00 00 00 00 00 50 ff 8a 3c 40 00 c8 ff 00 00
+  0090  00 00 00 00 00 00
+
+======================================================================
+5. Message ENTTEC DMX USB Pro, label 6 (construit en local)
+======================================================================
+30 octets : 0x7E, label 6, longueur 25 (LSB, MSB), trame, 0xE7
+  0000  7e 06 19 00 00 ff ff 40 00 00 00 00 00 50 ff 8a
+  0010  3c 40 00 c8 ff 00 00 00 00 00 00 00 00 e7
+
+======================================================================
+6. Aller-retour UDP sur 127.0.0.1 et décodage (dissecteur maison)
+======================================================================
+Art-Net reçu sur 127.0.0.1:6454, 42 octets, identique : True
+  ID         : Art-Net
+  OpCode     : 0x5000 (OpDmx), little endian
+  ProtVer    : 0.14
+  Sequence   : 1   Physical : 0
+  Port-Addr  : 1 = Net 0, Sub-Net 0, Universe 1
+  Length     : 24 (big endian)
+  Data[0:18] : 255 255 64 0 0 0 0 0 80 255 138 60 64 0 200 255 0 0
+
+sACN reçu sur 127.0.0.1:5568, 150 octets, identique : True
+  Root       : preamble 0x0010, vector 0x00000004 (E1.31 data), CID 5a1b0c1d-2e3f-4051-8263-748596a7b8c9
+  Framing    : vector 0x00000002, source 'deck-dmx'
+  Priority   : 100   Sync addr : 0   Seq : 1   Options : 0x00
+  Universe   : 1 -> 239.255.0.1
+  DMP        : vector 0x02, type 0xa1, count 25 (start code + 24 slots)
+  Start code : 0x00   Slots[1:18] : 255 255 64 0 0 0 0 0 80 255 138 60 64 0 200 255 0 0
+
+Même univers, mêmes 24 slots : True
