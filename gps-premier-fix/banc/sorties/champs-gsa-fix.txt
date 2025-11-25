@@ -1,0 +1,7 @@
+GPGSA  (talker GP, type GSA)  checksum 09 OK
+   1  sélection            A
+   2  mode                 3  -> fix 3D
+3-14  satellites utilisés  15, 17, 24, 28
+  15  PDOP                 4.00
+  16  HDOP                 2.25
+  17  VDOP                 3.25

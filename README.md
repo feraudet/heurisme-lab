@@ -22,5 +22,6 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [lora-temps-antenne](lora-temps-antenne/) | [LoRa: why 20 bytes take more than a second](https://heurisme.fr/en/blog/lora-temps-antenne/) |
 | [uart-erreur-bauds](uart-erreur-bauds/) | [UART at 115200 baud, within 2 %](https://heurisme.fr/en/blog/uart-erreur-bauds/) |
 | [dmx512-512-octets](dmx512-512-octets/) | [DMX512: 512 bytes, 44 times a second](https://heurisme.fr/en/blog/dmx512-512-octets/) |
+| [gps-premier-fix](gps-premier-fix/) | [GPS takes 30 seconds to know where it is](https://heurisme.fr/en/blog/gps-premier-fix/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).

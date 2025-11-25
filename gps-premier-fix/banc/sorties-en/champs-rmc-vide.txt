@@ -1,0 +1,13 @@
+GPRMC  (talker GP, type RMC)  checksum 53 OK
+   1  UTC time             (empty)
+   2  status               V  -> invalid (warning)
+   3  latitude             (empty)
+   4  N/S                  (empty)
+   5  longitude            (empty)
+   6  E/W                  (empty)
+   7  speed (knots)        (empty)
+   8  true course          (empty)
+   9  date                 (empty)
+  10  magnetic variation   (empty)
+  11  E/W                  (empty)
+  12  mode                 N  -> not valid

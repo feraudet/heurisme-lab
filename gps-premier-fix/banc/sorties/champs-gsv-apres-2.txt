@@ -1,0 +1,6 @@
+GPGSV  (talker GP, type GSV)  checksum 74 OK
+   1  phrases du groupe    2
+   2  numéro de phrase     2
+   3  satellites visibles  06
+      PRN 24  élévation  39  azimut 316  SNR 36 dB  -> position connue
+      PRN 28  élévation  55  azimut 198  SNR 48 dB  -> position connue

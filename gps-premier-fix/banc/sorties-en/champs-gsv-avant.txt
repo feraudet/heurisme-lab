@@ -1,0 +1,8 @@
+GPGSV  (talker GP, type GSV)  checksum 72 OK
+   1  sentences in group   2
+   2  sentence number      1
+   3  satellites in view   05
+      PRN 13  elevation  00  azimuth 000  SNR 37 dB  -> position unknown
+      PRN 15  elevation  00  azimuth 000  SNR 44 dB  -> position unknown
+      PRN 17  elevation  00  azimuth 000  SNR 37 dB  -> position unknown
+      PRN 24  elevation  00  azimuth 000  SNR 38 dB  -> position unknown

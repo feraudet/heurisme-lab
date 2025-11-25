@@ -1,0 +1,13 @@
+GPRMC  (talker GP, type RMC)  checksum 53 OK
+   1  heure UTC            (vide)
+   2  statut               V  -> invalide (warning)
+   3  latitude             (vide)
+   4  N/S                  (vide)
+   5  longitude            (vide)
+   6  E/W                  (vide)
+   7  vitesse (nœuds)      (vide)
+   8  route vraie          (vide)
+   9  date                 (vide)
+  10  déclinaison          (vide)
+  11  E/W                  (vide)
+  12  mode                 N  -> pas valide

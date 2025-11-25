@@ -1,0 +1,15 @@
+GPGGA  (talker GP, type GGA)  checksum 66 OK
+   1  UTC time             (empty)
+   2  latitude             (empty)
+   3  N/S                  (empty)
+   4  longitude            (empty)
+   5  E/W                  (empty)
+   6  fix quality          0  -> no fix
+   7  satellites used      (empty)
+   8  HDOP                 (empty)
+   9  altitude             (empty)
+  10  unit                 M
+  11  geoid separation     (empty)
+  12  unit                 M
+  13  DGPS age             (empty)
+  14  DGPS station         (empty)

@@ -1,0 +1,7 @@
+GPGSA  (talker GP, type GSA)  checksum 1E OK
+   1  sélection            A
+   2  mode                 1  -> pas de fix
+3-14  satellites utilisés  (aucun)
+  15  PDOP                 (vide)
+  16  HDOP                 (vide)
+  17  VDOP                 (vide)

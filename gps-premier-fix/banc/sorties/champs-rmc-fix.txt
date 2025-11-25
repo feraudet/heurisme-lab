@@ -1,0 +1,13 @@
+GPRMC  (talker GP, type RMC)  checksum 59 OK
+   1  heure UTC            105153.71
+   2  statut               A  -> valide
+   3  latitude             5050.4122
+   4  N/S                  N
+   5  longitude            00420.8266
+   6  E/W                  E
+   7  vitesse (nœuds)      0.14
+   8  route vraie          303.60
+   9  date                 120319
+  10  déclinaison          (vide)
+  11  E/W                  (vide)
+  12  mode                 A  -> autonome

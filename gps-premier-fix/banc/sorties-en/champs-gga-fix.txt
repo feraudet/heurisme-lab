@@ -1,0 +1,15 @@
+GPGGA  (talker GP, type GGA)  checksum 77 OK
+   1  UTC time             105153.71
+   2  latitude             5050.4122
+   3  N/S                  N
+   4  longitude            00420.8266
+   5  E/W                  E
+   6  fix quality          1  -> GPS fix
+   7  satellites used      04
+   8  HDOP                 2.25
+   9  altitude             109.44
+  10  unit                 M
+  11  geoid separation     (empty)
+  12  unit                 M
+  13  DGPS age             (empty)
+  14  DGPS station         (empty)

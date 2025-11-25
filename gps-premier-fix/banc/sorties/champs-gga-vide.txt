@@ -1,0 +1,15 @@
+GPGGA  (talker GP, type GGA)  checksum 66 OK
+   1  heure UTC            (vide)
+   2  latitude             (vide)
+   3  N/S                  (vide)
+   4  longitude            (vide)
+   5  E/W                  (vide)
+   6  qualité du fix       0  -> pas de fix
+   7  satellites utilisés  (vide)
+   8  HDOP                 (vide)
+   9  altitude             (vide)
+  10  unité                M
+  11  écart géoïde         (vide)
+  12  unité                M
+  13  âge DGPS             (vide)
+  14  station DGPS         (vide)

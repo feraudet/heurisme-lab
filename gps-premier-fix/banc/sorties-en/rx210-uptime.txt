@@ -1,0 +1,1 @@
+125:$PTFTTXT,FT-TEC Electronics GmbH,uptime: 00:09:00.0009,connection: 00:08:59.0249*53

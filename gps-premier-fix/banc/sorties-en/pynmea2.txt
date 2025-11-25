@@ -1,0 +1,2 @@
+telit-he910.log: 1558 sentences, 0 rejected by pynmea2, first fix at GGA no. 38 (time 10:51:53.710000+00:00, 04 satellites, HDOP 2.25)
+rx210.log: 160 sentences, 0 rejected by pynmea2, first fix at GGA no. 22 (time 18:41:02+00:00, 05 satellites, HDOP 3.62)

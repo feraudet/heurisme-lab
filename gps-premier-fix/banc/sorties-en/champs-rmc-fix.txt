@@ -1,0 +1,13 @@
+GPRMC  (talker GP, type RMC)  checksum 59 OK
+   1  UTC time             105153.71
+   2  status               A  -> valid
+   3  latitude             5050.4122
+   4  N/S                  N
+   5  longitude            00420.8266
+   6  E/W                  E
+   7  speed (knots)        0.14
+   8  true course          303.60
+   9  date                 120319
+  10  magnetic variation   (empty)
+  11  E/W                  (empty)
+  12  mode                 A  -> autonomous
