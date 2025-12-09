@@ -1,0 +1,32 @@
+$ gen_packets -B 9600 -r 48000 -o p9600.wav p1.txt
+[38;2;0;0;0mData rate set to 9600 bits / second.
+[38;2;0;0;0mUsing scrambled baseband signal rather than AFSK.
+[38;2;0;0;0mAudio sample rate set to 48000 samples / second.
+[38;2;0;0;0mOutput file set to p9600.wav
+[38;2;0;0;0mReading from p1.txt ...
+[38;2;0;192;0mF1TMV-7>APRS,WIDE1-1,WIDE2-1:!4903.50N/07201.75W-Test(exit 0)
+$ atest -B 9600 p9600.wav
+[48;2;255;255;255m[0J[38;2;0;0;0m[38;2;0;0;0m[38;2;0;0;0m48000 samples per second.  16 bits per sample.  1 audio channels.
+7696 audio bytes in file.  Duration = 0.1 seconds.
+Fix Bits level = 0
+[38;2;0;192;0mChannel 0: 9600 baud, K9NG/G3RUH,  , 48000 sample rate x 3.
+[38;2;0;0;0mThe ratio of audio samples per sec (48000) to data rate in baud (9600) is 5.0
+Increasing the sample rate should improve decoder performance.
+[38;2;0;192;0m
+DECODED[1] 0:00.079 F1TMV-7 audio level = 50(+33/-33)     
+[38;2;0;192;0m[0] F1TMV-7>APRS,WIDE1-1,WIDE2-1:!4903.50N/07201.75W-Test
+[38;2;0;0;0m
+
+1 from p9600.wav
+1 packets decoded in 0.000 seconds.  297.8 x realtime
+(exit 0)
+$ atest -B 1200 p9600.wav
+[48;2;255;255;255m[0J[38;2;0;0;0m[38;2;0;0;0m[38;2;0;0;0m48000 samples per second.  16 bits per sample.  1 audio channels.
+7696 audio bytes in file.  Duration = 0.1 seconds.
+Fix Bits level = 0
+[38;2;0;192;0mChannel 0: 1200 baud, AFSK 1200 & 2200 Hz, A, 48000 sample rate.
+[38;2;0;0;0m
+
+0 from p9600.wav
+0 packets decoded in 0.001 seconds.  85.3 x realtime
+(exit 0)

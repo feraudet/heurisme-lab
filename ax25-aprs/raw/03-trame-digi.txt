@@ -1,0 +1,31 @@
+$ cat p2.txt; echo
+F1TMV-7>APRS,N0CALL-1*,WIDE2-1:!4903.50N/07201.75W-Test
+(exit 0)
+$ gen_packets -o p2.wav p2.txt
+Output file set to p2.wav
+Reading from p2.txt ...
+F1TMV-7>APRS,N0CALL-1*,WIDE2-1:!4903.50N/07201.75W-Test(exit 0)
+$ atest -h p2.wav
+44100 samples per second.  16 bits per sample.  1 audio channels.
+56510 audio bytes in file.  Duration = 0.6 seconds.
+Fix Bits level = 0
+Channel 0: 1200 baud, AFSK 1200 & 2200 Hz, A, 44100 sample rate.
+
+DECODED[1] 0:00.632 Digipeater N0CALL-1 audio level = 50(14/14)     
+[0] F1TMV-7>APRS,N0CALL-1*,WIDE2-1:!4903.50N/07201.75W-Test
+------
+U frame UI: p/f=0, No layer 3 protocol implemented., length = 54
+ dest    APRS    0 c/r=1 res=3 last=0
+ source  F1TMV   7 c/r=1 res=3 last=0
+ digi 1  N0CALL  1   h=1 res=3 last=0
+ digi 2  WIDE2   1   h=0 res=3 last=1
+  000:  82 a0 a4 a6 40 40 e0 8c 62 a8 9a ac 40 ee 9c 60  ....@@..b...@..`
+  010:  86 82 98 98 e2 ae 92 88 8a 64 40 63 03 f0 21 34  .........d@c..!4
+  020:  39 30 33 2e 35 30 4e 2f 30 37 32 30 31 2e 37 35  903.50N/07201.75
+  030:  57 2d 54 65 73 74                                W-Test
+------
+
+
+1 from p2.wav
+1 packets decoded in 0.006 seconds.  104.3 x realtime
+(exit 0)

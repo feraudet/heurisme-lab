@@ -1,0 +1,11 @@
+$ cat kiss.conf
+ADEVICE stdin null
+ARATE 44100
+CHANNEL 0
+MODEM 1200
+(exit 0)
+$ ((head -c 176400 /dev/zero; tail -c +45 p1.wav; head -c 176400 /dev/zero) | pv -q -L 88200 | direwolf -c kiss.conf -t 0 -r 44100 - > /dev/null 2>&1 &) ; python3 kiss_client.py 4
+octets reçus sur TCP 8001 : 57
+c0 00 82 a0 a4 a6 40 40 e0 8c 62 a8 9a ac 40 ee ae 92 88 8a 62 40 62 ae 92 88 8a 64 40 63 03 f0 21 34 39 30 33 2e 35 30 4e 2f 30 37 32 30 31 2e 37 35 57 2d 54 65 73 74 c0
+type 0x00 (port 0, commande 0 = data frame), trame AX.25 : 54 octets, sans FCS
+(exit 0)

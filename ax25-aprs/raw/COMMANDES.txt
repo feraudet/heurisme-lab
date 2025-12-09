@@ -1,0 +1,29 @@
+Commandes qui ont produit les fichiers de raw/ (image debian:trixie-20251117, paquets du snapshot Debian du 2025-12-09)
+
+Conteneur :
+  docker run -d --name deck-ax25-dw --platform linux/arm64 --privileged -v "$PWD":/w \
+    debian:trixie-20251117@sha256:8f6a88feef3ed01a300dafb87f208977f39dccda1fd120e878129463f7fa3b8f sleep infinity
+  apt pointé sur https://snapshot.debian.org/archive/debian/20251209T000000Z/ (trixie, trixie-updates)
+  et https://snapshot.debian.org/archive/debian-security/20251209T000000Z/ (trixie-security), voir rejouer.sh
+  docker exec deck-ax25-dw bash -c 'apt-get -o Acquire::Check-Valid-Until=false update -qq && apt-get install -y -qq direwolf python3 python3-numpy kmod pv'
+  docker exec deck-ax25-dw useradd -m ham        (direwolf avertit s'il tourne en root)
+
+00 à 05 : docker exec -u ham deck-ax25-dw bash /w/run.sh
+  run.sh écrit chaque commande précédée de "$ ", puis sa sortie, puis "(exit N)".
+  direwolf colore sa sortie : le brut est dans NN-*.ansi, la copie NN-*.txt n'en retire
+  que les séquences ANSI (sed 's/\x1b\[[0-9;]*[A-Za-z]//g'). Le texte visible est identique.
+  Fichiers lus par run.sh : work/digi.conf, work/kiss.conf, work/kiss_client.py ; paquets work/p1.txt, p2.txt, p3.txt.
+
+06-noyau.txt : en root, une seule tentative :
+  docker exec deck-ax25-dw bash -c 'modprobe -q ax25; echo "modprobe ax25 : exit $?"; python3 -c "import socket; socket.socket(3, socket.SOCK_SEQPACKET)"'
+  (modprobe -q : le message d'erreur afficherait la version du noyau de Docker Desktop, qui ne fait pas partie du banc)
+
+07-ax25_frame.txt :
+  docker exec -u ham -w /w/work deck-ax25-dw python3 ax25_frame.py
+  (lit raw/01-aller-retour.txt et work/p1.wav, écrit work/signal.json utilisé par la slide 5)
+  Les WAV ont été supprimés après le build : relancer run.sh avant ax25_frame.py.
+
+Indicatifs : F1TMV-7 (station) est l'indicatif réel de l'auteur, utilisé à sa demande.
+N0CALL-1, N0CALL-2 (digipeaters) et N0CALL-3 (pair du mode connecté, slide 6) sont fictifs.
+APRS (destination), WIDE1-1 et WIDE2-1 sont des alias génériques.
+Position : l'exemple de la spec APRS (4903.50N/07201.75W).

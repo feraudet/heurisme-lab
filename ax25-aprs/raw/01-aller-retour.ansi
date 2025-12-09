@@ -1,0 +1,31 @@
+$ cat p1.txt; echo
+F1TMV-7>APRS,WIDE1-1,WIDE2-1:!4903.50N/07201.75W-Test
+(exit 0)
+$ gen_packets -o p1.wav p1.txt
+[38;2;0;0;0mOutput file set to p1.wav
+[38;2;0;0;0mReading from p1.txt ...
+[38;2;0;192;0mF1TMV-7>APRS,WIDE1-1,WIDE2-1:!4903.50N/07201.75W-Test(exit 0)
+$ atest -h p1.wav
+[48;2;255;255;255m[0J[38;2;0;0;0m[38;2;0;0;0m[38;2;0;0;0m44100 samples per second.  16 bits per sample.  1 audio channels.
+56510 audio bytes in file.  Duration = 0.6 seconds.
+Fix Bits level = 0
+[38;2;0;192;0mChannel 0: 1200 baud, AFSK 1200 & 2200 Hz, A, 44100 sample rate.
+[38;2;0;192;0m
+DECODED[1] 0:00.632 F1TMV-7 audio level = 50(14/14)     
+[38;2;0;192;0m[0] F1TMV-7>APRS,WIDE1-1,WIDE2-1:!4903.50N/07201.75W-Test
+[38;2;0;192;0m------
+U frame UI: p/f=0, No layer 3 protocol implemented., length = 54
+ dest    APRS    0 c/r=1 res=3 last=0
+ source  F1TMV   7 c/r=1 res=3 last=0
+ digi 1  WIDE1   1   h=0 res=3 last=0
+ digi 2  WIDE2   1   h=0 res=3 last=1
+  000:  82 a0 a4 a6 40 40 e0 8c 62 a8 9a ac 40 ee ae 92  ....@@..b...@...
+  010:  88 8a 62 40 62 ae 92 88 8a 64 40 63 03 f0 21 34  ..b@b....d@c..!4
+  020:  39 30 33 2e 35 30 4e 2f 30 37 32 30 31 2e 37 35  903.50N/07201.75
+  030:  57 2d 54 65 73 74                                W-Test
+------
+[38;2;0;0;0m
+
+1 from p1.wav
+1 packets decoded in 0.009 seconds.  69.8 x realtime
+(exit 0)

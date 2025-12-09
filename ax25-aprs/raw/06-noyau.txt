@@ -1,0 +1,11 @@
+$ modprobe -q ax25; echo "modprobe ax25 : exit $?"; python3 -c "import socket; socket.socket(3, socket.SOCK_SEQPACKET)"
+modprobe ax25 : exit 1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import socket; socket.socket(3, socket.SOCK_SEQPACKET)
+                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socket.py", line 233, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 97] Address family not supported by protocol
+(exit 1)

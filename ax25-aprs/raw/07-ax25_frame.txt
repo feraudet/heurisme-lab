@@ -1,0 +1,44 @@
+$ python3 ax25_frame.py
+Python 3.13.5  numpy 2.2.4
+
+== 1. Champ adresse (indicatif << 1, puis octet SSID)
+dest   APRS-0    82 a0 a4 a6 40 40  SSID e0 = 11100000
+source F1TMV-7   8c 62 a8 9a ac 40  SSID ee = 11101110
+digi 1 WIDE1-1   ae 92 88 8a 62 40  SSID 62 = 01100010
+digi 2 WIDE2-1   ae 92 88 8a 64 40  SSID 63 = 01100011
+contrôle 03 (UI, P=0)   PID f0 (pas de couche 3)   info 24 octets
+'F' = 0x46 -> 0x8c   '1' = 0x31 -> 0x62   ' ' = 0x20 -> 0x40
+
+== 2. Contre l'hexa affiché par `atest -h p1.wav`
+construit : 54 octets   atest : 54 octets   identique : OUI
+
+== 3. FCS : CRC-16/X-25 (poly 0x1021 réfléchi = 0x8408, init 0xFFFF, xorout 0xFFFF)
+crc_x25(b"123456789") = 0x906e   reveng check = 0x906e
+FCS de la trame = 0xcf4b -> envoyé 4b puis cf (octet faible d'abord)
+
+== 4. Démodulation de p1.wav ( 44100 Hz, 36.75 échantillons par bit )
+tonalités lues : 728   bits NRZI : 727   flags 01111110 : 34
+bits entre flags : 449   bits de stuffing retirés : 1   octets : 56
+trame reçue == trame construite : OUI
+FCS dans l'air : 4b cf   calculé : 4b cf   OK
+CRC sur trame + FCS reçus : 0xf0b8   résidu attendu : 0xf0b8
+bit de stuffing : après cinq 1, bits 236 à 240, dans les octets f0 21 (b'\xf0!')
+
+== 5. Extrait : flag 7e puis 82 a0, 24 bits
+bits (NRZI décodé) : 011111100100000100000101
+tonalité par bit   : B B B B B B B H B B H B H B H H B H B H B B H H  (B = 1200 Hz, H = 2200 Hz)
+fréquence mesurée  : min 1196 Hz, max 2205 Hz
+
+== 6. Octet de contrôle, modulo 8 (bit 0 envoyé en premier)
+SABM  P=1              0x3f  00111111
+UA    F=1              0x73  01110011
+I     N(S)=0 N(R)=0    0x00  00000000
+I     N(S)=1 N(R)=0    0x02  00000010
+I     N(S)=2 N(R)=0    0x04  00000100
+I     N(S)=3 N(R)=0    0x06  00000110
+REJ   N(R)=2           0x49  01001001
+RNR   N(R)=2           0x45  01000101
+RR    N(R)=4           0x81  10000001
+DISC  P=1              0x53  01010011
+UI    P=0              0x03  00000011
+(exit 0)

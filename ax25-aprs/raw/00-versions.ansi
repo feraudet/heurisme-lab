@@ -1,0 +1,6 @@
+$ cat /etc/debian_version; uname -m; dpkg-query -W direwolf; direwolf -h 2>&1 | head -1
+13.2
+aarch64
+direwolf	1.7+dfsg-2+b3
+Dire Wolf version 1.7
+(exit 0)

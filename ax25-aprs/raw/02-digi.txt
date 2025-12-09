@@ -1,0 +1,51 @@
+$ cat digi.conf
+ADEVICE stdin null
+ARATE 44100
+CHANNEL 0
+MYCALL N0CALL-1
+MODEM 1200
+DIGIPEAT 0 0 ^WIDE[3-7]-[1-7]$ ^WIDE[12]-[12]$
+(exit 0)
+$ cat p1.txt; echo; cat p3.txt; echo
+F1TMV-7>APRS,WIDE1-1,WIDE2-1:!4903.50N/07201.75W-Test
+F1TMV-7>APRS,N0CALL-2*,WIDE2-1:!4903.50N/07201.75W-Test
+(exit 0)
+$ gen_packets -o p1.wav p1.txt; gen_packets -o p3.wav p3.txt
+Output file set to p1.wav
+Reading from p1.txt ...
+F1TMV-7>APRS,WIDE1-1,WIDE2-1:!4903.50N/07201.75W-TestOutput file set to p3.wav
+Reading from p3.txt ...
+F1TMV-7>APRS,N0CALL-2*,WIDE2-1:!4903.50N/07201.75W-Test(exit 0)
+$ (head -c 176400 /dev/zero; tail -c +45 p1.wav; head -c 352800 /dev/zero; tail -c +45 p3.wav; head -c 352800 /dev/zero) | pv -q -L 88200 | direwolf -c digi.conf -t 0 -r 44100 -
+Dire Wolf version 1.7
+Includes optional support for:  gpsd hamlib cm108-ptt
+
+Reading config file digi.conf
+Config file: Beaconing should be configured for channel 0 when digipeating is enabled.
+Audio input device for receive: stdin  (channel 0)
+Audio out device for transmit: null  (channel 0)
+Channel 0: 1200 baud, AFSK 1200 & 2200 Hz, A+, 44100 sample rate.
+Note: PTT not configured for channel 0. (Ignore this if using VOX.)
+Ready to accept AGW client application 0 on port 8000 ...
+Ready to accept KISS TCP client application 0 on port 8001 ...
+
+F1TMV-7 audio level = 50(14/14)    _||||||__
+[0.3] F1TMV-7>APRS,WIDE1-1,WIDE2-1:!4903.50N/07201.75W-Test
+Position, House
+Use of "APRS" in the destination field is obsolete.  You can help to improve the quality of APRS signals.
+Tell the sender (F1TMV-7) to use the proper product identifier from https://github.com/aprsorg/aprs-deviceid 
+N 49 03.5000, W 072 01.7500
+Test
+[0H] F1TMV-7>APRS,N0CALL-1*,WIDE2-1:!4903.50N/07201.75W-Test
+
+Digipeater N0CALL-2 audio level = 50(14/14)    _||||_|__
+[0.3] F1TMV-7>APRS,N0CALL-2*,WIDE2-1:!4903.50N/07201.75W-Test
+Position, House
+Use of "APRS" in the destination field is obsolete.  You can help to improve the quality of APRS signals.
+Tell the sender (F1TMV-7) to use the proper product identifier from https://github.com/aprsorg/aprs-deviceid 
+N 49 03.5000, W 072 01.7500
+Test
+Digipeater: Drop redundant packet to channel 0.
+
+End of file on stdin.  Exiting.
+(exit 0)
