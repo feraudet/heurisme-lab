@@ -1,0 +1,51 @@
+Python 3.12.12  (standard library only)
+
+== 1. Fields of 8D4840D6202CC371C32CE0576098  (112 bits)
+DF   bits 1-5     10001  = 17
+CA   bits 6-8     101  = 5
+ICAO bits 9-32    010010000100000011010110  = 4840D6
+TC   bits 33-37   00100  = 4
+ME   bits 33-88   202CC371C32CE0
+PI   bits 89-112  576098
+
+== 2. CRC-24, generator 0x1FFF409
+8D4840D6202CC371C32CE0576098  computed 576098  sent 576098  112-bit remainder 000000
+8D40621D58C382D690C8AC2863A7  computed 2863A7  sent 2863A7  112-bit remainder 000000
+8D40621D58C386435CC412692AD6  computed 692AD6  sent 692AD6  112-bit remainder 000000
+8D485020994409940838175B284F  computed 5B284F  sent 5B284F  112-bit remainder 000000
+8D4840D6202CD371C32CE0576098  one bit flipped  112-bit remainder 30ACE0
+
+== 3. Identification (TC 1-4), 8 characters of 6 bits
+  001011 = 11 -> 'K'
+  001100 = 12 -> 'L'
+  001101 = 13 -> 'M'
+  110001 = 49 -> '1'
+  110000 = 48 -> '0'
+  110010 = 50 -> '2'
+  110011 = 51 -> '3'
+  100000 = 32 -> ' '
+callsign = KLM1023 
+
+== 4. Altitude (TC 9-18), 12 bits, Q bit
+8D40621D58C382D690C8AC2863A7  TC 11  bits 110000111000  Q=1  N=1560  25*N-1000 = 38000 ft
+8D40621D58C386435CC412692AD6  TC 11  bits 110000111000  Q=1  N=1560  25*N-1000 = 38000 ft
+
+== 5. CPR global decoding, NZ = 15
+even  F=0  LAT-CPR=93000  LON-CPR=51372  t=1457996402
+odd   F=1  LAT-CPR=74158  LON-CPR=50194  t=1457996400
+/2^17 : lat_e=0.709534  lat_o=0.565781  lon_e=0.391937  lon_o=0.382950
+dLat_e = 360/60 = 6.000000   dLat_o = 360/59 = 6.101695
+j = floor(59*lat_e - 60*lat_o + 0.5) = floor(8.415649) = 8
+lat_even = 6 * (8 + 0.709534) = 52.257202
+lat_odd  = 360/59 * (8 + 0.565781) = 52.265780
+NL(lat_even) = 36   NL(lat_odd) = 36   same zone: True
+newest = even -> lat = 52.25720, ni = max(NL, 1) = 36
+m = floor(lon_e*(NL-1) - lon_o*NL + 0.5) = floor(0.431610) = 0
+lon = 360/36 * (0 + 0.391937) = 3.91937
+position = 52.25720, 3.91937
+
+== 6. Airborne velocity (TC 19)
+8D485020994409940838175B284F  ICAO 485020  TC 19  subtype 1
+S_ew=1 V_ew=8  S_ns=1 V_ns=159  -> vx=-8 vy=-159 kt
+ground speed = sqrt(vx^2 + vy^2) = 159.20 kt   track = 182.88 deg
+vertical rate = -832 ft/min (source bit 0)

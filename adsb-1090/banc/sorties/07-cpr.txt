@@ -1,0 +1,13 @@
+== 5. CPR global decoding, NZ = 15
+even  F=0  LAT-CPR=93000  LON-CPR=51372  t=1457996402
+odd   F=1  LAT-CPR=74158  LON-CPR=50194  t=1457996400
+/2^17 : lat_e=0.709534  lat_o=0.565781  lon_e=0.391937  lon_o=0.382950
+dLat_e = 360/60 = 6.000000   dLat_o = 360/59 = 6.101695
+j = floor(59*lat_e - 60*lat_o + 0.5) = floor(8.415649) = 8
+lat_even = 6 * (8 + 0.709534) = 52.257202
+lat_odd  = 360/59 * (8 + 0.565781) = 52.265780
+NL(lat_even) = 36   NL(lat_odd) = 36   same zone: True
+newest = even -> lat = 52.25720, ni = max(NL, 1) = 36
+m = floor(lon_e*(NL-1) - lon_o*NL + 0.5) = floor(0.431610) = 0
+lon = 360/36 * (0 + 0.391937) = 3.91937
+position = 52.25720, 3.91937

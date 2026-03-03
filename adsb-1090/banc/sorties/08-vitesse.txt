@@ -1,0 +1,5 @@
+== 6. Airborne velocity (TC 19)
+8D485020994409940838175B284F  ICAO 485020  TC 19  subtype 1
+S_ew=1 V_ew=8  S_ns=1 V_ns=159  -> vx=-8 vy=-159 kt
+ground speed = sqrt(vx^2 + vy^2) = 159.20 kt   track = 182.88 deg
+vertical rate = -832 ft/min (source bit 0)

@@ -1,0 +1,24 @@
+pyModeS 2.21.1
+
+8D4840D6202CC371C32CE0576098  DF 17  ICAO 4840D6  TC 4  crc 000000
+8D40621D58C382D690C8AC2863A7  DF 17  ICAO 40621D  TC 11  crc 000000
+8D40621D58C386435CC412692AD6  DF 17  ICAO 40621D  TC 11  crc 000000
+8D485020994409940838175B284F  DF 17  ICAO 485020  TC 19  crc 000000
+callsign  KLM1023_
+altitude  38000 ft  38000 ft
+position  (52.2572021484375, 3.91937255859375)
+cprNL(52.25720) = 36
+velocity  (159, 182.8803775528476, -832, 'GS')
+
+ICAO           by hand     4840D6   pyModeS     4840D6   OK
+callsign       by hand   KLM1023    pyModeS   KLM1023    OK
+altitude       by hand      38000   pyModeS      38000   OK
+lat            by hand    52.2572   pyModeS    52.2572   OK
+lon            by hand    3.91937   pyModeS    3.91937   OK
+speed          by hand        159   pyModeS        159   OK
+track          by hand     182.88   pyModeS     182.88   OK
+vrate          by hand       -832   pyModeS       -832   OK
+crc 8D4840D6   by hand          0   pyModeS          0   OK
+crc 8D40621D   by hand          0   pyModeS          0   OK
+crc 8D40621D   by hand          0   pyModeS          0   OK
+crc 8D485020   by hand          0   pyModeS          0   OK
