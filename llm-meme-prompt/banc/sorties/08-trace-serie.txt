@@ -1,0 +1,11 @@
+$ python3 trace.py --n 8 --sortie sorties/08-trace-serie.json
+en parallèle=1
+req  t(s)   load(s)  cached  sha256        runner
+  1    7.1     0.09       -  d5e0edf67a27  ollama runner c=16384
+  2   14.5     0.14       -  d5e0edf67a27  ollama runner c=16384
+  3   21.8      0.5       -  d5e0edf67a27  ollama runner c=16384
+  4   28.8     0.07       -  d5e0edf67a27  ollama runner c=16384
+  5   35.8     0.07       -  d5e0edf67a27  ollama runner c=16384
+  6   42.8     0.06       -  d5e0edf67a27  ollama runner c=16384
+  7   49.9     0.06       -  d5e0edf67a27  ollama runner c=16384
+  8   57.2     0.08       -  d5e0edf67a27  ollama runner c=16384

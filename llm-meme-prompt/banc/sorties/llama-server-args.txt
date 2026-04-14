@@ -1,0 +1,5 @@
+# Processus lancé par Ollama pour servir phi4 pendant le banc, relevé dans le journal du serveur (chemins et horodatage retirés).
+# Cette version d'Ollama ne lance pas llama-server : elle sert phi4 avec son propre runner, une seule place de calcul (Parallel:1).
+ollama runner --model sha256-fd7b6731c33c… --port 58833
+# Réglages transmis au runner au chargement du modèle :
+level=INFO source=runner.go:895 msg=load request="{Operation:commit LoraPath:[] Parallel:1 BatchSize:512 FlashAttention:Enabled KvSize:16384 KvCacheType:q8_0 NumThreads:12 GPULayers:41[ID:0 Layers:41(0..40)] MultiUserCache:false ProjectorPath: MainGPU:0 UseMmap:true}"

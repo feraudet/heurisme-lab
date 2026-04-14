@@ -1,0 +1,15 @@
+$ python3 candidats.py
+prompt : Donne un prénom pour un chat. Réponds par un seul mot.
+token choisi à temperature 0 : 'M'
+rang  token     logprob   probabilité
+   1  'M'        -1.169    31.1%
+   2  'Min'      -2.042    13.0%
+   3  'B'        -2.083    12.5%
+   4  'L'        -2.253    10.5%
+   5  'S'        -2.767     6.3%
+   6  'O'        -3.209     4.0%
+   7  'Wh'       -3.215     4.0%
+   8  'Sim'      -3.592     2.8%
+   9  'N'        -3.857     2.1%
+  10  'Ch'       -4.005     1.8%
+somme des 10 premiers : 88.0%

@@ -1,0 +1,19 @@
+$ python3 trace.py --depuis sorties/09-trace-parallele.json --lang en
+parallel=8
+req  t(s)   load(s)  cached  sha256        runner
+  3    6.8     0.15       -  d5e0edf67a27  ollama runner c=16384
+  8   14.0     0.15       -  d5e0edf67a27  ollama runner c=16384
+  5   20.9     0.15       -  d5e0edf67a27  ollama runner c=16384
+  1   27.4     0.15       -  d5e0edf67a27  ollama runner c=16384
+  2   34.2     0.16       -  d5e0edf67a27  ollama runner c=16384
+  6   41.1     0.16       -  d5e0edf67a27  ollama runner c=16384
+  7   47.9     0.16       -  d5e0edf67a27  ollama runner c=16384
+  4   54.9     0.16       -  d5e0edf67a27  ollama runner c=16384
+  9   61.7     0.08       -  d5e0edf67a27  ollama runner c=16384
+ 10   68.5     0.22       -  d5e0edf67a27  ollama runner c=16384
+ 11   75.3     0.14       -  d5e0edf67a27  ollama runner c=16384
+ 12   82.1     0.08       -  d5e0edf67a27  ollama runner c=16384
+ 13   88.9     0.07       -  d5e0edf67a27  ollama runner c=16384
+ 14   95.8     0.06       -  d5e0edf67a27  ollama runner c=16384
+ 15  102.6     0.06       -  d5e0edf67a27  ollama runner c=16384
+ 16  109.6     0.08       -  d5e0edf67a27  ollama runner c=16384

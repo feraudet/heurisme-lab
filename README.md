@@ -25,5 +25,6 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [gps-premier-fix](gps-premier-fix/) | [GPS takes 30 seconds to know where it is](https://heurisme.fr/en/blog/gps-premier-fix/) |
 | [ax25-aprs](ax25-aprs/) | [Packet radio: what really goes over the air](https://heurisme.fr/en/blog/ax25-aprs/) |
 | [adsb-1090](adsb-1090/) | [The planes above your house: what they broadcast on 1090 MHz](https://heurisme.fr/en/blog/adsb-1090/) |
+| [llm-meme-prompt](llm-meme-prompt/) | [Same prompt, two answers](https://heurisme.fr/en/blog/llm-meme-prompt/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).

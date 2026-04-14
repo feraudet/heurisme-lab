@@ -1,0 +1,7 @@
+$ python3 divergence.py --depuis sorties/divergence.json --lang en
+answer 1: cached=- sha256=d5e0edf67a27 tokens=195
+answer 2: cached=- sha256=ffc8ef84df79 tokens=197
+first different token: no. 117
+common text before: …'der sur les épaules de ses humains pour une'
+answer 1 picks ' ca'      | top 2: ' ca' 0.2257   ' sé' 0.2253
+answer 2 picks ' sé'      | top 2: ' sé' 0.2264   ' ca' 0.2238

@@ -1,0 +1,5 @@
+$ python3 essais.py --depuis sorties/04-t0-seed.json --lang en
+50 runs, temperature=0.0, seed=42, parallel=1, prompt=short
+distinct answers: 1
+  50 × "Miaou\n\n(Note: \"M"
+total time 12.5 s, mean time per request 0.25 s

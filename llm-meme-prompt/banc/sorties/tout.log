@@ -1,0 +1,104 @@
+$ python3 candidats.py
+prompt : Donne un prénom pour un chat. Réponds par un seul mot.
+token choisi à temperature 0 : 'M'
+rang  token     logprob   probabilité
+   1  'M'        -1.169    31.1%
+   2  'Min'      -2.042    13.0%
+   3  'B'        -2.083    12.5%
+   4  'L'        -2.253    10.5%
+   5  'S'        -2.767     6.3%
+   6  'O'        -3.209     4.0%
+   7  'Wh'       -3.215     4.0%
+   8  'Sim'      -3.592     2.8%
+   9  'N'        -3.857     2.1%
+  10  'Ch'       -4.005     1.8%
+somme des 10 premiers : 88.0%
+$ python3 temperature.py
+token     T=0.2    T=0.5    T=0.8    T=1.0    T=1.5    
+'M'        97.3%   64.9%   43.2%   35.3%   25.2%  
+'Min'       1.2%   11.3%   14.5%   14.7%   14.1%  
+'B'         1.0%   10.4%   13.8%   14.1%   13.7%  
+'L'         0.4%    7.4%   11.1%   11.9%   12.3%  
+'S'         0.0%    2.7%    5.9%    7.1%    8.7%  
+'O'         0.0%    1.1%    3.4%    4.6%    6.5%  
+'Wh'        0.0%    1.1%    3.3%    4.6%    6.5%  
+'Sim'       0.0%    0.5%    2.1%    3.1%    5.0%  
+'N'         0.0%    0.3%    1.5%    2.4%    4.2%  
+'Ch'        0.0%    0.2%    1.2%    2.1%    3.8%  
+
+top_k=3   garde : 'M', 'Min', 'B'
+top_p=0.9 à T=0.8 garde : 'M', 'Min', 'B', 'L', 'S', 'O' (cumul 91.8%)
+$ python3 essais.py --n 50 --temperature 0.8 --sortie sorties/03-t08.json
+50 essais, temperature=0.8, seed=None, en parallèle=1, prompt=court
+réponses distinctes : 42
+   5 × "Minou"
+   3 × "Oscar"
+   2 × "Miaouss"
+   2 × "Misty"
+   1 × "Mittens\n\n(Note: \"M"
+   1 × "Mystic\n\n(Note: Je peux"
+   1 × "Miaouillette"
+   1 × "Miaousette"
+   1 × "Mozart\n\n(Note : Vous pouvez"
+   1 × "Miaou\n\n(Note: \"M"
+   1 × "Soleil\n\n(Note: \"S"
+   1 × "Bijou\n\n(Note: Bijou"
+   1 × "Luna\n\nN'hésite pas"
+   1 × "Brisbane\n\nN'hésite"
+   1 × "Miaou\n\n(Note: Ce choix"
+   1 × "Miaouki\n\n(Note: \""
+   1 × "Miaou\n\n(Note : Les n"
+   1 × "Soleil\n\n(Note: C'est"
+   1 × "Bella\n\n(Note: Ce prénom"
+   1 × "Misty  \n\nJe vous suggère"
+   1 × "Mousse\n\n(Note: Si tu cher"
+   1 × "Soleil"
+   1 × "Choupette"
+   1 × "Miaoumi"
+   1 × "Miaoulette"
+   1 × "Whiskers\n\n(Note: You asked"
+   1 × "Mystère\n\n(Note : Ce choix"
+   1 × "Miaou\n\nN'hésite"
+   1 × "Bijou"
+   1 × "Nala"
+   1 × "Ondine\n\n(Note: Ce choix"
+   1 × "Miaouss\n\nNote : C"
+   1 × "Minou\n\nN'hésite pas"
+   1 × "Minou\n\n(Note: Le choix d"
+   1 × "Muffin"
+   1 × "Misty\n\n(Note: \"Misty"
+   1 × "Miaouzi\n\n(Note: This"
+   1 × "Soleil\n\n(Note: You can"
+   1 × "Luna"
+   1 × "Luna\n\n(Note : Les préfé"
+   1 × "Luna\n\n(Note: La suggestion de"
+   1 × "Belle"
+durée totale 9.4 s, durée moyenne d'une requête 0.19 s
+$ python3 essais.py --n 50 --temperature 0 --seed 42 --sortie sorties/04-t0-seed.json
+50 essais, temperature=0.0, seed=42, en parallèle=1, prompt=court
+réponses distinctes : 1
+  50 × "Miaou\n\n(Note: \"M"
+durée totale 12.5 s, durée moyenne d'une requête 0.25 s
+$ python3 essais.py --n 50 --temperature 0.8 --seed 42 --sortie sorties/04b-t08-seed.json
+50 essais, temperature=0.8, seed=42, en parallèle=1, prompt=court
+réponses distinctes : 1
+  50 × "Luna\n\nN'hésite pas"
+durée totale 13.4 s, durée moyenne d'une requête 0.27 s
+$ python3 essais.py --n 50 --temperature 0 --seed 42 --long --sortie sorties/06-long-serie.json
+50 essais, temperature=0.0, seed=42, en parallèle=1, prompt=long
+réponses distinctes : 2
+  49 × d5e0edf67a27  (691 caractères)
+   1 × ffc8ef84df79  (697 caractères)
+durée totale 399.7 s, durée moyenne d'une requête 7.99 s
+$ python3 essais.py --n 50 --temperature 0 --seed 42 --long --parallele 8 --sortie sorties/07-long-parallele.json
+50 essais, temperature=0.0, seed=42, en parallèle=8, prompt=long
+réponses distinctes : 1
+  50 × d5e0edf67a27  (691 caractères)
+durée totale 357.8 s, durée moyenne d'une requête 53.36 s
+$ python3 flottants.py
+(0.1 + 0.2) + 0.3 = 0.6000000000000001
+0.1 + (0.2 + 0.3) = 0.6
+float16, 4096 valeurs, de gauche à droite  : 27.296875
+float16, mêmes valeurs, de droite à gauche : 27.078125
+float16, par blocs de 256 puis total       : 26.984375
+float64, référence                         : 27.071735739707947

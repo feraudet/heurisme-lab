@@ -1,0 +1,5 @@
+$ python3 essais.py --depuis sorties/07-long-parallele.json --lang en
+50 runs, temperature=0.0, seed=42, parallel=8, prompt=long
+distinct answers: 1
+  50 × d5e0edf67a27  (691 characters)
+total time 357.8 s, mean time per request 53.36 s

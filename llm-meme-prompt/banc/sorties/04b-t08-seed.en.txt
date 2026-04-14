@@ -1,0 +1,5 @@
+$ python3 essais.py --depuis sorties/04b-t08-seed.json --lang en
+50 runs, temperature=0.8, seed=42, parallel=1, prompt=short
+distinct answers: 1
+  50 × "Luna\n\nN'hésite pas"
+total time 13.4 s, mean time per request 0.27 s

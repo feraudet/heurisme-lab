@@ -1,0 +1,8 @@
+$ python3 repete.py --depuis sorties/repete.json --lang en
+run  prompt_eval_count  prompt_eval_cached_count  logprob('M')
+  1                 27                         -  'M' -1.169434905052185
+  2                 27                         -  'M' -1.1716841459274292
+  3                 27                         -  'M' -1.1716841459274292
+  4                 27                         -  'M' -1.1716841459274292
+  5                 27                         -  'M' -1.1716841459274292
+  6                 27                         -  'M' -1.1716841459274292

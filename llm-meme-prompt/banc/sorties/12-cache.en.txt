@@ -1,0 +1,12 @@
+$ python3 cache_log.py serve.log --lang en
+step                requests  prompt tokens reused from the cache (used/prompt)
+01-candidats               1  0/27 ×1
+03-t08                    50  26/27 ×50
+04-t0-seed                50  26/27 ×50
+04b-t08-seed              50  26/27 ×50
+06-long-serie             50  4/31 ×1, 30/31 ×49
+07-long-parallele         50  30/31 ×50
+08-trace-serie             8  30/31 ×8
+09-trace-parallele        16  30/31 ×16
+10-repete                  6  4/27 ×1, 26/27 ×5
+11-divergence              2  4/31 ×1, 30/31 ×1

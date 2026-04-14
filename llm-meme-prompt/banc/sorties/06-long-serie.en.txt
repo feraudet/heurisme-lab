@@ -1,0 +1,6 @@
+$ python3 essais.py --depuis sorties/06-long-serie.json --lang en
+50 runs, temperature=0.0, seed=42, parallel=1, prompt=long
+distinct answers: 2
+  49 × d5e0edf67a27  (691 characters)
+   1 × ffc8ef84df79  (697 characters)
+total time 399.7 s, mean time per request 7.99 s

@@ -1,0 +1,5 @@
+$ python3 essais.py --n 50 --temperature 0 --seed 42 --sortie sorties/04-t0-seed.json
+50 essais, temperature=0.0, seed=42, en parallèle=1, prompt=court
+réponses distinctes : 1
+  50 × "Miaou\n\n(Note: \"M"
+durée totale 12.5 s, durée moyenne d'une requête 0.25 s

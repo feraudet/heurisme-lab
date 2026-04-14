@@ -1,0 +1,6 @@
+$ python3 essais.py --n 50 --temperature 0 --seed 42 --long --sortie sorties/06-long-serie.json
+50 essais, temperature=0.0, seed=42, en parallèle=1, prompt=long
+réponses distinctes : 2
+  49 × d5e0edf67a27  (691 caractères)
+   1 × ffc8ef84df79  (697 caractères)
+durée totale 399.7 s, durée moyenne d'une requête 7.99 s

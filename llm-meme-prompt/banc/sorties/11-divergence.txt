@@ -1,0 +1,7 @@
+$ python3 divergence.py
+réponse 1: cached=- sha256=d5e0edf67a27 tokens=195
+réponse 2: cached=- sha256=ffc8ef84df79 tokens=197
+premier token différent : n° 117
+texte commun juste avant: …'der sur les épaules de ses humains pour une'
+réponse 1 prend ' ca'      | 2 meilleurs: ' ca' 0.2257   ' sé' 0.2253
+réponse 2 prend ' sé'      | 2 meilleurs: ' sé' 0.2264   ' ca' 0.2238

@@ -1,0 +1,7 @@
+$ python3 flottants.py --lang en
+(0.1 + 0.2) + 0.3 = 0.6000000000000001
+0.1 + (0.2 + 0.3) = 0.6
+float16, 4096 values, left to right    : 27.296875
+float16, same values, right to left    : 27.078125
+float16, blocks of 256, then the total : 26.984375
+float64, reference                     : 27.071735739707947
