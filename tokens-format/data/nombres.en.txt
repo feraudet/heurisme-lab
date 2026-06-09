@@ -1,0 +1,12 @@
+value                                 chars  o200k  qwen   o200k_base split
+running                                   7      1     1   running
+maintenance                              11      1     1   maintenance
+37.49                                     5      3     5   37·.·49
+1781015527                               10      4    10   178·101·552·7
+3.14159265                               10      5    10   3·.·141·592·65
+10.1.71.190                              11      7    11   10·.·1·.·71·.·190
+2026-06-09T14:32:07Z                     20     13    20   202·6·-·06·-·09·T·14·:·32·:·07·Z
+6513270e-269e-4d37-b2a7-4de452e6b438     36     23    34   651·327·0·e·-·269·e·-·4·d·37·-b·2·a·7·-·4·de·452·e·6·b·438
+
+CSV 100 rows         : 3689 tokens (o200k_base)
+CSV + UUID id column : 6075 tokens, +2386 i.e. +65%, 23.9 tokens per UUID

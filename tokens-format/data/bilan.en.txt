@@ -1,0 +1,9 @@
+model phi4 (alias phi4-banc), temperature 0, 10 questions per format
+
+format       correct     prompt tokens (phi4)   wrong
+json-indented   6/10                     9509   q06='```', q08='8', q09='2', q10='```'
+json-minified   7/10                     6110   q08='9', q09='4', q10='Therefore, the hostname with the absolute highest cost is `db-051`.'
+yaml            7/10                     7568   q08='10', q09='4', q10='Answer: 322.95'
+csv             8/10                     3664   q08='13', q09='3'
+markdown        7/10                     4316   q08='18', q09='6', q10='These values represent the maximum costs in the provided inventory.'
+xml             7/10                    11327   q08='11', q09='3', q10='```'

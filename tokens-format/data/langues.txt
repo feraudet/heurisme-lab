@@ -1,0 +1,10 @@
+texte      caractères  mots   o200k_base  cl100k_base      qwen2.5
+français          349    56           84           97           97
+anglais           304    52           61           61           61
+fr / en                            1.38x        1.59x        1.59x
+
+o200k_base   10 : v·ér·ifie·␣que·␣la·␣rép·lication·␣est·␣à·␣jour
+cl100k_base  11 : v·ér·ifie·␣que·␣la·␣ré·p·lication·␣est·␣à·␣jour
+
+o200k_base    7 : check·␣that·␣replication·␣is·␣up·␣to·␣date
+cl100k_base   7 : check·␣that·␣replication·␣is·␣up·␣to·␣date

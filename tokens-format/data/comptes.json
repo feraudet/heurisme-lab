@@ -1,0 +1,38 @@
+{
+  "json-indente": {
+    "octets": 23301,
+    "o200k_base": 9718,
+    "cl100k_base": 9464,
+    "qwen2.5": 10672
+  },
+  "json-minifie": {
+    "octets": 16700,
+    "o200k_base": 6318,
+    "cl100k_base": 6064,
+    "qwen2.5": 7272
+  },
+  "yaml": {
+    "octets": 16298,
+    "o200k_base": 7748,
+    "cl100k_base": 7523,
+    "qwen2.5": 8731
+  },
+  "csv": {
+    "octets": 7259,
+    "o200k_base": 3689,
+    "cl100k_base": 3619,
+    "qwen2.5": 4827
+  },
+  "markdown": {
+    "octets": 9523,
+    "o200k_base": 4296,
+    "cl100k_base": 4269,
+    "qwen2.5": 5477
+  },
+  "xml": {
+    "octets": 28758,
+    "o200k_base": 11737,
+    "cl100k_base": 11282,
+    "qwen2.5": 12490
+  }
+}

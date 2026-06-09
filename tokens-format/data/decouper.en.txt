@@ -1,0 +1,19 @@
+tokenizer: o200k_base
+
+json-indented: 97 tokens
+␣·␣{↵·␣␣␣·␣"·hostname·":·␣"·web·-·001·",↵·␣␣␣·␣"·env·":·␣"·prod·",↵·␣␣␣·␣"·region·":·␣"·eu·-central·-·1·",↵·␣␣␣·␣"·os·":·␣"·ubuntu·-·24·.·04·",↵·␣␣␣·␣"·cpu·":·␣·2·,↵·␣␣␣·␣"·ram·_g·b·":·␣·4·,↵·␣␣␣·␣"·disk·_g·b·":·␣·80·,↵·␣␣␣·␣"·ip·":·␣"·10·.·1·.·71·.·190·",↵·␣␣␣·␣"·status·":·␣"·running·",↵·␣␣␣·␣"·cost·_e·ur·":·␣·37·.·49·↵·␣·␣},↵
+
+json-minified: 64 tokens
+{"·hostname·":"·web·-·001·","·env·":"·prod·","·region·":"·eu·-central·-·1·","·os·":"·ubuntu·-·24·.·04·","·cpu·":·2·,"·ram·_g·b·":·4·,"·disk·_g·b·":·80·,"·ip·":"·10·.·1·.·71·.·190·","·status·":"·running·","·cost·_e·ur·":·37·.·49·},
+
+yaml: 78 tokens
+-·␣hostname·:·␣web·-·001·↵·␣·␣env·:·␣prod·↵·␣·␣region·:·␣eu·-central·-·1·↵·␣·␣os·:·␣ubuntu·-·24·.·04·↵·␣·␣cpu·:·␣·2·↵·␣·␣ram·_g·b·:·␣·4·↵·␣·␣disk·_g·b·:·␣·80·↵·␣·␣ip·:·␣·10·.·1·.·71·.·190·↵·␣·␣status·:·␣running·↵·␣·␣cost·_e·ur·:·␣·37·.·49·↵
+
+csv: 37 tokens
+web·-·001·,·prod·,·eu·-central·-·1·,·ubuntu·-·24·.·04·,·2·,·4·,·80·,·10·.·1·.·71·.·190·,r·unning·,·37·.·49·↵
+
+markdown: 43 tokens
+|·␣web·-·001·␣|·␣prod·␣|·␣eu·-central·-·1·␣|·␣ubuntu·-·24·.·04·␣|·␣·2·␣|·␣·4·␣|·␣·80·␣|·␣·10·.·1·.·71·.·190·␣|·␣running·␣|·␣·37·.·49·␣|↵
+
+xml: 117 tokens
+␣·␣<·server·>↵·␣␣␣·␣<·hostname·>·web·-·001·</·hostname·>↵·␣␣␣·␣<·env·>·prod·</·env·>↵·␣␣␣·␣<·region·>·eu·-central·-·1·</·region·>↵·␣␣␣·␣<·os·>·ubuntu·-·24·.·04·</·os·>↵·␣␣␣·␣<·cpu·>·2·</·cpu·>↵·␣␣␣·␣<·ram·_g·b·>·4·</·ram·_g·b·>↵·␣␣␣·␣<·disk·_g·b·>·80·</·disk·_g·b·>↵·␣␣␣·␣<·ip·>·10·.·1·.·71·.·190·</·ip·>↵·␣␣␣·␣<·status·>·running·</·status·>↵·␣␣␣·␣<·cost·_e·ur·>·37·.·49·</·cost·_e·ur·>↵·␣·␣</·server·>↵

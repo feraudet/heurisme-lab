@@ -1,0 +1,7 @@
+format          o200k_base  cl100k_base      qwen2.5  phi4 (ollama)
+json-indented        2.63x        2.62x        2.21x          2.60x
+json-minified        1.71x        1.68x        1.51x          1.67x
+yaml                 2.10x        2.08x        1.81x          2.07x
+csv                  1.00x        1.00x        1.00x          1.00x
+markdown             1.16x        1.18x        1.13x          1.18x
+xml                  3.18x        3.12x        2.59x          3.09x

@@ -1,0 +1,7 @@
+format          bytes   o200k_base  cl100k_base      qwen2.5  vs csv
+json-indented   23301         9718         9464        10672   2.63x
+json-minified   16700         6318         6064         7272   1.71x
+yaml            16298         7748         7523         8731   2.10x
+csv              7259         3689         3619         4827   1.00x
+markdown         9523         4296         4269         5477   1.16x
+xml             28758        11737        11282        12490   3.18x
