@@ -1,0 +1,33 @@
+$ python3 juge.py --juge qwen --protocole egalite
+juge=mlx-community/Qwen2.5-7B-Instruct-4bit protocole=egalite paires=30
+01 longueur      bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+02 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+03 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+04 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+05 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+06 longueur      bonne-en-A:A       bonne-en-B:A       -> bonne  /autre   DÉSACCORD
+07 longueur      bonne-en-A:A       bonne-en-B:A       -> bonne  /autre   DÉSACCORD
+08 longueur      bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+09 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+10 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+11 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+12 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+13 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+14 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+15 longueur      bonne-en-A:A       bonne-en-B:A       -> bonne  /autre   DÉSACCORD
+16 longueur      bonne-en-A:egalite bonne-en-B:A       -> egalite/autre   DÉSACCORD
+17 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+18 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+19 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+20 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+21 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+22 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+23 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+24 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+25 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+26 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+27 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+28 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+29 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+30 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+[exit 0]

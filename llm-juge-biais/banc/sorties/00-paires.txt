@@ -1,0 +1,5 @@
+$ python3 paires.py
+longueur       20 paires   bonne :   140 car.   autre :   373 car.
+fausse          5 paires   bonne :    82 car.   autre :    71 car.
+fausse-longue   5 paires   bonne :   100 car.   autre :   264 car.
+[exit 0]

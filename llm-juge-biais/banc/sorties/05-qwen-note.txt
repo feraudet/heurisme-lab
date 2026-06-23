@@ -1,0 +1,33 @@
+$ python3 juge.py --juge qwen --protocole note
+juge=mlx-community/Qwen2.5-7B-Instruct-4bit protocole=note paires=30
+01 longueur      bonne=8 autre=7
+02 longueur      bonne=7 autre=7
+03 longueur      bonne=8 autre=8
+04 longueur      bonne=8 autre=7
+05 longueur      bonne=8 autre=8
+06 longueur      bonne=7 autre=7
+07 longueur      bonne=8 autre=7
+08 longueur      bonne=7 autre=3
+09 longueur      bonne=8 autre=7
+10 longueur      bonne=7 autre=7
+11 longueur      bonne=8 autre=8
+12 longueur      bonne=2 autre=5
+13 longueur      bonne=8 autre=7
+14 longueur      bonne=8 autre=7
+15 longueur      bonne=7 autre=7
+16 longueur      bonne=7 autre=7
+17 longueur      bonne=8 autre=7
+18 longueur      bonne=7 autre=7
+19 longueur      bonne=8 autre=8
+20 longueur      bonne=7 autre=7
+21 fausse        bonne=8 autre=2
+22 fausse        bonne=8 autre=2
+23 fausse        bonne=8 autre=2
+24 fausse        bonne=8 autre=2
+25 fausse        bonne=7 autre=7
+26 fausse-longue bonne=8 autre=2
+27 fausse-longue bonne=8 autre=2
+28 fausse-longue bonne=8 autre=2
+29 fausse-longue bonne=7 autre=2
+30 fausse-longue bonne=7 autre=2
+[exit 0]

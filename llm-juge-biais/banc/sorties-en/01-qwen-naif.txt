@@ -1,0 +1,33 @@
+$ python3 juge.py --juge qwen --protocole naif --lang en
+judge=mlx-community/Qwen2.5-7B-Instruct-4bit protocol=naif pairs=30
+01 padding       good-in-A:A       good-in-B:B       -> good   /good    agree
+02 padding       good-in-A:B       good-in-B:A       -> other  /other   agree
+03 padding       good-in-A:B       good-in-B:A       -> other  /other   agree
+04 padding       good-in-A:B       good-in-B:A       -> other  /other   agree
+05 padding       good-in-A:B       good-in-B:A       -> other  /other   agree
+06 padding       good-in-A:A       good-in-B:B       -> good   /good    agree
+07 padding       good-in-A:A       good-in-B:A       -> good   /other   DISAGREE
+08 padding       good-in-A:B       good-in-B:B       -> other  /good    DISAGREE
+09 padding       good-in-A:B       good-in-B:A       -> other  /other   agree
+10 padding       good-in-A:B       good-in-B:B       -> other  /good    DISAGREE
+11 padding       good-in-A:B       good-in-B:B       -> other  /good    DISAGREE
+12 padding       good-in-A:B       good-in-B:B       -> other  /good    DISAGREE
+13 padding       good-in-A:B       good-in-B:B       -> other  /good    DISAGREE
+14 padding       good-in-A:B       good-in-B:A       -> other  /other   agree
+15 padding       good-in-A:A       good-in-B:B       -> good   /good    agree
+16 padding       good-in-A:A       good-in-B:A       -> good   /other   DISAGREE
+17 padding       good-in-A:B       good-in-B:B       -> other  /good    DISAGREE
+18 padding       good-in-A:B       good-in-B:A       -> other  /other   agree
+19 padding       good-in-A:B       good-in-B:A       -> other  /other   agree
+20 padding       good-in-A:B       good-in-B:A       -> other  /other   agree
+21 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+22 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+23 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+24 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+25 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+26 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+27 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+28 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+29 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+30 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+[exit 0]

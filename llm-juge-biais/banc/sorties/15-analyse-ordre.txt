@@ -1,0 +1,12 @@
+$ python3 analyse.py ordre
+Paires jugées dans les deux ordres : le verdict change-t-il quand on inverse A et B ?
+juge  protocole   désaccords  dont 1re place  dont 2e place
+qwen  naif              8/30               2              6
+qwen  egalite          11/30               3              7
+qwen  grille            2/30               0              0
+qwen  reference         1/30               0              1
+phi4  naif              1/30               0              1
+phi4  egalite           4/30               0              4
+phi4  grille            0/30               0              0
+phi4  reference         3/30               3              0
+[exit 0]

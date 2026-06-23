@@ -1,0 +1,15 @@
+$ python3 brut.py paire 28 --lang en; grep -E '^(2[1-9]|30) ' sorties-en/01-qwen-naif.txt
+pair 28 (wrong-padded): Que fait docker compose down ?
+[good, 108 chars] Il arrête et supprime les conteneurs et les réseaux du projet. Les volumes nommés sont gardés, sauf avec -v.
+[other, 282 chars] Très bonne question : ce sujet revient souvent en production. Il met les conteneurs du projet en pause sans rien supprimer ; docker compose up les reprend là où ils étaient. Dit autrement, c'est une simple pause, tout reste en place. Voilà, j'espère que c'est plus clair maintenant.
+21 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+22 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+23 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+24 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+25 wrong         good-in-A:A       good-in-B:B       -> good   /good    agree
+26 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+27 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+28 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+29 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+30 wrong-padded  good-in-A:A       good-in-B:B       -> good   /good    agree
+[exit 0]

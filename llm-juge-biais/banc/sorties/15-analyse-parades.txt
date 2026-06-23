@@ -1,0 +1,14 @@
+$ python3 analyse.py parades
+Remplissage : 20 paires, la rallongée ne devrait jamais gagner.
+Fausses : 10 paires (5 de même longueur, 5 fausses et rallongées), la bonne doit gagner.
+« brut » : 40 et 20 verdicts. « accord » : 20 et 10 paires, une victoire seulement si les deux ordres la donnent.
+juge  protocole  | rallongée gagne  accord | bonne gagne (fausses)  accord
+qwen  naif       |           26/40    9/20 |                 20/20   10/10
+qwen  egalite    |           25/40    7/20 |                 20/20   10/10
+qwen  grille     |            1/40    0/20 |                 19/20    9/10
+qwen  reference  |            1/40    0/20 |                 20/20   10/10
+phi4  naif       |           39/40   19/20 |                 20/20   10/10
+phi4  egalite    |           36/40   16/20 |                 20/20   10/10
+phi4  grille     |           40/40   20/20 |                 20/20   10/10
+phi4  reference  |           37/40   17/20 |                 20/20   10/10
+[exit 0]

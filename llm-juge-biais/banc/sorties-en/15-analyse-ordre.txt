@@ -1,0 +1,12 @@
+$ python3 analyse.py ordre --lang en
+Pairs judged in both orders: does the verdict change when A and B are swapped?
+judge protocol      disagree       1st place      2nd place
+qwen  naif              8/30               2              6
+qwen  egalite          11/30               3              7
+qwen  grille            2/30               0              0
+qwen  reference         1/30               0              1
+phi4  naif              1/30               0              1
+phi4  egalite           4/30               0              4
+phi4  grille            0/30               0              0
+phi4  reference         3/30               3              0
+[exit 0]

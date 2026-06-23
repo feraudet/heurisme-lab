@@ -1,0 +1,9 @@
+$ python3 analyse.py notes
+Chaque réponse notée seule, de 1 à 10 : pas de paire, donc pas d'ordre.
+juge  paires         moy. bonne moy. autre  bonne > autre   =  autre > bonne
+qwen  remplissage          7.30       6.90              8  11              1
+qwen  fausses              7.70       2.50              9   1              0
+phi4  remplissage          7.90       8.15              1  14              5
+phi4  fausses              8.11       3.33              9   0              0
+phi4  paire 21 écartée, note hors de 1 à 10 : bonne=10 autre=443
+[exit 0]

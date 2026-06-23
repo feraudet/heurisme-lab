@@ -1,0 +1,15 @@
+$ python3 brut.py paire 28; grep -E '^(2[1-9]|30) ' sorties/01-qwen-naif.txt
+paire 28 (fausse-longue) : Que fait docker compose down ?
+[bonne, 108 car.] Il arrête et supprime les conteneurs et les réseaux du projet. Les volumes nommés sont gardés, sauf avec -v.
+[autre, 282 car.] Très bonne question : ce sujet revient souvent en production. Il met les conteneurs du projet en pause sans rien supprimer ; docker compose up les reprend là où ils étaient. Dit autrement, c'est une simple pause, tout reste en place. Voilà, j'espère que c'est plus clair maintenant.
+21 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+22 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+23 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+24 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+25 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+26 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+27 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+28 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+29 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+30 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+[exit 0]

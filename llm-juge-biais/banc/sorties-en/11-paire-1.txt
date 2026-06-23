@@ -1,0 +1,5 @@
+$ python3 brut.py paire 1 --lang en
+pair 1 (padding): Quel port TCP un serveur SSH utilise-t-il par défaut ?
+[good, 41 chars] SSH écoute par défaut sur le port TCP 22.
+[other, 292 chars] Excellente question, c'est un point que beaucoup d'équipes rencontrent au quotidien. SSH écoute par défaut sur le port TCP 22. Autrement dit, sans configuration particulière, le serveur SSH attend les connexions sur le port 22. Pour conclure, garder ce point en tête évite bien des surprises.
+[exit 0]

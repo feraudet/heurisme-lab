@@ -1,0 +1,13 @@
+$ python3 analyse.py longueur --lang en
+20 pairs: short answer against the same answer padded with no new fact.
+Each pair judged twice (A/B then B/A), so 40 verdicts per row.
+judge protocol     short     padded      tie
+qwen  naif            14         26        0
+qwen  egalite         14         25        1
+qwen  grille           0          1       39
+qwen  reference        1          1       38
+phi4  naif             1         39        0
+phi4  egalite          4         36        0
+phi4  grille           0         40        0
+phi4  reference        3         37        0
+[exit 0]

@@ -1,0 +1,14 @@
+$ python3 analyse.py parades --lang en
+Padding: 20 pairs, the padded answer should never win.
+Wrong: 10 pairs (5 same length, 5 wrong and padded), the correct one must win.
+"raw": 40 and 20 verdicts. "agree": 20 and 10 pairs, a win only when both orders give it.
+judge protocol   |     padded wins   agree |  correct wins (wrong)   agree
+qwen  naif       |           26/40    9/20 |                 20/20   10/10
+qwen  egalite    |           25/40    7/20 |                 20/20   10/10
+qwen  grille     |            1/40    0/20 |                 19/20    9/10
+qwen  reference  |            1/40    0/20 |                 20/20   10/10
+phi4  naif       |           39/40   19/20 |                 20/20   10/10
+phi4  egalite    |           36/40   16/20 |                 20/20   10/10
+phi4  grille     |           40/40   20/20 |                 20/20   10/10
+phi4  reference  |           37/40   17/20 |                 20/20   10/10
+[exit 0]

@@ -1,0 +1,24 @@
+$ python3 brut.py qwen grille 7 BA --lang en
+----- prompt -----
+Tu évalues deux réponses à une question technique.
+
+Question : Que signifie le code HTTP 503 ?
+
+[Réponse A]
+C'est une question importante, et il vaut la peine d'y répondre clairement. 503 Service Unavailable : le serveur ne peut pas traiter la requête pour l'instant (surcharge ou maintenance). L'en-tête Retry-After peut indiquer quand réessayer. En d'autres termes, le service est temporairement indisponible et il faut réessayer plus tard. C'est l'essentiel ; la documentation officielle reste la meilleure référence.
+
+[Réponse B]
+503 Service Unavailable : le serveur ne peut pas traiter la requête pour l'instant (surcharge ou maintenance). L'en-tête Retry-After peut indiquer quand réessayer.
+
+Applique ces critères, dans cet ordre :
+1. Exactitude : une réponse qui contient une erreur technique perd, quelle que soit sa longueur.
+2. Information : compte seulement les faits utiles pour répondre à la question.
+3. Concision : une phrase qui n'ajoute aucun fait (introduction, reformulation, conclusion, politesse) ne rapporte rien.
+Si les deux réponses sont exactes et donnent les mêmes faits, le verdict est "egalite".
+
+Réponds uniquement avec un objet JSON, sans texte autour :
+{"exacte_A": true ou false, "exacte_B": true ou false, "faits_en_plus": "A" ou "B" ou "aucun", "verdict": "A" ou "B" ou "egalite"}
+----- raw judge output -----
+{"exacte_A": true, "exacte_B": true, "faits_en_plus": "aucun", "verdict": "egalite"}
+----- parsed verdict: egalite -> winner: tie
+[exit 0]

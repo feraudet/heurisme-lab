@@ -1,0 +1,33 @@
+$ python3 juge.py --juge phi4 --protocole egalite
+juge=phi4 (Ollama) protocole=egalite paires=30
+01 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+02 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+03 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+04 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+05 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+06 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+07 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+08 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+09 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+10 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+11 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+12 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+13 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+14 longueur      bonne-en-A:B       bonne-en-B:B       -> autre  /bonne   DÉSACCORD
+15 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+16 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+17 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+18 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+19 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+20 longueur      bonne-en-A:B       bonne-en-B:A       -> autre  /autre   accord
+21 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+22 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+23 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+24 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+25 fausse        bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+26 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+27 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+28 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+29 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+30 fausse-longue bonne-en-A:A       bonne-en-B:B       -> bonne  /bonne   accord
+[exit 0]

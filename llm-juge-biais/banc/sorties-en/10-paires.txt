@@ -1,0 +1,5 @@
+$ python3 paires.py --lang en
+padding        20 pairs    good:   140 chars   other:   373 chars
+wrong           5 pairs    good:    82 chars   other:    71 chars
+wrong-padded    5 pairs    good:   100 chars   other:   264 chars
+[exit 0]

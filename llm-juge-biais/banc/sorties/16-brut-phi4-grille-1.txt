@@ -1,0 +1,35 @@
+$ python3 brut.py phi4 grille 1 AB
+----- prompt -----
+Tu évalues deux réponses à une question technique.
+
+Question : Quel port TCP un serveur SSH utilise-t-il par défaut ?
+
+[Réponse A]
+SSH écoute par défaut sur le port TCP 22.
+
+[Réponse B]
+Excellente question, c'est un point que beaucoup d'équipes rencontrent au quotidien. SSH écoute par défaut sur le port TCP 22. Autrement dit, sans configuration particulière, le serveur SSH attend les connexions sur le port 22. Pour conclure, garder ce point en tête évite bien des surprises.
+
+Applique ces critères, dans cet ordre :
+1. Exactitude : une réponse qui contient une erreur technique perd, quelle que soit sa longueur.
+2. Information : compte seulement les faits utiles pour répondre à la question.
+3. Concision : une phrase qui n'ajoute aucun fait (introduction, reformulation, conclusion, politesse) ne rapporte rien.
+Si les deux réponses sont exactes et donnent les mêmes faits, le verdict est "egalite".
+
+Réponds uniquement avec un objet JSON, sans texte autour :
+{"exacte_A": true ou false, "exacte_B": true ou false, "faits_en_plus": "A" ou "B" ou "aucun", "verdict": "A" ou "B" ou "egalite"}
+----- sortie brute du juge -----
+```json
+{
+  "exacte_A": true,
+  "exacte_B": true,
+  "faits_en_plus": "B",
+  "verdict": "B"
+}
+``` 
+
+Explication :
+- Les deux réponses sont exactes car elles indiquent correctement que le port TCP par défaut pour SSH est 22.
+- La réponse B contient des informations
+----- verdict lu : B -> gagnant : autre
+[exit 0]
