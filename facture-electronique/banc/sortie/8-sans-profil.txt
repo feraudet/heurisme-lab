@@ -1,0 +1,1 @@
+facturx-pdfgen : exit 0

@@ -1,0 +1,22 @@
+[main] INFO com.helger.schematron.xslt.SchematronResourceXSLTCache - Compiling XSLT instance [cpPath=/xslt/ZF_250/FACTUR-X_EN16931.xslt; urlResolved=true; URL=jar:file:/opt/mustang.jar!/xslt/ZF_250/FACTUR-X_EN16931.xslt]
+[main] INFO com.helger.schematron.api.xslt.AbstractSchematronXSLTBasedResource - Applying Schematron XSLT on XML instance
+[main] INFO org.mustangproject.validator.XMLValidator - FailedAssert 
+	[BR-CO-15]-Invoice total amount with VAT (BT-112) = Invoice total amount without VAT (BT-109) + Invoice total VAT amount (BT-110).
+[main] ERROR org.mustangproject.validator.ZUGFeRDValidator - Error 4: 
+	[BR-CO-15]-Invoice total amount with VAT (BT-112) = Invoice total amount without VAT (BT-109) + Invoice total VAT amount (BT-110). from /xslt/ZF_250/FACTUR-X_EN16931.xslt)
+[main] INFO com.helger.schematron.xslt.SchematronResourceXSLTCache - Compiling XSLT instance [cpPath=/xslt/XP_Z12_012/20260216_BR-FR-Flux2-Schematron-CII_V1.3.0.xsl; urlResolved=true; URL=jar:file:/opt/mustang.jar!/xslt/XP_Z12_012/20260216_BR-FR-Flux2-Schematron-CII_V1.3.0.xsl]
+[main] INFO com.helger.schematron.api.xslt.AbstractSchematronXSLTBasedResource - Applying Schematron XSLT on XML instance
+[main] INFO com.helger.schematron.xslt.SchematronResourceXSLTCache - Compiling XSLT instance [cpPath=/xslt/XR_30/XRechnung-CII-validation.xslt; urlResolved=true; URL=jar:file:/opt/mustang.jar!/xslt/XR_30/XRechnung-CII-validation.xslt]
+[main] WARN com.helger.xml.transform.LoggingTransformErrorListener - [warn] Transformation warning (net.sf.saxon.trans.XPathException: A function that computes atomic values should use xsl:sequence rather than xsl:value-of)
+[main] WARN com.helger.xml.transform.LoggingTransformErrorListener - [warn] Transformation warning (net.sf.saxon.trans.XPathException: A function that computes atomic values should use xsl:sequence rather than xsl:value-of)
+[main] INFO com.helger.schematron.api.xslt.AbstractSchematronXSLTBasedResource - Applying Schematron XSLT on XML instance
+[main] INFO org.mustangproject.validator.XMLValidator - FailedAssert Business process MUST be provided.
+[main] INFO org.mustangproject.validator.ZUGFeRDValidator - Notice 27: Business process MUST be provided. [ID PEPPOL-EN16931-R001] from /xslt/XR_30/XRechnung-CII-validation.xslt)
+[main] INFO org.mustangproject.validator.XMLValidator - FailedAssert [BR-DE-15] Das Element "Buyer reference" (BT-10) muss übermittelt werden.
+[main] INFO org.mustangproject.validator.ZUGFeRDValidator - Notice 27: [BR-DE-15] Das Element "Buyer reference" (BT-10) muss übermittelt werden. [ID BR-DE-15] from /xslt/XR_30/XRechnung-CII-validation.xslt)
+[main] INFO org.mustangproject.validator.XMLValidator - FailedAssert [BR-DE-21] Das Element "Specification identifier" (BT-24) soll syntaktisch der Kennung des Standards XRechnung entsprechen.
+[main] INFO org.mustangproject.validator.ZUGFeRDValidator - Notice 27: [BR-DE-21] Das Element "Specification identifier" (BT-24) soll syntaktisch der Kennung des Standards XRechnung entsprechen. [ID BR-DE-21] from /xslt/XR_30/XRechnung-CII-validation.xslt)
+[main] INFO org.mustangproject.validator.XMLValidator - FailedAssert [BR-DE-2] Die Gruppe "SELLER CONTACT" (BG-6) muss übermittelt werden.
+[main] INFO org.mustangproject.validator.ZUGFeRDValidator - Notice 27: [BR-DE-2] Die Gruppe "SELLER CONTACT" (BG-6) muss übermittelt werden. [ID BR-DE-2] from /xslt/XR_30/XRechnung-CII-validation.xslt)
+[main] WARN org.mustangproject.validator.ZUGFeRDValidator - Warning 10: Arithmetical issue:Payable total in XML is 2922.00, but calculated total is 2922.20 with tax basis 2440.00 and with positions 2440.00 = 2400.00 + 40.00
+[main] INFO org.mustangproject.validator.ZUGFeRDValidator - Parsed PDF:valid XML:invalid Signature:Factur/X Python Checksum:6C3A64401AAC2868688FE9FE41D03E68A5158F0D Profile:urn:cen.eu:en16931:2017 Version:2 Took:3529ms Errors:[4,27,27,27,27,10] ErrorIDs: [PEPPOL-EN16931-R001,BR-DE-15,BR-DE-21,BR-DE-2]

@@ -1,0 +1,39 @@
+$ java -jar /opt/mustang.jar --action validate --source sans-adresse.pdf --disable-file-logging 2>sans-adresse.journal.txt
+<?xml version="1.0" encoding="UTF-8"?>
+
+<validation filename="sans-adresse.pdf" datetime="2026-10-12 20:50:02">
+  <pdf>ValidationResult [flavour=3b, totalAssertions=4626, assertions=[], isCompliant=true]
+    <info>
+      <signature>Factur/X Python</signature>
+      <duration unit="ms">1382</duration>
+    </info>
+    <summary status="valid"/>
+  </pdf>  
+  <xml>
+    <info>
+      <version>2</version>
+      <profile>urn:cen.eu:en16931:2017</profile>
+      <validator version="2.24.0"/>
+      <rules>
+        <fired>19</fired>
+        <failed>8</failed>
+      </rules>
+      <duration unit="ms">2303</duration>
+    </info>
+    <messages>
+      <warning type="4" location="/*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]" criterion="string($endpointID)">BR-FR-12/BT-49 : Le BT-49 est obligatoire. Valeur actuelle : BT-49="". [ID BR-FR-12_BT-49] from /xslt/XP_Z12_012/20260216_BR-FR-Flux2-Schematron-CII_V1.3.0.xsl)</warning>  
+      <warning type="4" location="/*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]" criterion="string($endpointID)">BR-FR-13/BT-34 : Le BT-34 est obligatoire. Valeur actuelle : BT-34="". [ID BR-FR-13_BT-34] from /xslt/XP_Z12_012/20260216_BR-FR-Flux2-Schematron-CII_V1.3.0.xsl)</warning>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext[1]" criterion="ram:BusinessProcessSpecifiedDocumentContextParameter/ram:ID">Business process MUST be provided. [ID PEPPOL-EN16931-R001] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction[1]/ram:ApplicableHeaderTradeAgreement[1]/ram:SellerTradeParty[1]" criterion="ram:URIUniversalCommunication/ram:URIID">Seller electronic address MUST be provided [ID PEPPOL-EN16931-R020] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction[1]/ram:ApplicableHeaderTradeAgreement[1]/ram:BuyerTradeParty[1]" criterion="ram:URIUniversalCommunication/ram:URIID">Buyer electronic address MUST be provided [ID PEPPOL-EN16931-R010] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice" criterion="rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerReference[boolean(normalize-space(.))]">[BR-DE-15] Das Element "Buyer reference" (BT-10) muss übermittelt werden. [ID BR-DE-15] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext[1]" criterion="ram:GuidelineSpecifiedDocumentContextParameter/ram:ID = $XR-CIUS-ID or ram:GuidelineSpecifiedDocumentContextParameter/ram:ID = $XR-EXTENSION-ID or ram:GuidelineSpecifiedDocumentContextParameter/ram:ID = $XR-CVD-ID">[BR-DE-21] Das Element "Specification identifier" (BT-24) soll syntaktisch der Kennung des Standards XRechnung entsprechen. [ID BR-DE-21] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction[1]/ram:ApplicableHeaderTradeAgreement[1]/ram:SellerTradeParty[1]" criterion="ram:DefinedTradeContact">[BR-DE-2] Die Gruppe "SELLER CONTACT" (BG-6) muss übermittelt werden. [ID BR-DE-2] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice> 
+    </messages>
+    <summary status="valid"/>
+  </xml>
+  <messages></messages>
+  <summary status="valid"/>
+</validation>
+
+[exit 0]

@@ -1,0 +1,4 @@
+# Java image of the bench: Mustang CLI 2.24.0 (Maven Central, published on 11 June 2026)
+FROM eclipse-temurin:21-jre
+COPY Mustang-CLI-2.24.0.jar /opt/mustang.jar
+WORKDIR /banc

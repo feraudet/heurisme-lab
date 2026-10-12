@@ -1,0 +1,16 @@
+$ facturx-pdfgen -w sortie/visuel-pdfa.pdf factur-x.xml sortie/facture.pdf
+2026-10-12 20:49:30,581 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:30,581 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:30,582 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:30,582 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:30,583 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:30,583 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:30,586 [INFO] factur-x XML file successfully validated against XSD in 0.002804 sec
+2026-10-12 20:49:30,586 [INFO] factur-x XML file successfully validated against XSD in 0.002804 sec
+2026-10-12 20:49:31,069 [INFO] factur-x XML file successfully validated against 1 schematron(s) in 0.481957 sec
+2026-10-12 20:49:31,069 [INFO] factur-x XML file successfully validated against 1 schematron(s) in 0.481957 sec
+2026-10-12 20:49:31,084 [INFO] factur-x.xml file added to PDF document
+2026-10-12 20:49:31,084 [INFO] factur-x.xml file added to PDF document
+2026-10-12 20:49:31,088 [INFO] factur-x PDF generated in 0.505848 sec
+2026-10-12 20:49:31,088 [INFO] factur-x PDF generated in 0.505848 sec
+[exit 0]

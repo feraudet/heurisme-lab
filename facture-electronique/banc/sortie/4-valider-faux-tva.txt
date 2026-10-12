@@ -1,0 +1,38 @@
+$ java -jar /opt/mustang.jar --action validate --source faux-tva.pdf --disable-file-logging 2>faux-tva.journal.txt
+<?xml version="1.0" encoding="UTF-8"?>
+
+<validation filename="faux-tva.pdf" datetime="2026-10-12 20:49:43">
+  <pdf>ValidationResult [flavour=3b, totalAssertions=4626, assertions=[], isCompliant=true]
+    <info>
+      <signature>Factur/X Python</signature>
+      <duration unit="ms">1294</duration>
+    </info>
+    <summary status="valid"/>
+  </pdf>  
+  <xml>
+    <info>
+      <version>2</version>
+      <profile>urn:cen.eu:en16931:2017</profile>
+      <validator version="2.24.0"/>
+      <rules>
+        <fired>19</fired>
+        <failed>6</failed>
+      </rules>
+      <duration unit="ms">2054</duration>
+    </info>
+    <messages>
+      <error type="4" location="/*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:SupplyChainTradeTransaction[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:ApplicableHeaderTradeSettlement[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]/*:ApplicableTradeTax[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][2]" criterion="(round(.[normalize-space(upper-case(ram:TypeCode)) = 'VAT']/xs:decimal(ram:RateApplicablePercent)) = 0 and (round(xs:decimal(ram:CalculatedAmount)) = 0)) or (round(.[normalize-space(upper-case(ram:TypeCode)) = 'VAT']/xs:decimal(ram:RateApplicablePercent)) != 0 and ((abs(xs:decimal(ram:CalculatedAmount)) - 1 &lt;= round(abs(xs:decimal(ram:BasisAmount)) * (.[normalize-space(upper-case(ram:TypeCode)) = 'VAT']/xs:decimal(ram:RateApplicablePercent) div 100) * 10 * 10) div 100 ) and (abs(xs:decimal(ram:CalculatedAmount)) + 1 &gt;= round(abs(xs:decimal(ram:BasisAmount)) * (.[normalize-space(upper-case(ram:TypeCode)) = 'VAT']/xs:decimal(ram:RateApplicablePercent) div 100) * 10 * 10) div 100 ))) or (not(exists(.[normalize-space(upper-case(ram:TypeCode))='VAT']/xs:decimal(ram:RateApplicablePercent))) and (round(xs:decimal(ram:CalculatedAmount)) = 0))">[BR-CO-17]-VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals. from /xslt/ZF_250/FACTUR-X_EN16931.xslt)</error>  
+      <error type="4" location="/*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:SupplyChainTradeTransaction[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:ApplicableHeaderTradeSettlement[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]/*:ApplicableTradeTax[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][2]/*:CategoryCode[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]" criterion="(abs(xs:decimal(../ram:CalculatedAmount)) - 1 &lt; round(abs(xs:decimal(../ram:BasisAmount)) * ../ram:RateApplicablePercent) div 100 ) and (abs(xs:decimal(../ram:CalculatedAmount)) + 1 &gt; round(abs(xs:decimal(../ram:BasisAmount)) * ../ram:RateApplicablePercent) div 100 )">[BR-S-09]-The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is "Standard rated" shall equal the VAT category taxable amount (BT-116) multiplied by the VAT category rate (BT-119). from /xslt/ZF_250/FACTUR-X_EN16931.xslt)</error>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext[1]" criterion="ram:BusinessProcessSpecifiedDocumentContextParameter/ram:ID">Business process MUST be provided. [ID PEPPOL-EN16931-R001] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice" criterion="rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerReference[boolean(normalize-space(.))]">[BR-DE-15] Das Element "Buyer reference" (BT-10) muss übermittelt werden. [ID BR-DE-15] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext[1]" criterion="ram:GuidelineSpecifiedDocumentContextParameter/ram:ID = $XR-CIUS-ID or ram:GuidelineSpecifiedDocumentContextParameter/ram:ID = $XR-EXTENSION-ID or ram:GuidelineSpecifiedDocumentContextParameter/ram:ID = $XR-CVD-ID">[BR-DE-21] Das Element "Specification identifier" (BT-24) soll syntaktisch der Kennung des Standards XRechnung entsprechen. [ID BR-DE-21] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice>  
+      <notice type="27" location="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction[1]/ram:ApplicableHeaderTradeAgreement[1]/ram:SellerTradeParty[1]" criterion="ram:DefinedTradeContact">[BR-DE-2] Die Gruppe "SELLER CONTACT" (BG-6) muss übermittelt werden. [ID BR-DE-2] from /xslt/XR_30/XRechnung-CII-validation.xslt)</notice>  
+      <warning type="10">Arithmetical issue:Payable total in XML is 2928.00, but calculated total is 2922.20 with tax basis 2440.00 and with positions 2440.00 = 2400.00 + 40.00</warning> 
+    </messages>
+    <summary status="invalid"/>
+  </xml>
+  <messages></messages>
+  <summary status="invalid"/>
+</validation>
+
+[exit 255]

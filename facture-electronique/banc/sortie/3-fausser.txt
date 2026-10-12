@@ -1,0 +1,90 @@
+$ diff factur-x.xml faux-total.xml
+157,158c157,158
+<         <ram:GrandTotalAmount>2922.20</ram:GrandTotalAmount>
+<         <ram:DuePayableAmount>2922.20</ram:DuePayableAmount>
+---
+>         <ram:GrandTotalAmount>2922.00</ram:GrandTotalAmount>
+>         <ram:DuePayableAmount>2922.00</ram:DuePayableAmount>
+$ diff factur-x.xml faux-tva.xml
+141c141
+<         <ram:CalculatedAmount>2.20</ram:CalculatedAmount>
+---
+>         <ram:CalculatedAmount>8.00</ram:CalculatedAmount>
+156,158c156,158
+<         <ram:TaxTotalAmount currencyID="EUR">482.20</ram:TaxTotalAmount>
+<         <ram:GrandTotalAmount>2922.20</ram:GrandTotalAmount>
+<         <ram:DuePayableAmount>2922.20</ram:DuePayableAmount>
+---
+>         <ram:TaxTotalAmount currencyID="EUR">488.00</ram:TaxTotalAmount>
+>         <ram:GrandTotalAmount>2928.00</ram:GrandTotalAmount>
+>         <ram:DuePayableAmount>2928.00</ram:DuePayableAmount>
+$ diff factur-x.xml faux-centimes.xml
+141c141
+<         <ram:CalculatedAmount>2.20</ram:CalculatedAmount>
+---
+>         <ram:CalculatedAmount>2.00</ram:CalculatedAmount>
+156,158c156,158
+<         <ram:TaxTotalAmount currencyID="EUR">482.20</ram:TaxTotalAmount>
+<         <ram:GrandTotalAmount>2922.20</ram:GrandTotalAmount>
+<         <ram:DuePayableAmount>2922.20</ram:DuePayableAmount>
+---
+>         <ram:TaxTotalAmount currencyID="EUR">482.00</ram:TaxTotalAmount>
+>         <ram:GrandTotalAmount>2922.00</ram:GrandTotalAmount>
+>         <ram:DuePayableAmount>2922.00</ram:DuePayableAmount>
+
+$ facturx-pdfgen -w visuel-pdfa.pdf faux-total.xml faux-total.pdf
+2026-10-12 20:49:36,351 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:36,351 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:36,354 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:36,354 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:36,355 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:36,355 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:36,361 [INFO] factur-x XML file successfully validated against XSD in 0.005384 sec
+2026-10-12 20:49:36,361 [INFO] factur-x XML file successfully validated against XSD in 0.005384 sec
+2026-10-12 20:49:36,782 [ERROR] The factur-x en16931 XML file is invalid against 1 schematron(s): 1 errors found.
+2026-10-12 20:49:36,782 [ERROR] The factur-x en16931 XML file is invalid against 1 schematron(s): 1 errors found.
+2026-10-12 20:49:36,782 [ERROR] 1. [base] [BR-CO-15]-Invoice total amount with VAT (BT-112) = Invoice total amount without VAT (BT-109) + Invoice total VAT amount (BT-110).
+Error location: /*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:SupplyChainTradeTransaction[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:ApplicableHeaderTradeSettlement[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]/*:SpecifiedTradeSettlementHeaderMonetarySummation[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]
+2026-10-12 20:49:36,782 [ERROR] 1. [base] [BR-CO-15]-Invoice total amount with VAT (BT-112) = Invoice total amount without VAT (BT-109) + Invoice total VAT amount (BT-110).
+Error location: /*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:SupplyChainTradeTransaction[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:ApplicableHeaderTradeSettlement[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]/*:SpecifiedTradeSettlementHeaderMonetarySummation[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]
+2026-10-12 20:49:36,782 [ERROR] factur-x lib call failed, exiting.
+2026-10-12 20:49:36,782 [ERROR] factur-x lib call failed, exiting.
+[exit 1]
+$ facturx-pdfgen -w visuel-pdfa.pdf faux-tva.xml faux-tva.pdf
+2026-10-12 20:49:37,254 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:37,254 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:37,256 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:37,256 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:37,256 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:37,256 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:37,259 [INFO] factur-x XML file successfully validated against XSD in 0.002303 sec
+2026-10-12 20:49:37,259 [INFO] factur-x XML file successfully validated against XSD in 0.002303 sec
+2026-10-12 20:49:37,683 [ERROR] The factur-x en16931 XML file is invalid against 1 schematron(s): 2 errors found.
+2026-10-12 20:49:37,683 [ERROR] The factur-x en16931 XML file is invalid against 1 schematron(s): 2 errors found.
+2026-10-12 20:49:37,683 [ERROR] 1. [base] [BR-CO-17]-VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals.
+Error location: /*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:SupplyChainTradeTransaction[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:ApplicableHeaderTradeSettlement[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]/*:ApplicableTradeTax[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][2]
+2026-10-12 20:49:37,683 [ERROR] 1. [base] [BR-CO-17]-VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals.
+Error location: /*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:SupplyChainTradeTransaction[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:ApplicableHeaderTradeSettlement[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]/*:ApplicableTradeTax[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][2]
+2026-10-12 20:49:37,683 [ERROR] 2. [base] [BR-S-09]-The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is "Standard rated" shall equal the VAT category taxable amount (BT-116) multiplied by the VAT category rate (BT-119).
+Error location: /*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:SupplyChainTradeTransaction[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:ApplicableHeaderTradeSettlement[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]/*:ApplicableTradeTax[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][2]/*:CategoryCode[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]
+2026-10-12 20:49:37,683 [ERROR] 2. [base] [BR-S-09]-The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is "Standard rated" shall equal the VAT category taxable amount (BT-116) multiplied by the VAT category rate (BT-119).
+Error location: /*:CrossIndustryInvoice[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:SupplyChainTradeTransaction[namespace-uri()='urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100'][1]/*:ApplicableHeaderTradeSettlement[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]/*:ApplicableTradeTax[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][2]/*:CategoryCode[namespace-uri()='urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100'][1]
+2026-10-12 20:49:37,683 [ERROR] factur-x lib call failed, exiting.
+2026-10-12 20:49:37,683 [ERROR] factur-x lib call failed, exiting.
+[exit 1]
+$ facturx-pdfgen -w visuel-pdfa.pdf faux-centimes.xml faux-centimes.pdf
+2026-10-12 20:49:38,100 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:38,100 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:38,102 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:38,102 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:38,102 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:38,102 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:38,104 [INFO] factur-x XML file successfully validated against XSD in 0.002431 sec
+2026-10-12 20:49:38,104 [INFO] factur-x XML file successfully validated against XSD in 0.002431 sec
+2026-10-12 20:49:38,485 [INFO] factur-x XML file successfully validated against 1 schematron(s) in 0.380907 sec
+2026-10-12 20:49:38,485 [INFO] factur-x XML file successfully validated against 1 schematron(s) in 0.380907 sec
+2026-10-12 20:49:38,494 [INFO] factur-x.xml file added to PDF document
+2026-10-12 20:49:38,494 [INFO] factur-x.xml file added to PDF document
+2026-10-12 20:49:38,498 [INFO] factur-x PDF generated in 0.397473 sec
+2026-10-12 20:49:38,498 [INFO] factur-x PDF generated in 0.397473 sec
+[exit 0]

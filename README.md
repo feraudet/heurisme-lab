@@ -28,5 +28,6 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [llm-meme-prompt](llm-meme-prompt/) | [Same prompt, two answers](https://heurisme.fr/en/blog/llm-meme-prompt/) |
 | [tokens-format](tokens-format/) | [JSON, YAML or CSV: what a prompt costs](https://heurisme.fr/en/blog/tokens-format/) |
 | [llm-juge-biais](llm-juge-biais/) | [The LLM judge that prefers the longest answer](https://heurisme.fr/en/blog/llm-juge-biais/) |
+| [facture-electronique](facture-electronique/) | [An electronic invoice, seen from the inside](https://heurisme.fr/en/blog/facture-electronique/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).

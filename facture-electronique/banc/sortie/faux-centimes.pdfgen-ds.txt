@@ -1,0 +1,14 @@
+2026-10-12 20:49:38,687 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:38,687 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:38,688 [WARNING] File faux-centimes.pdf already exists. Overwriting it.
+2026-10-12 20:49:38,688 [WARNING] File faux-centimes.pdf already exists. Overwriting it.
+2026-10-12 20:49:38,689 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:38,689 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:38,689 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:38,689 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:38,691 [INFO] factur-x XML file successfully validated against XSD in 0.001875 sec
+2026-10-12 20:49:38,691 [INFO] factur-x XML file successfully validated against XSD in 0.001875 sec
+2026-10-12 20:49:38,700 [INFO] factur-x.xml file added to PDF document
+2026-10-12 20:49:38,700 [INFO] factur-x.xml file added to PDF document
+2026-10-12 20:49:38,703 [INFO] factur-x PDF generated in 0.01533 sec
+2026-10-12 20:49:38,703 [INFO] factur-x PDF generated in 0.01533 sec

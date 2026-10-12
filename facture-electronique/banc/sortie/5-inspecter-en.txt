@@ -1,0 +1,52 @@
+$ python couches.py --en facture.pdf
+== 1. The page (what a human reads)
+pages: 1
+  FACTURE FX-2026-0042 Document de test entièrement fictif
+  Date : 15/06/2026    Livraison : 12/06/2026    Échéance : 15/07/2026
+  Vendeur
+  ...
+== 2. The attached file
+name: factur-x.xml
+AFRelationship: /Data
+Subtype: /text/xml
+size: 7640 bytes
+/AF in the catalog: 1 associated file(s)
+OutputIntent: /GTS_PDFA1 sRGB
+== 3. The XMP metadata
+pdfaid:part = 3
+pdfaid:conformance = B
+fx:DocumentType = INVOICE
+fx:DocumentFileName = factur-x.xml
+fx:Version = 1.0
+fx:ConformanceLevel = EN 16931
+[exit 0]
+$ python champs.py --en facture.pdf
+2026-10-12 20:49:56,432 [INFO] A valid XML file factur-x.xml has been found in the PDF
+2026-10-12 20:49:56,432 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:56,432 [INFO] XML file factur-x.xml extracted from PDF
+extracted: factur-x.xml, 7640 bytes
+BT-24  profile                         urn:cen.eu:en16931:2017
+BT-1   number                          FX-2026-0042
+BT-3   type (380 = invoice)            380
+BT-2   date                            20260615
+BT-27  seller                          Atelier Fictif SAS
+BT-30  seller SIREN                    000000018  (schemeID 0002)
+BT-31  seller VAT number               FR66000000018  (schemeID VA)
+BT-34  seller electronic address       000000018  (schemeID 0225)
+BT-44  buyer                           Client Exemple SARL
+BT-47  buyer SIREN                     000000026  (schemeID 0002)
+BT-48  buyer VAT number                FR90000000026  (schemeID VA)
+BT-49  buyer electronic address        000000026  (schemeID 0225)
+line 1: Conseil technique (jour), 3 x 800.00 = 2400.00 excl. VAT, VAT 20.00 %
+line 2: Guide technique imprimé, 1 x 40.00 = 40.00 excl. VAT, VAT 5.50 %
+BG-23  VAT 20.00 %: basis 2400.00, amount 480.00
+BG-23  VAT  5.50 %: basis 40.00, amount 2.20
+BT-106 sum of lines                    2440.00
+BT-109 total excl. VAT                 2440.00
+BT-110 total VAT                       482.20
+BT-112 total incl. VAT                 2922.20
+BT-115 amount due                      2922.20
+BT-21  note PMD: Pénalités de retard : trois fois le taux d'intérêt légal.
+BT-21  note PMT: Indemnité forfaitaire pour frais de recouvrement : 40 euros.
+BT-21  note AAB: Pas d'escompte pour paiement anticipé.
+[exit 0]

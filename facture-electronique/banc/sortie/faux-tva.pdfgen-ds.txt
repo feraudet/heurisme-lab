@@ -1,0 +1,12 @@
+2026-10-12 20:49:37,883 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:37,883 [INFO] pdfgen version 0.9 using factur-x lib version 5.0
+2026-10-12 20:49:37,885 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:37,885 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:37,885 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:37,885 [INFO] Level is en16931 (autodetected)
+2026-10-12 20:49:37,889 [INFO] factur-x XML file successfully validated against XSD in 0.003194 sec
+2026-10-12 20:49:37,889 [INFO] factur-x XML file successfully validated against XSD in 0.003194 sec
+2026-10-12 20:49:37,900 [INFO] factur-x.xml file added to PDF document
+2026-10-12 20:49:37,900 [INFO] factur-x.xml file added to PDF document
+2026-10-12 20:49:37,904 [INFO] factur-x PDF generated in 0.019773 sec
+2026-10-12 20:49:37,904 [INFO] factur-x PDF generated in 0.019773 sec

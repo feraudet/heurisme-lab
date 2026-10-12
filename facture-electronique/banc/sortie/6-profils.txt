@@ -1,0 +1,7 @@
+$ python profils.py factur-x.xml
+minimum   refusé par XSD : Element '{urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100}IncludedNote': This element is not expected., line 14.
+basicwl   refusé par XSD : Element '{urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100}IncludedSupplyChainTradeLineItem': This element is not expected. Expected is ( {urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100}ApplicableHeaderTradeAgreement )., line 28.
+basic     refusé par Schematron : 1. [base] Value of 'ram:ID' is not allowed.
+en16931   OK (XSD et Schematron)
+extended  refusé par Schematron : 1. [base] Value of 'ram:ID' is not allowed.
+[exit 0]

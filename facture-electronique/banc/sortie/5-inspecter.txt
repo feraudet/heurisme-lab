@@ -1,0 +1,52 @@
+$ python couches.py facture.pdf
+== 1. La page (ce que l'humain lit)
+pages : 1
+  FACTURE FX-2026-0042 Document de test entièrement fictif
+  Date : 15/06/2026    Livraison : 12/06/2026    Échéance : 15/07/2026
+  Vendeur
+  ...
+== 2. Le fichier joint
+nom : factur-x.xml
+AFRelationship : /Data
+Subtype : /text/xml
+taille : 7640 octets
+/AF dans le catalogue : 1 fichier(s) associé(s)
+OutputIntent : /GTS_PDFA1 sRGB
+== 3. Les métadonnées XMP
+pdfaid:part = 3
+pdfaid:conformance = B
+fx:DocumentType = INVOICE
+fx:DocumentFileName = factur-x.xml
+fx:Version = 1.0
+fx:ConformanceLevel = EN 16931
+[exit 0]
+$ python champs.py facture.pdf
+2026-10-12 20:49:52,266 [INFO] A valid XML file factur-x.xml has been found in the PDF
+2026-10-12 20:49:52,267 [INFO] Flavor is factur-x (autodetected)
+2026-10-12 20:49:52,267 [INFO] XML file factur-x.xml extracted from PDF
+extrait : factur-x.xml, 7640 octets
+BT-24  profil                          urn:cen.eu:en16931:2017
+BT-1   numéro                          FX-2026-0042
+BT-3   type (380 = facture)            380
+BT-2   date                            20260615
+BT-27  vendeur                         Atelier Fictif SAS
+BT-30  SIREN vendeur                   000000018  (schemeID 0002)
+BT-31  TVA vendeur                     FR66000000018  (schemeID VA)
+BT-34  adresse électronique vendeur    000000018  (schemeID 0225)
+BT-44  acheteur                        Client Exemple SARL
+BT-47  SIREN acheteur                  000000026  (schemeID 0002)
+BT-48  TVA acheteur                    FR90000000026  (schemeID VA)
+BT-49  adresse électronique acheteur   000000026  (schemeID 0225)
+ligne 1 : Conseil technique (jour), 3 x 800.00 = 2400.00 HT, TVA 20.00 %
+ligne 2 : Guide technique imprimé, 1 x 40.00 = 40.00 HT, TVA 5.50 %
+BG-23  TVA 20.00 % : base 2400.00, montant 480.00
+BG-23  TVA  5.50 % : base 40.00, montant 2.20
+BT-106 somme des lignes                2440.00
+BT-109 total HT                        2440.00
+BT-110 total TVA                       482.20
+BT-112 total TTC                       2922.20
+BT-115 à payer                         2922.20
+BT-21  note PMD : Pénalités de retard : trois fois le taux d'intérêt légal.
+BT-21  note PMT : Indemnité forfaitaire pour frais de recouvrement : 40 euros.
+BT-21  note AAB : Pas d'escompte pour paiement anticipé.
+[exit 0]
