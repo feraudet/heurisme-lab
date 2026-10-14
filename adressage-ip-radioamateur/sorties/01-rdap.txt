@@ -1,0 +1,21 @@
+$ python3 analyse.py rdap
+query 44.0.0.0/8 -> NET-44-0-0-0-0 (NET44)
+  44.0.0.0 - 44.255.255.255 = 44.0.0.0/8
+  registrant ARIN (American Registry for Internet Numbers)
+  registered 1992-07-01, last changed 2019-07-17
+query 44.0.0.0/9 -> NET-44-0-0-0-1 (AMPRNET)
+  44.0.0.0 - 44.191.255.255 = 44.0.0.0/9, 44.128.0.0/10
+  registrant ARDC (Amateur Radio Digital Communications)
+  registered 1992-07-01, last changed 2024-11-07
+query 44.151.0.0/16 -> NET-44-0-0-0-1 (AMPRNET)
+  44.0.0.0 - 44.191.255.255 = 44.0.0.0/9, 44.128.0.0/10
+  registrant ARDC (Amateur Radio Digital Communications)
+  registered 1992-07-01, last changed 2024-11-07
+query 44.192.0.0/10 -> NET-44-192-0-0-1 (AMAZO-4)
+  44.192.0.0 - 44.255.255.255 = 44.192.0.0/10
+  registrant AMAZO-4 (Amazon.com, Inc.)
+  registered 2019-07-18, last changed 2019-07-18
+ARIN entity ARDC (Amateur Radio Digital Communications): 1 network(s)
+  NET-44-0-0-0-1  44.0.0.0 - 44.191.255.255  ipVersion v4
+AS56508 (ARDC Amateur Radio Digital Communications) originates: 23 IPv4 prefix(es), 0 IPv6 prefix(es)
+(exit 0)

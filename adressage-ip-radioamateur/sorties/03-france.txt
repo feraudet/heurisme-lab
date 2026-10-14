@@ -1,0 +1,32 @@
+$ python3 analyse.py france
+AMPRNet geofeed (portal.ampr.org): 4191 entries, 68 country codes
+top 5 countries by number of entries
+  US   1916
+  FR    362
+  GB    354
+  TH    219
+  CA    213
+FR entries: 362
+
+FR entries inside 44.151.0.0/16: 303
+  by length: /16 x1, /17 x1, /27 x1, /28 x1, /29 x2, /30 x2, /32 x295
+  first line: 44.151.0.0/16,FR,Bretagne,Brest,
+FR entries outside 44.151.0.0/16: 59
+
+BGP for 44.151.0.0/16 (RIS dump 2026-10-14T16:00:00 UTC)
+  announced itself: no
+  more specifics announced: 0
+  covered by: 44.128.0.0/10 AS7377 UCSD - University of California, San Diego
+
+FR geofeed entries that match a BGP announcement exactly (all outside 44.151.0.0/16)
+  44.7.0.0/20        AS20473
+  44.30.79.0/24      AS204186
+  44.31.40.0/24      AS212948
+  44.31.71.0/24      AS34019
+  44.31.84.0/24      AS208529
+  44.31.138.0/23     AS197922
+  44.31.174.0/24     AS206155
+  44.31.190.0/24     AS209097
+  44.32.55.0/24      AS51083
+  total: 9 of 362 FR entries
+(exit 0)

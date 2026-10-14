@@ -1,0 +1,37 @@
+$ python3 analyse.py bgp
+RIS dump 2026-10-14T16:00:00 UTC, routes seen by at least 10 RIS peers (RIPEstat routing-status default)
+44.0.0.0/8 itself announced: no
+distinct prefixes announced inside 44.0.0.0/8: 608
+distinct (prefix, origin AS) pairs: 609
+distinct origin AS: 374
+
+prefixes by length: /9 x1, /10 x2, /11 x2, /16 x7, /17 x2, /18 x1, /19 x1, /20 x5, /21 x9, /22 x21, /23 x23, /24 x534
+longest prefix announced: /24
+
+by block               prefixes   more specifics   addresses in more specifics
+  44.0.0.0/9               571              570       580,864 (6.92 % of the block)
+  44.128.0.0/10             34               33       142,592 (3.40 % of the block)
+  44.192.0.0/10              3                2     4,194,304 (100.00 % of the block)
+
+addresses covered by an announcement inside 44.0.0.0/8: 16,777,216
+  of which originated by Amazon (AS16509, AS14618): 4,194,304 (25.00 %)
+
+covering routes of the three blocks
+  44.0.0.0/9       AS7377    UCSD - University of California, San Diego
+  44.128.0.0/10    AS7377    UCSD - University of California, San Diego
+  44.192.0.0/10    AS16509   AMAZON-02 - Amazon.com, Inc.
+  44.192.0.0/11    AS14618   AMAZON-AES - Amazon.com, Inc.
+  44.224.0.0/11    AS16509   AMAZON-02 - Amazon.com, Inc.
+
+top 10 origin AS inside 44.0.0.0/9 and 44.128.0.0/10, by number of prefixes
+  AS20473     98  AS-VULTR - The Constant Company, LLC
+  AS56508     23  ARDC Amateur Radio Digital Communications
+  AS63479     11  HAMWAN - HamWAN
+  AS50131      7  SPARTANHOST Spartan Host Ltd
+  AS4764       6  WIDEBAND-AS-AP - Aussie Broadband
+  AS20712      5  AS20712 Andrews & Arnold Ltd
+  AS53356      5  FREE RANGE CLOUD - Free Range Cloud Hosting Inc.
+  AS55016      5  IMPER-AS-1 - Imperium Inc.
+  AS57883      5  NITAET NITAET
+  AS6140       4  TWO-P - Two P
+(exit 0)

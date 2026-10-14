@@ -29,5 +29,6 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [tokens-format](tokens-format/) | [JSON, YAML or CSV: what a prompt costs](https://heurisme.fr/en/blog/tokens-format/) |
 | [llm-juge-biais](llm-juge-biais/) | [The LLM judge that prefers the longest answer](https://heurisme.fr/en/blog/llm-juge-biais/) |
 | [facture-electronique](facture-electronique/) | [An electronic invoice, seen from the inside](https://heurisme.fr/en/blog/facture-electronique/) |
+| [adressage-ip-radioamateur](adressage-ip-radioamateur/) | [44Net: the amateur radio IP network](https://heurisme.fr/en/blog/adressage-ip-radioamateur/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).
