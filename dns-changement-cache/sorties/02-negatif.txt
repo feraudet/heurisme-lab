@@ -1,0 +1,52 @@
+# t = 0 s
+$ dig @172.30.153.20 v2.exemple.test A +noall +comments +answer +authority +noedns
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: <id>
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+
+;; AUTHORITY SECTION:
+exemple.test.		30	IN	SOA	ns.exemple.test. hostmaster.exemple.test. 2026101502 3600 600 86400 30
+
+
+# t = 2 s: the zone on the authoritative server is now zones/03-v2-cree.zone (v2.exemple.test created, 192.0.2.20)
+
+# t = 3 s
+$ dig @172.30.153.10 v2.exemple.test A +norecurse +noall +comments +answer +noedns
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: <id>
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; ANSWER SECTION:
+v2.exemple.test.	60	IN	A	192.0.2.20
+
+
+# t = 10 s
+$ dig @172.30.153.20 v2.exemple.test A +noall +comments +answer +authority +noedns
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: <id>
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+
+;; AUTHORITY SECTION:
+exemple.test.		20	IN	SOA	ns.exemple.test. hostmaster.exemple.test. 2026101502 3600 600 86400 30
+
+
+# t = 29 s
+$ dig @172.30.153.20 v2.exemple.test A +noall +comments +answer +authority +noedns
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: <id>
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+
+;; AUTHORITY SECTION:
+exemple.test.		1	IN	SOA	ns.exemple.test. hostmaster.exemple.test. 2026101502 3600 600 86400 30
+
+
+# t = 31 s
+$ dig @172.30.153.20 v2.exemple.test A +noall +comments +answer +authority +noedns
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: <id>
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; ANSWER SECTION:
+v2.exemple.test.	60	IN	A	192.0.2.20
+
+

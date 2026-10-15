@@ -1,0 +1,27 @@
+$ python3 accents.py
+French corpus (523 paragraphs of the Python docs)
+  already in NFC form: yes
+  accented letters: 3151 of 119769 characters (2.6 %)
+  words with at least one accent: 2778 of 19344 (14.4 %)
+  most frequent: é 2179, è 301, à 300, ê 204, î 78, ô 25
+  UTF-8 bytes: as is 123148, without accents 119997, NFD 126299
+
+no acc. = accents removed, NFD = accents decomposed
+gap = share of the FR-EN gap closed by removing the accents
+tokenizer            EN     FR no acc.   diff    NFD    diff   gap
+cl100k_base       20516  29718   28950  -2.6%  34316  +15.5%    8%
+o200k_base        20549  26013   26468  +1.7%  31291  +20.3%   -8%
+Mistral-7B-v0.3   22811  34291   33341  -2.8%  38347  +11.8%    8%
+Mistral-NeMo      20923  26354   27285  +3.5%  35518  +34.8%  -17%
+Qwen2.5           20598  29482   29030  -1.5%  29482   +0.0%    5%
+CroissantLLM      21626  24736   26216  +6.0%  24736   +0.0%  -48%
+
+Tokens per word, French words with and without an accent (each word alone, after a space)
+tokenizer          with accent  without
+cl100k_base               2.15     1.24
+o200k_base                1.49     1.14
+Mistral-7B-v0.3           2.40     1.39
+Mistral-NeMo              1.45     1.17
+Qwen2.5                   2.05     1.25
+CroissantLLM              1.41     1.18
+(exit 0)

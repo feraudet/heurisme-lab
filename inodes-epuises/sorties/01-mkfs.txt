@@ -1,0 +1,38 @@
+$ grep -n 'inode_ratio' /etc/mke2fs.conf
+7:	inode_ratio = 16384
+18:		inode_ratio = 4096
+22:		inode_ratio = 8192
+25:		inode_ratio = 32768
+28:		inode_ratio = 65536
+31:		inode_ratio = 4096
+34:		inode_ratio = 1048576
+38:		inode_ratio = 4194304
+
+$ truncate -s 128M var.img
+
+$ mkfs.ext4 -q -T default var.img
+
+$ dumpe2fs -h var.img 2>/dev/null | grep -E '^(Block count|Block size|Inode count|Inode size):'
+Inode count:              8192
+Block count:              32768
+Block size:               4096
+Inode size:	          256
+
+$ mount -o loop var.img /srv/var
+
+$ df -h --output=size,used,avail,pcent,target /srv/var
+ Size  Used Avail Use% Mounted on
+ 110M   24K  101M   1% /srv/var
+
+$ df --output=itotal,iused,iavail,ipcent,target /srv/var
+Inodes IUsed IFree IUse% Mounted on
+  8192    11  8181    1% /srv/var
+
+$ truncate -s 20G disque-20G.img
+
+$ mkfs.ext4 -q disque-20G.img
+
+$ dumpe2fs -h disque-20G.img 2>/dev/null | grep -E '^(Block count|Inode count):'
+Inode count:              1310720
+Block count:              5242880
+

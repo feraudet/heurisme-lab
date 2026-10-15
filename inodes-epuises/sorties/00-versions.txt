@@ -1,0 +1,5 @@
+coreutils	9.1-1
+e2fsprogs	1.47.0-2+b2
+php-common	2:93
+php8.2-cli	8.2.34-1~deb12u1
+xfsprogs	6.1.0-1

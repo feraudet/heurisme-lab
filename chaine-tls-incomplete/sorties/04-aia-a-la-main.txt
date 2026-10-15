@@ -1,0 +1,14 @@
+$ openssl x509 -in pki/feuille.crt -noout -ext authorityInfoAccess
+Authority Information Access: 
+    CA Issuers - URI:http://pki.exemple.test/intermediaire.crt
+(exit 0)
+$ curl -s http://pki.exemple.test/intermediaire.crt -o /tmp/intermediaire.der -w "%{http_code} %{content_type}\n"
+200 text/plain
+(exit 0)
+$ openssl x509 -inform DER -in /tmp/intermediaire.der -out /tmp/intermediaire.pem && openssl x509 -in /tmp/intermediaire.pem -noout -subject -issuer
+subject=CN = Exemple Intermediaire
+issuer=CN = Exemple Racine
+(exit 0)
+$ openssl verify -CAfile pki/racine.crt -untrusted /tmp/intermediaire.pem pki/feuille.crt
+pki/feuille.crt: OK
+(exit 0)

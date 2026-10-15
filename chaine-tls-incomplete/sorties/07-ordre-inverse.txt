@@ -1,0 +1,4 @@
+$ nginx -t -c /w/nginx-fullchain-a-l-envers.conf
+(date masked) [emerg] (pid masked): SSL_CTX_use_PrivateKey("/w/pki/feuille.key") failed (SSL: error:05800074:x509 certificate routines::key values mismatch)
+nginx: configuration file /w/nginx-fullchain-a-l-envers.conf test failed
+(exit 1)

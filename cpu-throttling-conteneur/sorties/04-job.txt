@@ -1,0 +1,14 @@
+$ python3 resume.py job
+background job: 4 threads x 50 ms of CPU = 200 ms of CPU
+wall time of the job in ms, median of all jobs of all runs [lowest-highest]
+no-limit     51.3 [50.1-62.8]  (105 jobs)
+cpus-1      175.2 [135.9-197.3]  (105 jobs)
+cpuset-0    210.8 [210.3-214.2]  (105 jobs)
+cpus-4       50.5 [50.1-60.0]  (105 jobs)
+
+job 10 of the first run, as printed by api (pause = no job thread progressed for more than 2 ms)
+no-limit   job 10 wall_ms 54.3
+cpus-1     job 10 wall_ms 137.9 pause 25.8-32.2 pause 57.1-132.8
+cpuset-0   job 10 wall_ms 210.4
+cpus-4     job 10 wall_ms 58.9
+(exit 0)

@@ -1,0 +1,80 @@
+$ python3 decoupe.py
+o200k_base, french: 18 tokens for 13 words
+  Ne          1  Ne
+  propose     1  ␣propose
+  jamais      1  ␣jamais
+  une         1  ␣une
+  commande    1  ␣commande
+  qui         1  ␣qui
+  redémarre   3  ␣red·ém·arre
+  un          1  ␣un
+  nœud        3  ␣n·œ·ud
+  de          1  ␣de
+  base        1  ␣base
+  de          1  ␣de
+  données.    2  ␣données·.
+
+o200k_base, english: 11 tokens for 9 words
+  Never       1  Never
+  suggest     1  ␣suggest
+  a           1  ␣a
+  command     1  ␣command
+  that        1  ␣that
+  restarts    2  ␣rest·arts
+  a           1  ␣a
+  database    1  ␣database
+  node.       2  ␣node·.
+
+Mistral-7B-v0.3, french: 21 tokens for 13 words
+  Ne          1  Ne
+  propose     1  ␣propose
+  jamais      1  ␣jamais
+  une         1  ␣une
+  commande    2  ␣command·e
+  qui         1  ␣qui
+  redémarre   4  ␣red·é·mar·re
+  un          1  ␣un
+  nœud        3  ␣n·œ·ud
+  de          1  ␣de
+  base        1  ␣base
+  de          1  ␣de
+  données.    3  ␣don·nées·.
+
+Mistral-7B-v0.3, english: 11 tokens for 9 words
+  Never       1  Never
+  suggest     1  ␣suggest
+  a           1  ␣a
+  command     1  ␣command
+  that        1  ␣that
+  restarts    2  ␣rest·arts
+  a           1  ␣a
+  database    1  ␣database
+  node.       2  ␣node·.
+
+CroissantLLM, french: 17 tokens for 13 words
+  Ne          1  Ne
+  propose     1  ␣propose
+  jamais      1  ␣jamais
+  une         1  ␣une
+  commande    1  ␣commande
+  qui         1  ␣qui
+  redémarre   3  ␣red·ém·arre
+  un          1  ␣un
+  nœud        3  ␣n·œ·ud
+  de          1  ␣de
+  base        1  ␣base
+  de          1  ␣de
+  données.    1  ␣données.
+
+CroissantLLM, english: 10 tokens for 9 words
+  Never       1  Never
+  suggest     1  ␣suggest
+  a           1  ␣a
+  command     1  ␣command
+  that        1  ␣that
+  restarts    2  ␣rest·arts
+  a           1  ␣a
+  database    1  ␣database
+  node.       1  ␣node.
+
+(exit 0)

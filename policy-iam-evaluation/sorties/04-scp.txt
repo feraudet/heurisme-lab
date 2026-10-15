@@ -1,0 +1,33 @@
+$ python3 simule.py scp
+action    s3:PutObject
+resource  arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip
+policies  role-deploy, boundary-deploy (every case below)
+
+[H] account SCP allows ec2:* only
+    SCP full-access > ec2-only   context: (none)
+  EvalDecision          implicitDeny
+  MatchedStatements     (none)
+  MissingContextValues  (none)
+  AllowedByOrganizations        false
+
+[I] SCP denies outside eu-west-3, request to us-east-1
+    SCP full-access > full-access+region   context: aws:RequestedRegion=us-east-1
+  EvalDecision          explicitDeny
+  MatchedStatements     (none)
+  MissingContextValues  (none)
+  AllowedByOrganizations        false
+
+[J] SCP denies outside eu-west-3, no context given
+    SCP full-access > full-access+region   context: (none)
+  EvalDecision          explicitDeny
+  MatchedStatements     (none)
+  MissingContextValues  (none)
+  AllowedByOrganizations        false
+
+[K] SCP denies outside eu-west-3, request to eu-west-3
+    SCP full-access > full-access+region   context: aws:RequestedRegion=eu-west-3
+  EvalDecision          allowed
+  MatchedStatements     PolicyInputList.1 (IAM Policy) lines 3-9
+  MissingContextValues  (none)
+  AllowedByPermissionsBoundary  true
+  AllowedByOrganizations        true

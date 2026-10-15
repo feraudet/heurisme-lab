@@ -1,0 +1,32 @@
+# t = 0 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	60	IN	A	192.0.2.10
+
+# t = 2 s: the zone on the authoritative server is now zones/02-bascule.zone (www 192.0.2.10 -> 192.0.2.20, TTL 60 s)
+
+# t = 3 s
+$ dig @172.30.153.10 www.exemple.test A +norecurse +noall +comments +answer +noedns
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: <id>
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; ANSWER SECTION:
+www.exemple.test.	60	IN	A	192.0.2.20
+
+
+# t = 10 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	50	IN	A	192.0.2.10
+
+# t = 30 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	30	IN	A	192.0.2.10
+
+# t = 59 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	1	IN	A	192.0.2.10
+
+# t = 61 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	60	IN	A	192.0.2.20
+

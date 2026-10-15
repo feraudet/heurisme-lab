@@ -1,0 +1,23 @@
+$ openssl x509 -in pki/racine.crt -noout -subject -issuer -serial -dates
+subject=CN = Exemple Racine
+issuer=CN = Exemple Racine
+serial=1001
+notBefore=Oct  1 00:00:00 2026 GMT
+notAfter=Oct  1 00:00:00 2036 GMT
+(exit 0)
+$ openssl x509 -in pki/intermediaire.crt -noout -subject -issuer -serial -ext basicConstraints
+subject=CN = Exemple Intermediaire
+issuer=CN = Exemple Racine
+serial=2001
+X509v3 Basic Constraints: critical
+    CA:TRUE, pathlen:0
+(exit 0)
+$ openssl x509 -in pki/feuille.crt -noout -subject -issuer -serial -ext subjectAltName,authorityInfoAccess
+subject=CN = www.exemple.test
+issuer=CN = Exemple Intermediaire
+serial=3001
+X509v3 Subject Alternative Name: 
+    DNS:www.exemple.test
+Authority Information Access: 
+    CA Issuers - URI:http://pki.exemple.test/intermediaire.crt
+(exit 0)

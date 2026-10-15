@@ -1,0 +1,18 @@
+$ python3 simule.py boundary
+action    s3:PutObject
+resource  arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip
+policies  role-deploy (every case below)
+
+[C] push allowed, read-only boundary
+    boundary-lecture   context: (none)
+  EvalDecision          implicitDeny
+  MatchedStatements     (none)
+  MissingContextValues  (none)
+  AllowedByPermissionsBoundary  false
+
+[D] push allowed, boundary that allows push
+    boundary-deploy   context: (none)
+  EvalDecision          allowed
+  MatchedStatements     PolicyInputList.1 (IAM Policy) lines 3-9
+  MissingContextValues  (none)
+  AllowedByPermissionsBoundary  true

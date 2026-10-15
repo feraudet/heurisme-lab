@@ -1,0 +1,22 @@
+# A. role allowed to read only
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-lecture.json)" --output json
+# B. role allowed to push
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --output json
+# C. push allowed, read-only boundary
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --permissions-boundary-policy-input-list "$(cat policies/boundary-lecture.json)" --output json
+# D. push allowed, boundary that allows push
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --permissions-boundary-policy-input-list "$(cat policies/boundary-deploy.json)" --output json
+# E. bucket policy denies plain HTTP, request over HTTP
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --permissions-boundary-policy-input-list "$(cat policies/boundary-deploy.json)" --resource-policy file://policies/bucket-https.json --caller-arn arn:aws:iam::111122223333:role/deploy --resource-owner arn:aws:iam::111122223333:root --context-entries ContextKeyName=aws:SecureTransport,ContextKeyType=boolean,ContextKeyValues=false --output json
+# F. bucket policy denies plain HTTP, request over HTTPS
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --permissions-boundary-policy-input-list "$(cat policies/boundary-deploy.json)" --resource-policy file://policies/bucket-https.json --caller-arn arn:aws:iam::111122223333:role/deploy --resource-owner arn:aws:iam::111122223333:root --context-entries ContextKeyName=aws:SecureTransport,ContextKeyType=boolean,ContextKeyValues=true --output json
+# G. bucket policy denies plain HTTP, no context given
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --permissions-boundary-policy-input-list "$(cat policies/boundary-deploy.json)" --resource-policy file://policies/bucket-https.json --caller-arn arn:aws:iam::111122223333:role/deploy --resource-owner arn:aws:iam::111122223333:root --output json
+# H. account SCP allows ec2:* only
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --permissions-boundary-policy-input-list "$(cat policies/boundary-deploy.json)" --ordered-organization-policy-input-list file://policies/org-H.json --output json
+# I. SCP denies outside eu-west-3, request to us-east-1
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --permissions-boundary-policy-input-list "$(cat policies/boundary-deploy.json)" --ordered-organization-policy-input-list file://policies/org-I.json --context-entries ContextKeyName=aws:RequestedRegion,ContextKeyType=string,ContextKeyValues=us-east-1 --output json
+# J. SCP denies outside eu-west-3, no context given
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --permissions-boundary-policy-input-list "$(cat policies/boundary-deploy.json)" --ordered-organization-policy-input-list file://policies/org-J.json --output json
+# K. SCP denies outside eu-west-3, request to eu-west-3
+aws iam simulate-custom-policy --action-names s3:PutObject --resource-arns arn:aws:s3:::amzn-s3-demo-bucket/releases/app-1.4.2.zip --policy-input-list "$(cat policies/role-deploy.json)" --permissions-boundary-policy-input-list "$(cat policies/boundary-deploy.json)" --ordered-organization-policy-input-list file://policies/org-K.json --context-entries ContextKeyName=aws:RequestedRegion,ContextKeyType=string,ContextKeyValues=eu-west-3 --output json

@@ -1,0 +1,13 @@
+[
+  {
+    "ServiceControlPolicyInputList": [
+      "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"*\",\"Resource\":\"*\"}]}"
+    ]
+  },
+  {
+    "ServiceControlPolicyInputList": [
+      "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"*\",\"Resource\":\"*\"}]}",
+      "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"DenyOutsideParis\",\"Effect\":\"Deny\",\"Action\":\"*\",\"Resource\":\"*\",\"Condition\":{\"StringNotEquals\":{\"aws:RequestedRegion\":\"eu-west-3\"}}}]}"
+    ]
+  }
+]

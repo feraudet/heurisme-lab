@@ -1,0 +1,55 @@
+$ grep ssl_certificate nginx-fullchain.conf
+    ssl_certificate     /w/pki/fullchain.pem;
+    ssl_certificate_key /w/pki/feuille.key;
+(exit 0)
+$ grep -c "BEGIN CERTIFICATE" pki/fullchain.pem
+2
+(exit 0)
+$ openssl s_client -connect www.exemple.test:443 -servername www.exemple.test -CAfile pki/racine.crt -showcerts </dev/null
+depth=2 CN = Exemple Racine
+verify return:1
+depth=1 CN = Exemple Intermediaire
+verify return:1
+depth=0 CN = www.exemple.test
+verify return:1
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN = www.exemple.test
+   i:CN = Exemple Intermediaire
+   a:PKEY: id-ecPublicKey, 256 (bit); sigalg: ecdsa-with-SHA256
+   v:NotBefore: Oct  1 00:00:00 2026 GMT; NotAfter: Oct  1 00:00:00 2036 GMT
+-----BEGIN CERTIFICATE-----
+(base64 masked: new keys at each replay)
+-----END CERTIFICATE-----
+ 1 s:CN = Exemple Intermediaire
+   i:CN = Exemple Racine
+   a:PKEY: id-ecPublicKey, 256 (bit); sigalg: ecdsa-with-SHA256
+   v:NotBefore: Oct  1 00:00:00 2026 GMT; NotAfter: Oct  1 00:00:00 2036 GMT
+-----BEGIN CERTIFICATE-----
+(base64 masked: new keys at each replay)
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=CN = www.exemple.test
+issuer=CN = Exemple Intermediaire
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: ECDSA
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read (masked) bytes and written (masked) bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 256 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+DONE
+(exit 0)

@@ -1,0 +1,12 @@
+[
+  {
+    "ServiceControlPolicyInputList": [
+      "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"*\",\"Resource\":\"*\"}]}"
+    ]
+  },
+  {
+    "ServiceControlPolicyInputList": [
+      "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AllowOnlyEc2\",\"Effect\":\"Allow\",\"Action\":\"ec2:*\",\"Resource\":\"*\"}]}"
+    ]
+  }
+]

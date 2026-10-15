@@ -1,0 +1,47 @@
+$ truncate -s 300M xfs.img
+
+$ mkfs.xfs -q xfs.img
+
+$ mount -o loop xfs.img /mnt/xfs
+
+$ xfs_info /mnt/xfs | grep -o 'imaxpct=[0-9]*'
+imaxpct=25
+
+$ df --output=itotal,iused,iavail,ipcent,target /mnt/xfs
+Inodes IUsed  IFree IUse% Mounted on
+153600     3 153597    1% /mnt/xfs
+
+$ umount /mnt/xfs
+
+$ mkfs.xfs -q -f -i maxpct=1 xfs.img
+
+$ mount -o loop xfs.img /mnt/xfs
+
+$ df --output=itotal,iused,iavail,ipcent,target /mnt/xfs
+Inodes IUsed IFree IUse% Mounted on
+  6144     3  6141    1% /mnt/xfs
+
+$ mkdir /mnt/xfs/s; taskset -c 0 bash -c 'n=0; while touch /mnt/xfs/s/f$n; do n=$((n+1)); done; echo "$n files created"'
+touch: cannot touch '/mnt/xfs/s/f6204': No space left on device
+6204 files created
+
+$ df -h --output=size,used,avail,pcent,target /mnt/xfs
+ Size  Used Avail Use% Mounted on
+ 236M   21M  216M   9% /mnt/xfs
+
+$ df --output=itotal,iused,iavail,ipcent,target /mnt/xfs
+Inodes IUsed IFree IUse% Mounted on
+  6144  6144     0  100% /mnt/xfs
+
+$ xfs_growfs -m 5 /mnt/xfs | tail -1
+inode max percent changed from 1 to 5
+
+$ touch /mnt/xfs/s/after && echo created
+created
+
+$ df --output=itotal,iused,iavail,ipcent,target /mnt/xfs
+Inodes IUsed IFree IUse% Mounted on
+ 30720  6209 24511   21% /mnt/xfs
+
+$ umount /mnt/xfs
+

@@ -1,0 +1,11 @@
+$ORIGIN exemple.test.
+$TTL 60
+@     60  IN SOA ns.exemple.test. hostmaster.exemple.test. (
+              2026101504 ; serial
+              3600       ; refresh
+              600        ; retry
+              86400      ; expire
+              30 )       ; minimum: negative caching TTL
+@         IN NS  ns.exemple.test.
+ns        IN A   172.30.153.10
+www  60  IN A   192.0.2.10

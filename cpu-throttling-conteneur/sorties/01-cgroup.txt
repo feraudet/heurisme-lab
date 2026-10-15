@@ -1,0 +1,9 @@
+$ python3 resume.py cgroup
+what the container sees in its cgroup (first run of each config)
+
+command                      cpu.max         cpuset.cpus.effective
+docker run                   max 100000      0-9
+docker run --cpus=1          100000 100000   0-9
+docker run --cpuset-cpus=0   max 100000      0
+docker run --cpus=4          400000 100000   0-9
+(exit 0)

@@ -1,0 +1,33 @@
+$ mkdir -p /srv/var/log/nginx /srv/var/cache/nginx /srv/var/spool/postfix/deferred /srv/var/lib/php/sessions
+
+$ yes 'GET /panier HTTP/1.1 200' | head -c 40M > /srv/var/log/nginx/access.log
+
+$ for n in $(seq 1 300); do head -c 3000 /dev/zero > /srv/var/cache/nginx/c$n; done
+
+$ for n in $(seq 1 40); do echo "message $n" > /srv/var/spool/postfix/deferred/m$n; done
+
+$ php -d session.save_path=/srv/var/lib/php/sessions -d session.use_cookies=0 /w/sessions.php
+PHP Warning:  session_start(): open(/srv/var/lib/php/sessions/sess_2c601ad9d2ff9bc8b282670cdd, O_RDWR) failed: No space left on device (28) in /w/sessions.php on line 6
+PHP Warning:  session_start(): Failed to read session data: files (path: /srv/var/lib/php/sessions) in /w/sessions.php on line 6
+session_start() failed after 7830 sessions
+(exit 1)
+
+$ df -h --output=size,used,avail,pcent,target /srv/var
+ Size  Used Avail Use% Mounted on
+ 110M   73M   29M  72% /srv/var
+
+$ df --output=itotal,iused,iavail,ipcent,target /srv/var
+Inodes IUsed IFree IUse% Mounted on
+  8192  8192     0  100% /srv/var
+
+$ touch /srv/var/log/nginx/error.log
+touch: cannot touch '/srv/var/log/nginx/error.log': No space left on device
+(exit 1)
+
+$ mkdir /srv/var/cache/nginx/tmp
+mkdir: cannot create directory '/srv/var/cache/nginx/tmp': No space left on device
+(exit 1)
+
+$ echo 'GET / HTTP/1.1 200' >> /srv/var/log/nginx/access.log && echo appended
+appended
+

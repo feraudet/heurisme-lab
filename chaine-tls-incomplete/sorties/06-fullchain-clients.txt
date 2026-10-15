@@ -1,0 +1,6 @@
+$ curl -sS https://www.exemple.test/api/sante --cacert pki/racine.crt
+{"etat": "ok"}
+(exit 0)
+$ python3 client.py 2>&1 | tail -n 1
+200 {"etat": "ok"}
+(exit 0)

@@ -1,0 +1,26 @@
+$ php -r 'echo ini_get("session.save_path"), PHP_EOL;'
+/var/lib/php/sessions
+
+$ grep -n '^session.gc' /etc/php/8.2/cli/php.ini
+1441:session.gc_probability = 0
+1451:session.gc_divisor = 1000
+1456:session.gc_maxlifetime = 1440
+
+$ grep -v '^#' /etc/cron.d/php | grep .
+09,39 *     * * *     root   [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi
+
+$ grep -E "^(OnCalendar|OnBootSec)" /lib/systemd/system/phpsessionclean.timer
+OnCalendar=*-*-* *:09,39:00
+
+$ grep -n -- '-cmin' /usr/lib/php/sessionclean
+55:	find -O3 "$save_path/" -ignore_readdir_race -depth -mindepth 1 -name 'sess_*' -type f -cmin "+$gc_maxlifetime" -delete
+
+$ find /srv/var/lib/php/sessions -name 'sess_*' -type f -delete
+
+$ df --output=itotal,iused,iavail,ipcent,target /srv/var
+Inodes IUsed IFree IUse% Mounted on
+  8192   362  7830    5% /srv/var
+
+$ touch /srv/var/log/nginx/error.log && echo created
+created
+

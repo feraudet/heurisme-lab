@@ -1,0 +1,33 @@
+$ python3 corpus.py
+Corpus: French translation of the Python docs (python-docs-fr, commit dda0482a), 6 .po files
+523 paragraph pairs kept, joined with a line break
+  english: 16965 words, 103430 characters, 103432 UTF-8 bytes
+  french:  19344 words, 119769 characters, 123148 UTF-8 bytes
+  french / english: 1.14x words, 1.16x characters
+
+tokenizer           vocab  tokens EN  tokens FR  FR/EN  tok/word EN  tok/word FR
+cl100k_base        100277      20516      29718  1.45x         1.21         1.54
+o200k_base         200019      20549      26013  1.27x         1.21         1.34
+Mistral-7B-v0.3     32768      22811      34291  1.50x         1.34         1.77
+Mistral-NeMo       131072      20923      26354  1.26x         1.23         1.36
+Qwen2.5            151665      20598      29482  1.43x         1.21         1.52
+CroissantLLM        32000      21626      24736  1.14x         1.27         1.28
+
+FR/EN ratio paragraph by paragraph (523 pairs): median and spread
+tokenizer          median    p10    p90  FR shorter
+cl100k_base         1.43x  1.19x  1.75x           7
+o200k_base          1.26x  1.07x  1.50x          16
+Mistral-7B-v0.3     1.50x  1.23x  1.83x           6
+Mistral-NeMo        1.25x  1.06x  1.50x          14
+Qwen2.5             1.42x  1.17x  1.72x           7
+CroissantLLM        1.14x  1.00x  1.35x          49
+
+Same window, same content: how much of the corpus fits in 10,000 tokens
+tokenizer          english   french  french vs english
+cl100k_base          48.7%    33.6%             -31.0%
+o200k_base           48.7%    38.4%             -21.0%
+Mistral-7B-v0.3      43.8%    29.2%             -33.5%
+Mistral-NeMo         47.8%    37.9%             -20.6%
+Qwen2.5              48.5%    33.9%             -30.1%
+CroissantLLM         46.2%    40.4%             -12.6%
+(exit 0)

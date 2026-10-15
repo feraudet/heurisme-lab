@@ -1,0 +1,15 @@
+$ python3 resume.py cpustat
+cpu.stat of the container: what changed during the measure (first run of each config)
+
+config     seconds     usage_usec     nr_periods   nr_throttled throttled_usec
+no-limit      20.4        5152993              0              0              0
+cpus-1        20.4        5269113            203             40        8150329
+cpuset-0      20.4        5113965              0              0              0
+cpus-4        20.4        5137596            203              0              0
+
+nr_throttled / nr_periods, median of the runs [lowest-highest]
+no-limit    0.0% [0.0%-0.0%]
+cpus-1     19.6% [19.6%-19.7%]
+cpuset-0    0.0% [0.0%-0.0%]
+cpus-4      0.0% [0.0%-0.0%]
+(exit 0)

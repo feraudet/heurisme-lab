@@ -1,0 +1,24 @@
+# t = 0 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	60	IN	A	192.0.2.10
+
+# t = 2 s: the zone on the authoritative server is now zones/05-ttl-baisse.zone (www keeps 192.0.2.10, TTL 60 s -> 5 s)
+
+# t = 30 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	30	IN	A	192.0.2.10
+
+# t = 61 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	5	IN	A	192.0.2.10
+
+# t = 62 s: the zone on the authoritative server is now zones/06-bascule-ttl-5.zone (www 192.0.2.10 -> 192.0.2.20, TTL 5 s)
+
+# t = 64 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	2	IN	A	192.0.2.10
+
+# t = 67 s
+$ dig @172.30.153.20 www.exemple.test A +noall +answer
+www.exemple.test.	5	IN	A	192.0.2.20
+

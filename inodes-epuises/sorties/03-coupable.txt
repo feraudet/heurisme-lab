@@ -1,0 +1,13 @@
+$ du --inodes -x -d 3 /srv/var | sort -n | tail -5
+302	/srv/var/cache
+7831	/srv/var/lib/php/sessions
+7832	/srv/var/lib/php
+7833	/srv/var/lib
+8183	/srv/var
+
+$ find /srv/var -xdev -type f | cut -d/ -f1-5 | sort | uniq -c | sort -n
+      1 /srv/var/log/nginx
+     40 /srv/var/spool/postfix
+    300 /srv/var/cache/nginx
+   7830 /srv/var/lib/php
+

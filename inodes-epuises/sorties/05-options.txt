@@ -1,0 +1,36 @@
+$ rm -f essai.img && truncate -s 128M essai.img
+
+$ mkfs.ext4 -q -T default essai.img
+
+$ dumpe2fs -h essai.img 2>/dev/null | grep -E '^(Inode count|Free blocks):'
+Inode count:              8192
+Free blocks:              28135
+
+$ rm -f essai.img && truncate -s 128M essai.img
+
+$ mkfs.ext4 -q -T default -i 4096 essai.img
+
+$ dumpe2fs -h essai.img 2>/dev/null | grep -E '^(Inode count|Free blocks):'
+Inode count:              32768
+Free blocks:              26599
+
+$ rm -f essai.img && truncate -s 128M essai.img
+
+$ mkfs.ext4 -q -T default -N 20000 essai.img
+
+$ dumpe2fs -h essai.img 2>/dev/null | grep -E '^(Inode count|Free blocks):'
+Inode count:              20000
+Free blocks:              27397
+
+$ mkfs.ext4 -q -T default essai.img
+
+$ truncate -s 256M essai.img && resize2fs essai.img
+resize2fs 1.47.0 (5-Feb-2023)
+Resizing the filesystem on essai.img to 65536 (4k) blocks.
+The filesystem on essai.img is now 65536 (4k) blocks long.
+
+
+$ dumpe2fs -h essai.img 2>/dev/null | grep -E '^(Block count|Inode count):'
+Inode count:              16384
+Block count:              65536
+

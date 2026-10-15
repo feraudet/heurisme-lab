@@ -35,5 +35,12 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [antenne-gain-dbi](antenne-gain-dbi/) | [An antenna with gain creates no energy](https://heurisme.fr/en/blog/antenne-gain-dbi/) |
 | [antenne-polarisation](antenne-polarisation/) | [Polarization: the ADS-B antenna mounted flat](https://heurisme.fr/en/blog/antenne-polarisation/) |
 | [cable-coaxial-pertes](cable-coaxial-pertes/) | [Coax cable: 15 m of RG58 lose more than the antenna gains](https://heurisme.fr/en/blog/cable-coaxial-pertes/) |
+| [inodes-epuises](inodes-epuises/) | [Out of inodes: “No space left on device” with free space](https://heurisme.fr/en/blog/inodes-epuises/) |
+| [cpu-throttling-conteneur](cpu-throttling-conteneur/) | [CPU limit: an API slowed down on an idle machine](https://heurisme.fr/en/blog/cpu-throttling-conteneur/) |
+| [dns-changement-cache](dns-changement-cache/) | [A DNS change does not propagate: caches expire](https://heurisme.fr/en/blog/dns-changement-cache/) |
+| [keepalive-502](keepalive-502/) | [Rare 502s that nobody can reproduce](https://heurisme.fr/en/blog/keepalive-502/) |
+| [chaine-tls-incomplete](chaine-tls-incomplete/) | [Incomplete TLS chain: the browser gets through, curl and Python do not](https://heurisme.fr/en/blog/chaine-tls-incomplete/) |
+| [tokens-francais-anglais](tokens-francais-anglais/) | [In French, the same prompt costs more tokens](https://heurisme.fr/en/blog/tokens-francais-anglais/) |
+| [policy-iam-evaluation](policy-iam-evaluation/) | [An Allow is not enough: IAM still says no](https://heurisme.fr/en/blog/policy-iam-evaluation/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).

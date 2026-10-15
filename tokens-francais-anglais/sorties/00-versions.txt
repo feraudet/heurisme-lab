@@ -1,0 +1,4 @@
+Python 3.12.15
+regex==2026.9.29
+tiktoken==0.13.0
+tokenizers==0.23.1

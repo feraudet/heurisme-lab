@@ -1,0 +1,51 @@
+# Minimal configuration for "openssl ca": a local PKI for the bench, nothing more.
+# "openssl ca" is used (rather than "openssl x509 -req -days") because it takes fixed
+# validity dates (-startdate / -enddate) and reads the serial number from a file:
+# both come out the same at every replay.
+[ ca ]
+default_ca = ca_banc
+
+[ ca_banc ]
+dir             = ./pki
+database        = $dir/index.txt
+serial          = $dir/serial
+new_certs_dir   = $dir/emis
+default_md      = sha256
+policy          = policy_libre
+unique_subject  = no
+copy_extensions = none
+email_in_dn     = no
+
+[ policy_libre ]
+commonName = supplied
+
+[ req ]
+distinguished_name = dn_vide
+prompt = no
+[ dn_vide ]
+CN = placeholder
+
+# Root: self-signed, may sign CAs, kept by the client only.
+[ ext_racine ]
+basicConstraints       = critical, CA:true
+keyUsage               = critical, keyCertSign, cRLSign
+subjectKeyIdentifier   = hash
+
+# Intermediate: signed by the root, signs server certificates (pathlen 0).
+[ ext_intermediaire ]
+basicConstraints       = critical, CA:true, pathlen:0
+keyUsage               = critical, keyCertSign, cRLSign
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid
+
+# Leaf: the server certificate of www.exemple.test, signed by the intermediate.
+# authorityInfoAccess gives the address where the issuer certificate can be downloaded
+# (RFC 5280, 4.2.2.1, caIssuers): what a browser follows, and curl or OpenSSL do not.
+[ ext_feuille ]
+basicConstraints       = critical, CA:false
+keyUsage               = critical, digitalSignature
+extendedKeyUsage       = serverAuth
+subjectAltName         = DNS:www.exemple.test
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid
+authorityInfoAccess    = caIssuers;URI:http://pki.exemple.test/intermediaire.crt
