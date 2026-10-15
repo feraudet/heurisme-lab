@@ -1,0 +1,26 @@
+$ python3 analyse.py toit
+Aircraft at 10000 m, antenna at ground level, 1090 MHz, free space.
+ground  elev.  slant   path    whip   coll.  coll.    whip     coll.
+km      deg    km      loss dB dBi    dBi    - whip   G-L dB   G-L dB
+5        63.4   11.2   114.2  -5.15   -8.76   -3.61   -119.3   -122.9
+10       44.9   14.1   116.2  -1.19  -16.99  -15.80   -117.4   -133.2
+25       21.7   26.9   121.8   1.14    0.19   -0.95   -120.7   -121.6
+50       11.1   51.0   127.4   1.59    3.89   +2.30   -125.8   -123.5
+100       5.3  100.6   133.2   1.71    4.81   +3.11   -131.5   -128.4
+200       2.0  200.4   139.2   1.73    5.05   +3.32   -137.5   -134.2
+300       0.6  300.4   142.7   1.74    5.07   +3.33   -141.0   -137.7
+
+Weakest aircraft in the table, whip: the one at 300 km, -141.0 dB.
+Weakest aircraft in the table, collinear: the one at 300 km, -137.7 dB.
+Collinear dip: -42.91 dBi at 41 deg elevation (whip: -0.64 dBi),
+  aircraft 11.5 km away on the ground: collinear G-L -159.8 dB, whip -117.5 dB.
+Collinear more than 10 dB below the whip: 34 to 49 deg (8.7 to 14.8 km on the ground).
+
+Below the horizon (antenna on a high point, stations further down):
+elev. deg        -5     -15     -30     -45     -60
+whip dBi       1.70    1.42    0.47   -1.28   -4.28
+coll. dBi      4.84    2.86   -5.48  -16.85   -8.68
+
+G-L = antenna gain minus path loss. Path loss = 20 log10(4 pi d / lambda).
+Spherical Earth, radius 6371 km, no refraction, no ground reflection.
+(exit 0)

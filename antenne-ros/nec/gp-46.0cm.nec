@@ -1,0 +1,16 @@
+CM quarter-wave ground plane, vertical element 46.0 cm, 4 radials 52 cm at 45 deg
+CM heurisme-lab/antenne-ros, written by antenne.py
+CE
+GW 1 21 0 0 0 0 0 0.4600 0.0015
+GW 2 11 0 0 0 0.3677 0.0000 -0.3677 0.0015
+GW 3 11 0 0 0 0.0000 0.3677 -0.3677 0.0015
+GW 4 11 0 0 0 -0.3677 0.0000 -0.3677 0.0015
+GW 5 11 0 0 0 0.0000 -0.3677 -0.3677 0.0015
+GE 0
+EX 0 1 1 0 1.0 0.0
+PT -1 0 0 0
+FR 0 51 0 0 140.0 0.2
+XQ
+FR 0 1 0 0 144.8 0
+RP 0 37 1 1000 0 0 5 0
+EN

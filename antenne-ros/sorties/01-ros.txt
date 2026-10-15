@@ -1,0 +1,27 @@
+$ python3 ros.py ros
+Z0 = 50 ohm, forward power 25 W
+
+load Z (ohm)     |gamma|    SWR  RL (dB)  reflected  accepted
+50.0 + j0.0        0.000   1.00      inf     0.00 W   25.00 W
+60.0 + j0.0        0.091   1.20     20.8     0.21 W   24.79 W
+75.0 + j0.0        0.200   1.50     14.0     1.00 W   24.00 W
+100.0 + j0.0       0.333   2.00      9.5     2.78 W   22.22 W
+25.0 + j0.0        0.333   2.00      9.5     2.78 W   22.22 W
+50.0 + j30.0       0.287   1.81     10.8     2.06 W   22.94 W
+50.0 - j30.0       0.287   1.81     10.8     2.06 W   22.94 W
+150.0 + j0.0       0.500   3.00      6.0     6.25 W   18.75 W
+10.0 + j0.0        0.667   5.00      3.5    11.11 W   13.89 W
+open               1.000    inf      0.0    25.00 W    0.00 W
+
+SWR -> power that reaches the antenna and is not sent back:
+  SWR 1.2 : |gamma| 0.091, RL 20.8 dB, accepted  99.2 %, mismatch loss 0.04 dB
+  SWR 1.5 : |gamma| 0.200, RL 14.0 dB, accepted  96.0 %, mismatch loss 0.18 dB
+  SWR 2.0 : |gamma| 0.333, RL  9.5 dB, accepted  88.9 %, mismatch loss 0.51 dB
+  SWR 3.0 : |gamma| 0.500, RL  6.0 dB, accepted  75.0 %, mismatch loss 1.25 dB
+  SWR 5.0 : |gamma| 0.667, RL  3.5 dB, accepted  55.6 %, mismatch loss 2.55 dB
+
+Wavelength at 144.8 MHz: 207.0 cm in free space, quarter wave 51.8 cm
+Standing wave maxima repeat every half wavelength in the cable (velocity factor from the data sheet):
+  RG-58 (Belden 8240)  VF 0.66 : every 68.3 cm
+  LMR-400 (Times)      VF 0.84 : every 87.0 cm
+(exit 0)

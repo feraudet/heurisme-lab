@@ -1,0 +1,20 @@
+$ python3 analyse.py rotation
+Two dipoles of 13.0 cm at 1090 MHz (lambda = 27.50 cm), 2.75 m apart (10 lambda), free space
+Transmit dipole vertical. Receive dipole rotated by an angle about the line between them.
+Coupling = power into a matched load / power fed to the transmit dipole
+  angle   coupling   vs 0 deg   cos^2 law   difference
+    0 deg    -37.71 dB     0.00 dB     0.00 dB     +0.00 dB
+   15 deg    -38.01 dB    -0.30 dB    -0.30 dB     +0.00 dB
+   30 deg    -38.96 dB    -1.25 dB    -1.25 dB     +0.00 dB
+   45 deg    -40.72 dB    -3.01 dB    -3.01 dB     +0.00 dB
+   60 deg    -43.73 dB    -6.02 dB    -6.02 dB     +0.00 dB
+   75 deg    -49.45 dB   -11.74 dB   -11.74 dB     +0.00 dB
+   80 deg    -52.92 dB   -15.21 dB   -15.21 dB     +0.00 dB
+   85 deg    -58.91 dB   -21.19 dB   -21.19 dB     +0.00 dB
+   89 deg    -72.88 dB   -35.17 dB   -35.16 dB     -0.00 dB
+   90 deg    < -200 dB   < -200 dB     -inf
+< -200 dB: numerical zero (rounding in nec2c), the coupling is nil by symmetry
+At 90 deg: |Z21| = 4.56e-20 ohm, against 1.90e+00 ohm at 0 deg
+Lone vertical dipole, toward +y (nec2c): E(theta) = 0.8174 V/m, E(phi) = 0.0000 V/m, polarization LINEAR: the field is vertical, parallel to the wire
+Check: dipole gain 2.14 dBi (nec2c), Friis 2 x 2.14 dBi + 20 log(lambda / 4 pi d) = -37.70 dB, bench at 0 deg = -37.71 dB
+(exit 0)

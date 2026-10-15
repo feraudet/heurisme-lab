@@ -1,0 +1,9 @@
+$ python3 analyse.py epaisseur
+Resonant length vs wire diameter, perfect ground plane, 868 MHz
+lambda/4 = 8.63 cm
+  diameter   lambda/d   L at X=0   L/(lambda/4)   R at X=0
+    0.5 mm       691     8.22 cm        0.952     36.0 ohm
+    1.0 mm       345     8.14 cm        0.942     35.9 ohm
+    1.5 mm       230     8.08 cm        0.935     35.9 ohm
+    2.0 mm       173     8.03 cm        0.929     36.0 ohm
+(exit 0)

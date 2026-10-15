@@ -1,0 +1,17 @@
+$ python3 analyse.py circulaire
+Turnstile: two crossed dipoles fed 90 deg apart, at each end, 2.75 m apart
+The horizontal dipole sits 4 mm behind the vertical one; the feed phase includes it.
+  nec2c, sense tx plus90: axial ratio 1.0000, sense LEFT
+  nec2c, sense rx plus90: axial ratio 1.0000, sense RIGHT
+  nec2c, sense tx minus90: axial ratio 1.0000, sense RIGHT
+  nec2c, sense rx minus90: axial ratio 1.0000, sense LEFT
+  |Z34| = 6.79e-15 ohm (crossed dipoles do not couple), R33 = 73.12 ohm, R44 = 73.12 ohm
+  transmit         receive          coupling   vs vertical/vertical
+  vertical         vertical           -37.71 dB     0.00 dB
+  vertical         circular RIGHT     -40.72 dB    -3.01 dB
+  circular RIGHT   vertical           -40.72 dB    -3.01 dB
+  circular RIGHT   horizontal         -40.75 dB    -3.04 dB
+  circular RIGHT   circular RIGHT     -37.72 dB    -0.01 dB
+  circular RIGHT   circular LEFT      -94.43 dB   -56.72 dB
+  circular LEFT    circular LEFT      -37.72 dB    -0.01 dB
+(exit 0)

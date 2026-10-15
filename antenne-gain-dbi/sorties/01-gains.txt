@@ -1,0 +1,12 @@
+$ python3 analyse.py gains
+antenna               Z (ohm)       max dBi  max dBd  behind dBi  -3 dB vert  -3 dB horiz
+isotropic (theory)    -                0.00    -2.15        0.00        none         none
+half-wave dipole      72.7 +0.2j       2.14    -0.01        2.14      78 deg     omni 0.0
+quarter-wave whip     42.1 -2.4j       1.74    -0.41        1.74      90 deg     omni 0.0
+3-element Yagi        46.1 -1.2j       7.37     5.22      -15.47      66 deg      116 deg
+collinear, 2 dipoles  72.0 -7.8j       5.08     2.93        5.08      35 deg     omni 0.0
+
+Free space, 1090 MHz, perfect conductors. dBd = dBi - 2.15 (ideal half-wave dipole).
+behind: horizon, opposite the Yagi beam (phi = 180). -3 dB vert: main lobe width in
+the vertical plane. omni x: gain varies by x dB around the antenna (less than 3 dB).
+(exit 0)

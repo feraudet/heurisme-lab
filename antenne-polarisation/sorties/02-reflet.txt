@@ -1,0 +1,8 @@
+$ python3 analyse.py reflet
+Same link, plus a metal wire of 1 m (1 mm diameter) tilted 45 deg,
+halfway along the link (1.38 m) and 50 cm to the side of it
+  angle   without wire   with wire
+    0 deg    -37.71 dB     -37.61 dB
+   90 deg    < -200 dB     -70.20 dB
+Isolation between 0 and 90 deg with the wire: 32.6 dB
+(exit 0)

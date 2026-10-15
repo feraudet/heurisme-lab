@@ -1,0 +1,20 @@
+$ python3 analyse.py longueur
+Monopole on a perfect ground plane (GN 1), wire 1 mm diameter, 868 MHz
+lambda = 34.54 cm, lambda/4 = 8.63 cm
+  L (cm)    R (ohm)    X (ohm)   SWR on 50 ohm
+     7.6       29.4      -26.8     2.35
+     7.7       30.5      -21.8     2.08
+     7.8       31.7      -16.8     1.85
+     7.9       32.9      -11.9     1.66
+     8.0       34.1       -6.9     1.51
+     8.1       35.4       -1.9     1.42
+     8.2       36.8       +3.1     1.37
+     8.3       38.1       +8.1     1.39
+     8.4       39.6      +13.1     1.46
+     8.5       41.0      +18.2     1.56
+     8.6       42.6      +23.3     1.69
+     8.7       44.1      +28.4     1.83
+     8.8       45.8      +33.5     2.00
+X = 0 at L = 8.14 cm, R = 35.9 ohm, SWR on 50 ohm = 1.39
+L / (lambda/4) = 0.942, 0.50 cm shorter than lambda/4
+(exit 0)

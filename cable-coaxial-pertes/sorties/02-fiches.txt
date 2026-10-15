@@ -1,0 +1,51 @@
+$ python3 pertes.py fiches
+RG174: Belden 8216 (RG-174), raw/belden-8216.pdf, page 1, Electrical Characteristics, Attenuation
+  model: alpha(f) = 0.74267*sqrt(f) + 0.010225*f  dB/100 ft  (least squares fit, points >= 50 MHz)
+  f (MHz)  datasheet dB/100 m  model dB/100 m  gap
+       50                19.0            18.9   -0.1
+      100                27.6            27.7   +0.2
+      200                41.0            41.2   +0.2
+      400                62.3            62.2   -0.2
+      700                88.6            87.9   -0.6
+      900               101.7           103.3   +1.6
+     1000               111.5           110.6   -0.9
+
+RG58: Belden 8240 (RG-58), raw/belden-8240.pdf, page 1, Electrical Characteristics, Attenuation
+  model: alpha(f) = 0.34246*sqrt(f) + 0.003747*f  dB/100 ft  (least squares fit, points >= 50 MHz)
+  f (MHz)  datasheet dB/100 m  model dB/100 m  gap
+       50                 8.2             8.6   +0.4
+      100                12.5            12.5   -0.0
+      200                18.4            18.3   -0.0
+      400                27.6            27.4   -0.2
+      700                38.4            38.3   -0.1
+      900                44.9            44.8   -0.2
+     1000                47.6            47.8   +0.3
+
+RG213: Belden 8267 (RG-213), raw/belden-8267.pdf, page 1, Electrical Characteristics, Attenuation
+  model: alpha(f) = 0.16400*sqrt(f) + 0.002792*f  dB/100 ft  (least squares fit, points >= 50 MHz)
+  f (MHz)  datasheet dB/100 m  model dB/100 m  gap
+       50                 4.3             4.3   -0.0
+      100                 6.2             6.3   +0.1
+      200                 8.9             9.4   +0.6
+      400                13.5            14.4   +1.0
+      700                21.3            20.6   -0.7
+      900                24.9            24.4   -0.5
+     1000                26.2            26.2   -0.1
+     4000                70.5            70.7   +0.1
+
+LMR400: Times Microwave LMR-400, raw/times-lmr400.pdf, page 2, Attenuation vs. Frequency (typical)
+  model: alpha(f) = 0.12229*sqrt(f) + 0.000260*f  dB/100 ft  (manufacturer formula)
+  f (MHz)  datasheet dB/100 m  model dB/100 m  gap
+       50                 3.0             2.9   -0.1
+      150                 4.9             5.0   +0.1
+      220                 6.2             6.1   -0.1
+      450                 8.9             8.9   +0.0
+      900                12.8            12.8   +0.0
+     1500                16.7            16.8   +0.1
+     1800                18.7            18.6   -0.1
+     2000                19.7            19.6   -0.0
+     2500                22.3            22.2   -0.1
+     5800                35.4            35.5   +0.1
+     8000                42.7            42.7   +0.1
+
+(exit 0)

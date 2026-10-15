@@ -1,0 +1,9 @@
+$ python3 analyse.py portee
+Free-space range scales as the square root of the received power:
+range factor = 10^(-loss / 20)
+  case                       loss     range factor   200 km becomes
+  tilted 45 deg              3.01 dB     0.707           141.4 km
+  horizontal, wire nearby   32.59 dB     0.023             4.7 km
+  horizontal, 10 dB (*)     10.00 dB     0.316            63.2 km
+(*) ITU-R P.1406-2, 5.1.1: average XPD over 10 dB in open areas, 5 to 8 dB in towns (900 MHz)
+(exit 0)

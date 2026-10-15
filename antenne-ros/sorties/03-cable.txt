@@ -1,0 +1,33 @@
+$ python3 ros.py cable
+Transmitter: 25 W forward at 144.8 MHz, 20 m of coax to the antenna
+  RG-58 (Belden 8240)  4.67 dB/100 ft = 15.31 dB/100 m -> 3.06 dB over 20 m
+  LMR-400 (Times)      1.51 dB/100 ft = 4.95 dB/100 m -> 0.99 dB over 20 m
+
+--- RG-58 (Belden 8240), 3.06 dB matched loss ---
+antenna       Z at antenna      SWR ant SWR at TX reaches ant  radiated back to TX
+rod 44.0 cm   46.3 - j31.0         1.89      1.36     12.35 W   11.17 W     0.58 W
+rod 46.0 cm   49.9 - j12.3         1.28      1.13     12.35 W   12.17 W     0.09 W
+rod 47.4 cm   52.6 + j0.7          1.05      1.03     12.35 W   12.34 W     0.00 W
+rod 49.0 cm   55.9 + j15.6         1.37      1.17     12.35 W   12.05 W     0.15 W
+rod 51.8 cm   62.2 + j41.9         2.15      1.44     12.35 W   10.71 W     0.81 W
+rod 54.0 cm   67.8 + j62.9         2.92      1.64     12.35 W    9.40 W     1.46 W
+disconnected  open                  inf      2.95     12.35 W    0.00 W     6.10 W
+
+--- LMR-400 (Times), 0.99 dB matched loss ---
+antenna       Z at antenna      SWR ant SWR at TX reaches ant  radiated back to TX
+rod 44.0 cm   46.3 - j31.0         1.89      1.65     19.90 W   18.01 W     1.51 W
+rod 46.0 cm   49.9 - j12.3         1.28      1.22     19.90 W   19.60 W     0.24 W
+rod 47.4 cm   52.6 + j0.7          1.05      1.04     19.90 W   19.89 W     0.01 W
+rod 49.0 cm   55.9 + j15.6         1.37      1.28     19.90 W   19.42 W     0.38 W
+rod 51.8 cm   62.2 + j41.9         2.15      1.82     19.90 W   17.26 W     2.10 W
+rod 54.0 cm   67.8 + j62.9         2.92      2.28     19.90 W   15.14 W     3.79 W
+disconnected  open                  inf      8.81     19.90 W    0.00 W    15.84 W
+
+Same disconnected antenna (|gamma| = 1), SWR read at the transmitter vs RG-58 length:
+    0 m : loss  0.00 dB, SWR at TX inf
+    5 m : loss  0.77 dB, SWR at TX 11.37
+   10 m : loss  1.53 dB, SWR at TX 5.73
+   20 m : loss  3.06 dB, SWR at TX 2.95
+   30 m : loss  4.59 dB, SWR at TX 2.06
+   50 m : loss  7.66 dB, SWR at TX 1.41
+(exit 0)

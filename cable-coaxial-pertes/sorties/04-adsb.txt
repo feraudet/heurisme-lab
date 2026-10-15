@@ -1,0 +1,31 @@
+$ python3 pertes.py adsb
+ADS-B receiver, 1090 MHz: roof antenna, coax down to the Raspberry Pi
+Antenna: 5.5 dBi, i.e. 3.35 dB more than a half-wave dipole (2.15 dBi)
+Connectors (maximum insertion loss):
+  N plug for RG 58 C/U (Rosenberger 53S107-106N5): <= 0.05 dB -> 0.050 dB
+  SMA plug (Rosenberger 32S107-307L5): <= 0.04 x sqrt(f/GHz) dB -> 0.042 dB
+  both: 0.092 dB
+
+cable    length  cable loss  with 2 conn.  power left  vs antenna gain over dipole
+RG174       5 m     5.85 dB       5.94 dB      25.5 %  loses 2.59 dB
+RG174      10 m    11.70 dB      11.79 dB       6.6 %  loses 8.44 dB
+RG174      15 m    17.55 dB      17.64 dB       1.7 %  loses 14.29 dB
+RG174      20 m    23.40 dB      23.49 dB       0.4 %  loses 20.14 dB
+
+RG58        5 m     2.52 dB       2.62 dB      54.7 %  keeps 0.73 dB
+RG58       10 m     5.05 dB       5.14 dB      30.6 %  loses 1.79 dB
+RG58       15 m     7.57 dB       7.67 dB      17.1 %  loses 4.32 dB
+RG58       20 m    10.10 dB      10.19 dB       9.6 %  loses 6.84 dB
+
+RG213       5 m     1.39 dB       1.48 dB      71.1 %  keeps 1.87 dB
+RG213      10 m     2.77 dB       2.87 dB      51.7 %  keeps 0.48 dB
+RG213      15 m     4.16 dB       4.25 dB      37.5 %  loses 0.90 dB
+RG213      20 m     5.55 dB       5.64 dB      27.3 %  loses 2.29 dB
+
+LMR400      5 m     0.71 dB       0.80 dB      83.2 %  keeps 2.55 dB
+LMR400     10 m     1.42 dB       1.51 dB      70.6 %  keeps 1.84 dB
+LMR400     15 m     2.13 dB       2.22 dB      60.0 %  keeps 1.13 dB
+LMR400     20 m     2.84 dB       2.93 dB      51.0 %  keeps 0.42 dB
+
+Example: 15 m of RG58 + 2 connectors = 7.67 dB, more than the whole 5.5 dBi of the antenna.
+(exit 0)

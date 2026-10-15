@@ -30,5 +30,10 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [llm-juge-biais](llm-juge-biais/) | [The LLM judge that prefers the longest answer](https://heurisme.fr/en/blog/llm-juge-biais/) |
 | [facture-electronique](facture-electronique/) | [An electronic invoice, seen from the inside](https://heurisme.fr/en/blog/facture-electronique/) |
 | [adressage-ip-radioamateur](adressage-ip-radioamateur/) | [44Net: the amateur radio IP network](https://heurisme.fr/en/blog/adressage-ip-radioamateur/) |
+| [antenne-quart-onde](antenne-quart-onde/) | [Quarter-wave antenna: why 8 cm at 868 MHz](https://heurisme.fr/en/blog/antenne-quart-onde/) |
+| [antenne-ros](antenne-ros/) | [SWR: what the antenna sends back to the transmitter](https://heurisme.fr/en/blog/antenne-ros/) |
+| [antenne-gain-dbi](antenne-gain-dbi/) | [An antenna with gain creates no energy](https://heurisme.fr/en/blog/antenne-gain-dbi/) |
+| [antenne-polarisation](antenne-polarisation/) | [Polarization: the ADS-B antenna mounted flat](https://heurisme.fr/en/blog/antenne-polarisation/) |
+| [cable-coaxial-pertes](cable-coaxial-pertes/) | [Coax cable: 15 m of RG58 lose more than the antenna gains](https://heurisme.fr/en/blog/cable-coaxial-pertes/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).

@@ -1,0 +1,12 @@
+$ python3 pertes.py db
+Loss (dB)   power left   (10 lg(P1/P2), ITU-R V.574)
+     0.5        89.1 %
+     1.0        79.4 %
+     3.0        50.1 %
+     6.0        25.1 %
+     7.5        17.8 %
+    10.0        10.0 %
+    20.0         1.0 %
+
+3 dB: 0.5012 of the power, i.e. half. 10 dB: a tenth. 20 dB: a hundredth.
+(exit 0)

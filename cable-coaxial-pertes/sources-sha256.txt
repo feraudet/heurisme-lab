@@ -1,0 +1,11 @@
+# sha256  file in raw/  source URL (downloaded on 2026-10-15)
+cc9bc1419ad3f21a46c049f0f859ae42ddc5bae3f6abd63a48abc34630b1ff23  belden-8240.pdf  https://catalog.belden.com/techdata/EN/8240_techdata.pdf
+a86fff05f8c162940e506eff4c29d0dee60c7b9a7fd505839ee647ecef2136a7  belden-8216.pdf  https://catalog.belden.com/techdata/EN/8216_techdata.pdf
+f712eec6330cd7dc6f5de1f954b1c38b7d252e653d6a266cd714c62bfbc9fbf0  belden-8267.pdf  https://catalog.belden.com/techdata/EN/8267_techdata.pdf
+c3b84312e70e997f95b308730fa0b3c4fb47eff3f95e674888be9b9225a5c409  times-lmr400.pdf  https://www.talleycom.com/images/pdf/lmr400.pdf
+2debeca21ce4ee8a06eddc1cafb36cf4386ab307b5cfebf1adc9ad48af637fd7  rosenberger-53S107-106N5.pdf  https://nonprod.docs.rs-online.com/7948/0900766b8131abbd.pdf
+e7e612814df3c21fe2c9dbe63713e00b10f46e3c231178e89ec9ee2816c773f0  rosenberger-32S107-307L5.pdf  https://nonprod.docs.rs-online.com/a358/0900766b8131ab30.pdf
+2c15c4da94b9a5be059a9ee421c7f37ef851e82eda9bebdb4f5f32426d2ce601  minicircuits-psa4-5043.pdf  https://www.minicircuits.com/pdfs/PSA4-5043+.pdf
+2bb6176db61e35f3eeda2c45e8b02df5be8b28c1b8663257cda0f91d52e2c374  itu-r-p372-18.pdf  https://www.itu.int/dms_pubrec/itu-r/rec/p/R-REC-P.372-18-202609-I!!PDF-E.pdf
+8bf83d67fe463e6865875549befd43a0353cd85c0849fc0f69336ef08c51b3b8  itu-r-v574-5.pdf  https://www.itu.int/dms_pubrec/itu-r/rec/v/R-REC-V.574-5-201508-I!!PDF-E.pdf
+93ea8debfe81a9d5c34fd867bf47ad4047152c801583b7b8dabab135b6c50f05  itu-r-bs1195-1.pdf  https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1195-1-201301-I!!PDF-E.pdf

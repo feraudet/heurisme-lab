@@ -1,0 +1,20 @@
+$ python3 analyse.py passerelle
+Gateway antenna: 4 radials of 8.6 cm drooping 45 deg, wire 1 mm, two cuts of the vertical
+           L = 7.8 cm                    L = 8.6 cm
+  f (MHz)   R (ohm)  X (ohm)  SWR       R (ohm)  X (ohm)  SWR
+     856      48.8     -7.5  1.17         58.5    +30.5  1.78
+     858      49.1     -6.4  1.14         58.9    +31.8  1.82
+     860      49.5     -5.2  1.11         59.4    +33.0  1.86
+     862      49.8     -4.1  1.09         59.8    +34.2  1.90
+     864      50.2     -3.0  1.06         60.3    +35.5  1.94
+     866      50.6     -1.8  1.04         60.7    +36.7  1.98
+     868      50.9     -0.7  1.02         61.2    +37.9  2.02
+     870      51.3     +0.5  1.03         61.7    +39.2  2.06
+     872      51.6     +1.6  1.05         62.1    +40.4  2.10
+     874      52.0     +2.8  1.07         62.6    +41.6  2.14
+     876      52.4     +3.9  1.09         63.1    +42.9  2.18
+     878      52.8     +5.0  1.12         63.6    +44.1  2.22
+     880      53.1     +6.2  1.14         64.0    +45.3  2.26
+L = 7.8 cm: SWR 1.02 to 1.09 from 862 to 870 MHz; at 868 MHz return loss 39.0 dB, mismatch loss 0.00 dB
+L = 8.6 cm: SWR 1.90 to 2.06 from 862 to 870 MHz; at 868 MHz return loss 9.5 dB, mismatch loss 0.52 dB
+(exit 0)

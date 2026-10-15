@@ -1,0 +1,21 @@
+$ python3 pertes.py tableau
+Attenuation in dB/100 m, and loss of 15 m of cable (model of 'fiches')
+cable    f (MHz)  dB/100 m  log-log check  status        15 m loss  power left
+RG174        144      34.1           34.0  interpolated     5.11 dB      30.8 %
+RG174        868     100.9           99.7  interpolated    15.14 dB       3.1 %
+RG174       1090     117.0          120.3  extrapolated    17.55 dB       1.8 %
+
+RG58         144      15.3           15.3  interpolated     2.29 dB      59.0 %
+RG58         868      43.8           43.9  interpolated     6.57 dB      22.0 %
+RG58        1090      50.5           49.8  extrapolated     7.57 dB      17.5 %
+
+RG213        144       7.8            7.5  interpolated     1.17 dB      76.4 %
+RG213        868      23.8           24.4  interpolated     3.57 dB      43.9 %
+RG213       1090      27.7           27.9  interpolated     4.16 dB      38.4 %
+
+LMR400       144       4.9            4.8  interpolated     0.74 dB      84.3 %
+LMR400       868      12.6           12.6  interpolated     1.88 dB      64.8 %
+LMR400      1090      14.2           14.1  interpolated     2.13 dB      61.3 %
+
+1090 MHz is past the end of the Belden RG174 and RG58 tables (1000 MHz): extrapolated.
+(exit 0)

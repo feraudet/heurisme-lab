@@ -1,0 +1,10 @@
+$ python3 analyse.py radians
+Ground plane in free space: vertical + 4 radials of 8.6 cm, wire 1 mm, 868 MHz
+droop = angle of the radials below horizontal
+  droop   L at X=0   R at X=0   SWR on 50 ohm
+    0 deg    8.50 cm    24.2 ohm     2.07
+   15 deg    8.25 cm    33.2 ohm     1.50
+   30 deg    8.03 cm    42.5 ohm     1.18
+   45 deg    7.81 cm    51.1 ohm     1.02
+   60 deg    7.59 cm    57.6 ohm     1.15
+(exit 0)

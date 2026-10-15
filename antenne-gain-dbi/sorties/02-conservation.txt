@@ -1,0 +1,12 @@
+$ python3 analyse.py conservation
+antenna               input W     radiated W  eff. %  max dBi  NEC avg  our avg
+half-wave dipole      6.8786E-03  6.8786E-03  100.00     2.14   1.0002   1.0001
+quarter-wave whip     1.1824E-02  1.1824E-02  100.00     1.74   0.9979   0.9979
+3-element Yagi        1.0832E-02  1.0832E-02  100.00     7.37   0.9947   1.0001
+collinear, 2 dipoles  1.3721E-02  1.3721E-02  100.00     5.08   1.0002   1.0000
+
+1 V per source. avg = power gain averaged over the whole sphere, in linear units:
+1.0000 means all the input power leaves as radiation, whatever the shape.
+NEC avg: NEC2's own sum (solid angle 3.9889 pi). our avg: 1-degree grid, trapezoids
+in theta, sin(theta) weighting, divided by 4 pi.
+(exit 0)

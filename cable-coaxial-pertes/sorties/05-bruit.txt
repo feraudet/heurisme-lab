@@ -1,0 +1,33 @@
+$ python3 pertes.py bruit
+System noise figure at 1090 MHz, 15 m of cable + 2 connectors, line at 290 K
+ITU-R P.372, eq. (1) and (5): a line of loss lt at 290 K in front of a receiver of factor fr gives lt*fr.
+Friis cascade: F = F1 + (F2 - 1)/G1.
+LNA PSA4-5043+: NF 0.75 dB, gain 18.4 dB (typical at 1.0 GHz)
+Line loss: RG58 7.67 dB, LMR400 2.22 dB
+
+Receiver noise figure assumed: 3 dB
+  receiver at the antenna (no cable)   NF  3.00 dB
+  antenna > RG58 > receiver            NF 10.67 dB
+  antenna > RG58 > LNA > receiver      NF  8.47 dB
+  antenna > LNA > RG58 > receiver      NF  1.28 dB
+  antenna > LMR400 > receiver          NF  5.22 dB
+  antenna > LNA > LMR400 > receiver    NF  0.87 dB
+
+Receiver noise figure assumed: 5 dB
+  receiver at the antenna (no cable)   NF  5.00 dB
+  antenna > RG58 > receiver            NF 12.67 dB
+  antenna > RG58 > LNA > receiver      NF  8.53 dB
+  antenna > LNA > RG58 > receiver      NF  1.59 dB
+  antenna > LMR400 > receiver          NF  7.22 dB
+  antenna > LNA > LMR400 > receiver    NF  0.97 dB
+
+Receiver noise figure assumed: 8 dB
+  receiver at the antenna (no cable)   NF  8.00 dB
+  antenna > RG58 > receiver            NF 15.67 dB
+  antenna > RG58 > LNA > receiver      NF  8.69 dB
+  antenna > LNA > RG58 > receiver      NF  2.32 dB
+  antenna > LMR400 > receiver          NF 10.22 dB
+  antenna > LNA > LMR400 > receiver    NF  1.23 dB
+
+Same with the minimum LNA gain (16.5 dB), receiver 5 dB: antenna > LNA > RG58 > receiver NF 1.99 dB
+(exit 0)
