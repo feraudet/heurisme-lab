@@ -42,5 +42,6 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [chaine-tls-incomplete](chaine-tls-incomplete/) | [Incomplete TLS chain: the browser gets through, curl and Python do not](https://heurisme.fr/en/blog/chaine-tls-incomplete/) |
 | [tokens-francais-anglais](tokens-francais-anglais/) | [In French, the same prompt costs more tokens](https://heurisme.fr/en/blog/tokens-francais-anglais/) |
 | [policy-iam-evaluation](policy-iam-evaluation/) | [An Allow is not enough: IAM still says no](https://heurisme.fr/en/blog/policy-iam-evaluation/) |
+| [ebus-trames](ebus-trames/) | [eBUS: a self-powered bus on 2 wires](https://heurisme.fr/en/blog/ebus-trames/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).

@@ -1,0 +1,59 @@
+$ python3 ebus_trames.py
+Python 3.13.17
+eBUS, recalculs de l’article « eBUS : la chaudière parle sur deux fils »
+
+== 1. CRC-8 eBUS, polynôme 0x9B (x^8 + x^7 + x^4 + x^3 + x + 1), départ 0
+  message             10 fe b5 05 04 27 a9 15 aa
+  sur le fil          10 fe b5 05 04 27 a9 00 15 a9 01
+  CRC ebusd, fil      77   attendu par test_symbol.cpp : 77
+  CRC ebusd, brut     b5   (sans échappement : faux)
+  CRC-8 classique     69   (crc = T[crc ^ octet] : faux)
+
+== 2. Échappement : AA devient A9 01, A9 devient A9 00
+  aa             -> a9 01                -> aa
+  a9             -> a9 00                -> a9
+  10 aa a9 23    -> 10 a9 01 a9 00 23    -> 10 aa a9 23
+
+== 3. Trames réelles, CRC recalculés
+Trame 1 : écoute passive, Vaillant (wiki ebusd, 3.1 TCP client commands, ligne <1025b50903290000e4000500009203008900)
+  maître   QQ=10 ZZ=25 PB=b5 SB=09 NN=03 DB=[29 00 00]
+           CRC lu e4, recalculé e4 : OK
+  esclave  NN=05 DB=[00 00 92 03 00] (5 octets utiles, 5 sur le fil)
+           CRC lu 89, sur les octets du fil 89 : OK
+Trame 2 : lecture envoyée par ebusd (même page, ligne >3115b509030d8700ff<00041545000002>00)
+  maître   QQ=31 ZZ=15 PB=b5 SB=09 NN=03 DB=[0d 87 00]
+           CRC lu ff, recalculé ff : OK
+  esclave  NN=04 DB=[15 45 00 00] (4 octets utiles, 4 sur le fil)
+           CRC lu 02, sur les octets du fil 02 : OK
+Trame 3 : réponse avec un octet AA échappé (ebusd issue 1800, ligne >3108b50905540200c30bf9<00080201c30ba9012300003c>00)
+  maître   QQ=31 ZZ=08 PB=b5 SB=09 NN=05 DB=[54 02 00 c3 0b]
+           CRC lu f9, recalculé f9 : OK
+  esclave  NN=08 DB=[02 01 c3 0b aa 23 00 00] (8 octets utiles, 9 sur le fil)
+           CRC lu 3c, sur les octets du fil 3c : OK ; sur les octets non échappés 10 : FAUX
+Trame 4 : CRC lui-même échappé (même issue, ligne 3115b52406020001000400a900)
+  CRC recalculé a9, envoyé sur le fil comme a9 00
+Trame 5 : identification 07 04, sans réponse (ebusd issue 419, ligne >31040704006f)
+  maître   QQ=31 ZZ=04 PB=07 SB=04 NN=00 DB=[]
+           CRC lu 6f, recalculé 6f : OK
+
+== 4. Adresses maîtres : chaque demi-octet vaut 0, 1, 3, 7 ou F
+  25 maîtres : 00 01 03 07 0f 10 11 13 17 1f 30 31 33 37 3f 70 71 73 77 7f f0 f1 f3 f7 ff
+  adresse esclave du maître (+5) : 00->05, 10->15, 31->36, ff->04
+
+== 5. Arbitrage : le bus fait un ET des octets, bit de poids faible en premier
+  émet 10  fil (bit 0 d'abord) 00001000
+  émet 30  fil (bit 0 d'abord) 00001100
+  lit  10  fil (bit 0 d'abord) 00001000  -> 10 gagne au premier tour
+
+  émet 31  fil (bit 0 d'abord) 10001100
+  émet 13  fil (bit 0 d'abord) 11001000
+  lit  11  fil (bit 0 d'abord) 10001000  -> personne ne se reconnaît ; retente au SYN suivant : 31
+
+  émet 03  fil (bit 0 d'abord) 11000000
+  émet 10  fil (bit 0 d'abord) 00001000
+  lit  00  fil (bit 0 d'abord) 00000000  -> personne ne se reconnaît ; retente au SYN suivant : 10
+
+== 6. Durées à 2400 bauds, 8N1
+  un octet = 10 bits = 4.17 ms
+  trame 1 complète, SYN de tête et de fin compris : 20 octets = 83 ms
+exit=0
