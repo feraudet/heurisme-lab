@@ -43,7 +43,7 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [tokens-francais-anglais](tokens-francais-anglais/) | [In French, the same prompt costs more tokens](https://heurisme.fr/en/blog/tokens-francais-anglais/) |
 | [policy-iam-evaluation](policy-iam-evaluation/) | [An Allow is not enough: IAM still says no](https://heurisme.fr/en/blog/policy-iam-evaluation/) |
 | [ebus-trames](ebus-trames/) | [eBUS: a self-powered bus on 2 wires](https://heurisme.fr/en/blog/ebus-trames/) |
-
-Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).
 | [infinity-agents-en-pause](infinity-agents-en-pause/) | [Infinity: 75,000 paused agents in 8 GB](https://heurisme.fr/en/blog/infinity-agents-en-pause/) |
 | [scion-git-agents](scion-git-agents/) | [Scion: 30,000 merges a day, git can't keep up](https://heurisme.fr/en/blog/scion-git-agents/) |
+
+Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).
