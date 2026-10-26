@@ -45,3 +45,4 @@ Third-party data is not copied here: only its address and its sha256 are. Its li
 | [ebus-trames](ebus-trames/) | [eBUS: a self-powered bus on 2 wires](https://heurisme.fr/en/blog/ebus-trames/) |
 
 Scripts and outputs in this repo are released under the MIT license (see `LICENSE`).
+| [infinity-agents-en-pause](infinity-agents-en-pause/) | [Infinity: 75,000 paused agents in 8 GB](https://heurisme.fr/en/blog/infinity-agents-en-pause/) |

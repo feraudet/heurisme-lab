@@ -1,0 +1,8 @@
+
+thread '<unnamed>' panicked at library/std/src/sys/pal/unix/stack_overflow.rs:221:13:
+failed to set up alternative stack guard page: Cannot allocate memory (os error 12)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread '<unnamed>' panicked at library/std/src/sys/pal/unix/stack_overflow.rs:217:13:
+failed to allocate an alternative stack: Cannot allocate memory (os error 12)
+fatal runtime error: failed to initiate panic, error 1276110544, aborting
