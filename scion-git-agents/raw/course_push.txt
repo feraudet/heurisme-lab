@@ -1,0 +1,29 @@
+$ python3 course_push.py
+git version 2.55.0 | Python 3.14.7 | Darwin arm64 | 16 CPU
+
+== 1. Les chiffres d'Anthropic, recalculés
+25 M checkouts CI/jour x 25 Go (copie de travail compressée) = 625 Po/jour   (article : « more than 600 PB »)
+merges/jour : mai 2 500 -> septembre 30 000 = x12
+30 000 merges/jour = 1250 merges/heure en moyenne = un toutes les 2.9 s
+
+== 2. Modèle A : git classique, chaque agent pushe depuis son clone
+N agents | push tentés | refus non-fast-forward | refus verrou | rebases | max par agent | durée | fichiers sur main | commits
+       1 |           1 |                      0 |            0 |       0 |             1 |   0.1 s |                 1 | 1
+      10 |          55 |                      0 |           45 |      45 |            10 |   1.3 s |                10 | 10
+      50 |        1240 |                    676 |          514 |    1190 |            49 |  21.2 s |                50 | 50
+     200 |       17031 |                  13657 |         3174 |   16831 |           180 | 367.5 s |               200 | 200
+(fichiers et commits : README et commit initial retirés)
+
+== 3. Modèle B : le serveur construit les commits, CAS sur main
+threads | N changesets | CAS réussis | CAS ratés (main a bougé) | durée | fichiers sur main | commits
+      1 |            1 |           1 |                        0 |   0.0 s |                 1 | 1
+      1 |           10 |          10 |                        0 |   0.5 s |                10 | 10
+      1 |           50 |          50 |                        0 |   2.8 s |                50 | 50
+      1 |          200 |         200 |                        0 |  10.3 s |               200 | 200
+      8 |            1 |           1 |                        0 |   0.0 s |                 1 | 1
+      8 |           10 |          10 |                       42 |   0.5 s |                10 | 10
+      8 |           50 |          50 |                      320 |   3.5 s |                50 | 50
+      8 |          200 |         200 |                     1351 |  14.2 s |               200 | 200
+(un CAS raté recommence sur le nouveau tip, sans clone, sans fetch, sans rebase côté client)
+
+exit=0
